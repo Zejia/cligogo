@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<view class="container" >
+<view class="page-section-spacing">
+<image class='menu' src="{{mallsrc}}"></image>
+        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+          <view wx:for="{{swiper}}" wx:for-item='swipers' bindtap="swipersActivity" class="scroll-view-item_H demo-text-1">{{swipers.name}}</view>
+        </scroll-view>
+</view>
+  <map id='map'
+        style="width: 100%; height: {{mapheight}}px;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        covers="{{covers}}"
+        markers="{{markers}}" 
+        bindmarkertap="markertap"
+        controls="{{controls}}" 
+        bindcontroltap="controltap" 
+        show-location
+        >
+      </map>
+       <view class='info-mask  animated fadeInDown masks'>
+            <view class='info-address'> <i class='iconfont icon-dizhi'></i><text class='address'>青山村</text>
+                </view>
+            <view class="shopPicBg">
+                <view class="shop-name"><text id='shop-name'>乡村童年情怀农庄</text>
+                <text class='shop-name-tips' id='shop-name-tips'>可以让你找回童年的地方</text></view>
+                <view class="bot">
+                    <text class="star star-5"></text>
+                    <text class="itemNum">低消 ¥<text class="price">920</text>/日<text class="itemNum-val">最大容纳<text id='itemNum-val'></text>人</text>
+                    </text>
+                </view>
+            </view>
+            <view class="project">
+                <!--     <a href="">
+                    <h3 class="title-item"> 娱乐项目(112) <i class="arrowent"></i> </h3>
+                </a>
+                <ul class='project-items'>
+                    <li>垂钓</li>
+                    <li>采摘采摘采摘采摘</li>
+                    <li>野炊</li>
+                    <li>烧烤</li>
+                    <li>烧烤</li>
+                </ul> -->
+                <view class="appointment" id='appointment' data-type=''>
+                    <view class='btn gray'>预约已满</view>
+                </view>
+            </view>
+        </view>
+
+</view>
