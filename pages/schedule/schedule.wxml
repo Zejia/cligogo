@@ -1,0 +1,25 @@
+<!--logs.wxml-->
+<view class="container">
+<view class="none-data">
+    你还没有旅行计划!
+</view>
+   <!--  <view class='schedule-list'>
+         <view class='schedule-header'>
+            <view class='schedule-title'>
+                <view class='big-title'>乡村童年</view> 
+                <view class='sec-title'>出行时间 : 2018-08-12</view> 
+            </view>   
+            <view class='schedule-price'>
+                ￥ <text class="schedule-price-info">2333</text>
+            </view> 
+        </view>
+        <view class='schedule-footer'>
+            <view class='schedule-title'>
+                <view class='gray sec-title'>待出行</view> 
+            </view>   
+            <view class='schedule-price'>
+                <view class='sec-title'>20人</view> 
+            </view> 
+        </view>
+    </view> -->
+</view>

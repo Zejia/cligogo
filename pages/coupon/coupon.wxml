@@ -1,0 +1,44 @@
+<!--logs.wxml-->
+<view class="container">
+    <!-- <view class="none-data">
+ <view style="margin: 20rpx;">你还没有优惠券 !</view>
+<text class=''>推荐给朋友，可获得最高200元优惠券，<text class='tips-share'>去分享</text></text>
+</view> -->
+    <view class='schedule-list'>
+        <view class='schedule-header'>
+            <view class='schedule-title'>
+                <view class='big-title'>新手红包</view>
+                <view class='sec-title'>有效期 : 2018-08-12</view>
+            </view>
+            <view class='schedule-price'>
+                ￥
+                <text class="schedule-price-info">20</text>
+            </view>
+        </view>
+        <view class='schedule-footer'>
+            <view class='schedule-title'>
+                <view class='gray sec-title'>所有城市适用</view>
+            </view>
+        </view>
+    </view>
+      <view class='schedule-list gray'>
+        <view class='schedule-header'>
+            <view class='schedule-title'>
+                <view class='big-title'>新手红包</view>
+                <view class='sec-title'>过期</view>
+            </view>
+            <view class='schedule-price'>
+                ￥
+                <text class="schedule-price-info">20</text>
+            </view>
+        </view>
+        <view class='schedule-footer'>
+            <view class='schedule-title'>
+                <view class='gray sec-title'>所有城市适用</view>
+            </view>
+        </view>
+    </view>
+    <view class='tips'>推荐给朋友，可获得最高200元优惠券，
+        <text class='tips-share'>去分享</text>
+    </view>
+</view>

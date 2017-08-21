@@ -1,37 +1,30 @@
 <!--index.wxml-->
-<view class="container" >
-<view class="page-section-spacing">
-<image class='menu' src="{{mallsrc}}"></image>
+<view class="container">
+    <view class="page-section-spacing">
+        <image class='menu' src="{{mallsrc}}"></image>
         <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
-          <view wx:for="{{swiper}}" wx:for-item='swipers' bindtap="swipersActivity" class="scroll-view-item_H demo-text-1">{{swipers.name}}</view>
+            <view wx:for="{{swiper}}" wx:for-item='swipers' bindtap="swipersActivity" class="scroll-view-item_H demo-text-1">{{swipers.name}}</view>
         </scroll-view>
-</view>
-  <map id='map'
-        style="width: 100%; height: {{mapheight}}px;"
-        latitude="{{latitude}}"
-        longitude="{{longitude}}"
-        covers="{{covers}}"
-        markers="{{markers}}" 
-        bindmarkertap="markertap"
-        controls="{{controls}}" 
-        bindcontroltap="controltap" 
-        show-location
-        >
-      </map>
-       <view class='info-mask  animated fadeInDown masks'>
-            <view class='info-address'> <i class='iconfont icon-dizhi'></i><text class='address'>青山村</text>
-                </view>
-            <view class="shopPicBg">
-                <view class="shop-name"><text id='shop-name'>乡村童年情怀农庄</text>
-                <text class='shop-name-tips' id='shop-name-tips'>可以让你找回童年的地方</text></view>
-                <view class="bot">
-                    <text class="star star-5"></text>
-                    <text class="itemNum">低消 ¥<text class="price">920</text>/日<text class="itemNum-val">最大容纳<text id='itemNum-val'></text>人</text>
-                    </text>
-                </view>
+    </view>
+    <map id='map' style="width: 100%; height: {{mapheight}}px;" latitude="{{latitude}}" longitude="{{longitude}}" covers="{{covers}}" markers="{{markers}}" bindmarkertap="markertap" show-location>
+    </map>
+    <view class='info-mask  animated fadeInDown masks'>
+        <view class='info-address'> <i class='iconfont icon-dizhi'></i>
+            <text class='address'>青山村</text>
+        </view>
+        <view class="shopPicBg">
+            <view class="shop-name">
+                <text id='shop-name'>乡村童年情怀农庄</text>
+                <text class='shop-name-tips' id='shop-name-tips'>可以让你找回童年的地方</text>
             </view>
-            <view class="project">
-                <!--     <a href="">
+            <view class="bot">
+                <text class="star star-5"></text>
+                <text class="itemNum">低消¥<text class="price">920</text>/日<text class="itemNum-val">最大容纳<text id='itemNum-val'></text>人</text>
+                </text>
+            </view>
+        </view>
+        <view class="project">
+            <!--     <a href="">
                     <h3 class="title-item"> 娱乐项目(112) <i class="arrowent"></i> </h3>
                 </a>
                 <ul class='project-items'>
@@ -41,10 +34,115 @@
                     <li>烧烤</li>
                     <li>烧烤</li>
                 </ul> -->
-                <view class="appointment" id='appointment' data-type=''>
-                    <view class='btn gray'>预约已满</view>
-                </view>
+            <view class="appointment" id='appointment' data-type=''>
+                <view class='btn gray'>预约已满</view>
             </view>
         </view>
-
+    </view>
+    <view class='password-mask  animated fadeInDown masks'>
+        <view class='title'>NO.2222解锁码</view>
+        <ul class="password-list">
+            <li>4</li>
+            <li>3</li>
+            <li>1</li>
+            <li>3</li>
+        </ul>
+    </view>
+    <view class='mask'>
+        <view class='mask-icon' id='reset'>
+            <i class='iconfont icon-dingweigengxin'></i>
+        </view>
+        <view class='scanCode' id='scanCode'>
+            <i class='iconfont icon-saoma'></i>
+            <span class='mask-name'>扫码开锁</span>
+        </view>
+        <view class='mask-icon'>
+            <i class='iconfont icon-kefu'></i>
+        </view>
+    </view>
+    <view class='login-mask animated fadeIn masks'>
+        <view class='login-wrap'>
+            <i id='login-close' class="iconfont icon-guanbi close"></i>
+            <view class='login-title'>输入手机号码</view>
+            <!-- <input class='input-password' placeholder="这是一个可以自动聚焦的input" auto-focus/> -->
+            <view class="sixDigitPassword-box">
+                <input class='sixInput' maxlength="4" auto-focus/>
+                <i style="width: 24%; border-color: transparent;" class="">
+                <b>1</b>
+                </i>
+                <i style="width: 24%;"><b>1</b></i>
+                <i style="width: 24%;"><b>2</b></i>
+                <i style="width: 24%;"><b>3</b></i>
+            </view>
+        </view>
+    </view>
+    <!-- Contenedor -->
+    <ul id="accordion" class="accordion">
+        <view class='header'>
+            <text class='close'>关闭</text>
+            <view class='title'>常见问题</view>
+        </view>
+        <li data-index='1' bindtap="toggle" class="{{active==1?'open':''}}">
+            <div class="link">问题一<i class="iconfont icon-chevron-copy-copy-copy-copy-copy fa-chevron-down"></i></div>
+            <ul class="submenu" wx:if="{{active=='1'}}">
+                <li><a href="#">Photoshop</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">Maquetacion web</a></li>
+            </ul>
+        </li>
+        <li data-index='2' bindtap="toggle" class="{{active==2?'open':''}}">
+            <div class="link">问题二<i class="iconfont icon-chevron-copy-copy-copy-copy-copy fa-chevron-down"></i></div>
+            <ul class="submenu" wx:if="{{active=='2'}}">
+                <li><a href="#">Javascript</a></li>
+                <li><a href="#">jQuery</a></li>
+                <li><a href="#">Frameworks javascript</a></li>
+            </ul>
+        </li>
+        <li data-index='3' bindtap="toggle" class="{{active==3?'open':''}}">
+            <div class="link">问题三<i class="iconfont icon-chevron-copy-copy-copy-copy-copy fa-chevron-down"></i></div>
+            <ul class="submenu" wx:if="{{active=='3'}}">
+                <li><a href="#">Tablets</a></li>
+                <li><a href="#">Dispositivos mobiles</a></li>
+                <li><a href="#">Medios de escritorio</a></li>
+                <li><a href="#">Otros dispositivos</a></li>
+            </ul>
+        </li>
+        <li data-index='4' bindtap="toggle" class="{{active==4?'open':''}}">
+            <div class="link">问题四<i class="iconfont icon-chevron-copy-copy-copy-copy-copy fa-chevron-down"></i></div>
+            <ul class="submenu" wx:if="{{active=='4'}}">
+                <li><a href="#">Google</a></li>
+                <li><a href="#">Bing</a></li>
+                <li><a href="#">Yahoo</a></li>
+                <li><a href="#">Otros buscadores</a></li>
+            </ul>
+        </li>
+        <view class='footer'>
+            <text class='question'>问题还没有解决?</text>
+            <button class='ft-btn' type="primary" size='100'>联系客服 </button>
+        </view>
+    </ul>
+    <!-- 服务选择蒙层 -->
+    <view class='menu-mask masks animated'>
+        <view class='menu-title'>服务选择</view>
+        <i id='menu-mask-close' class="iconfont icon-guanbi close"></i>
+        <view class='info-mask-ul menu-mask-ul' id='menu-mask-ul'>
+            <li>
+                <image class='icon'  src="../../images/mountain.png"></image>
+                <view class='menu-name'>列表一</view>
+            </li>
+            <li>
+                <image class='icon'  src="../../images/mountain.png"></image>
+                <view class='menu-name'>列表一</view>
+            </li>
+            <li>
+                <image class='icon'  src="../../images/mountain.png"></image>
+                <view class='menu-name'>列表一</view>
+            </li>
+            <li>
+                <image class='icon'  src="../../images/mountain.png"></image>
+                <view class='menu-name'>列表一</view>
+            </li>
+        </view>
+    </view>
 </view>

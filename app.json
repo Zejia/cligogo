@@ -1,7 +1,13 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/schedule/schedule",
+    "pages/schedule-info/schedule-info",
+    "pages/coupon/coupon",
+    "pages/setting/setting/setting",
+    "pages/setting/setting-info/setting-info",
+    "pages/setting/setting-list/setting-list"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -22,7 +28,7 @@
       {
         "selectedIconPath": "images/me.png",
         "iconPath": "images/me.png",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/setting/setting/setting",
         "text": "我的"
       }
     ]

@@ -1,0 +1,31 @@
+<!--logs.wxml-->
+<view class="container">
+    <view class="header">
+        <view class="header-img">
+        </view>
+        <text class='header-title'>修改头像</text>
+    </view>
+    <ul class='setting-list'>
+        <navigator url="../setting-list/setting-list" open-type="redirect" hover-class="other-navigator-hover">
+            <view>
+                用户指南
+            </view>
+        </navigator>
+        <navigator url="../setting-list/setting-list" open-type="redirect" hover-class="other-navigator-hover">
+            <view>
+                法律条款
+            </view>
+        </navigator>
+        <navigator url="../setting-list/setting-list" open-type="redirect" hover-class="other-navigator-hover">
+            <view>
+                服务规则
+            </view>
+        </navigator>
+        <navigator url="../setting-list/setting-list" open-type="redirect" hover-class="other-navigator-hover">
+            <view>
+                关于村里走走
+            </view>
+        </navigator>
+    </ul>
+    <button type="warn" bindtap="warn"> 退出登录 </button>
+</view>

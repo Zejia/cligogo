@@ -1,68 +1,107 @@
 /**index.wxss**/
 
-@font-face {font-family: "iconfont";
-  src: url('//at.alicdn.com/t/font_dojhio54aezbbj4i.eot?t=1501052507858'); /* IE9*/
-  src: url('//at.alicdn.com/t/font_dojhio54aezbbj4i.eot?t=1501052507858#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//at.alicdn.com/t/font_dojhio54aezbbj4i.woff?t=1501052507858') format('woff'), /* chrome, firefox */
-  url('//at.alicdn.com/t/font_dojhio54aezbbj4i.ttf?t=1501052507858') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('//at.alicdn.com/t/font_dojhio54aezbbj4i.svg?t=1501052507858#iconfont') format('svg'); /* iOS 4.1- */
+@font-face {
+    font-family: "iconfont";
+    src: url('//at.alicdn.com/t/font_360502_gjxolt5mzhicz0k9.eot?t=1503191218263');
+    /* IE9*/
+    src: url('//at.alicdn.com/t/font_360502_gjxolt5mzhicz0k9.eot?t=1503191218263#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_360502_gjxolt5mzhicz0k9.woff?t=1503191218263') format('woff'), /* chrome, firefox */
+    url('//at.alicdn.com/t/font_360502_gjxolt5mzhicz0k9.ttf?t=1503191218263') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_360502_gjxolt5mzhicz0k9.svg?t=1503191218263#iconfont') format('svg');
+    /* iOS 4.1- */
 }
 
 .iconfont {
-  font-family:"iconfont" !important;
-  font-size:16px;
-  font-style:normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-dizhi:before { content: "\e621"; }
-
-.icon-saoma:before { content: "\e6e0"; }
-
-.icon-datingtubiao:before { content: "\e6c2"; }
-
-.icon-qianbao-copy:before { content: "\e600"; }
-
-.icon-app-schedule-b:before { content: "\e65c"; }
-
-.icon-wode:before { content: "\e6c0"; }
-
-.icon-guanbi:before { content: "\e635"; }
-
-.icon-kefu:before { content: "\e61e"; }
-
-.icon-dingweigengxin:before { content: "\e608"; }
-
-.icon-shan-copy:before { content: "\e6e1"; }
-
-
-.page-section-spacing{
-    position:relative;
+.icon-dizhi:before {
+    content: "\e621";
 }
-.scroll-view_H{
-  white-space: nowrap;
-  margin:0 20px;
+
+.icon-saoma:before {
+    content: "\e6e0";
 }
-.scroll-view-item{
-  height: 60rpx;
+
+.icon-datingtubiao:before {
+    content: "\e6c2";
 }
-.scroll-view-item_H{
-  display: inline-block;
-  width: 33.3%;
-  height: 60rpx;
-  line-height: 60rpx;
-  font-size:32rpx;
-  color:#9c9c9c;
+
+.icon-qianbao-copy:before {
+    content: "\e600";
 }
+
+.icon-chevron-copy-copy-copy-copy-copy:before {
+    content: "\e720";
+}
+
+.icon-wodezhuangyuan:before {
+    content: "\e64a";
+}
+
+.icon-app-schedule-b:before {
+    content: "\e65c";
+}
+
+.icon-wode:before {
+    content: "\e6c0";
+}
+
+.icon-guanbi:before {
+    content: "\e635";
+}
+
+.icon-kefu:before {
+    content: "\e61e";
+}
+
+.icon-dingweigengxin:before {
+    content: "\e608";
+}
+
+.icon-icon:before {
+    content: "\e601";
+}
+
+.icon-shan-copy:before {
+    content: "\e6e1";
+}
+
+.page-section-spacing {
+    position: relative;
+}
+
+.scroll-view_H {
+    white-space: nowrap;
+    margin: 0 20px;
+}
+
+.scroll-view-item {
+    height: 60rpx;
+}
+
+.scroll-view-item_H {
+    display: inline-block;
+    width: 33.3%;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 32rpx;
+    color: #9c9c9c;
+}
+
 .swiper-activity {
     color: #f09f5d;
 }
+
 .menu {
-    width:50rpx;
-    height:50rpx;
+    width: 50rpx;
+    height: 50rpx;
     position: absolute;
-    top:-4rpx;
+    top: -4rpx;
     right: 0px;
     z-index: 99;
     background: #fff;
@@ -72,6 +111,7 @@
     caption-side: -moz-box-shadow:-16px 0px 27.4px 0px rgb(255, 255, 255);
     box-shadow: -16px 0px 27.4px 0px rgb(255, 255, 255);
 }
+
 .mui-bar {
     background: #fff;
 }
@@ -182,7 +222,7 @@
     min-height: 100px;
     background: #fff;
     position: fixed;
-    top:60rpx;
+    top: 60rpx;
     /*display: none;*/
 }
 
@@ -323,7 +363,7 @@
     min-height: 100px;
     background: #fff;
     position: fixed;
-    top: 84px;
+    top: 60rpx;
     display: none;
 }
 
@@ -390,7 +430,7 @@
     min-height: 100%;
     background: rgba(255, 255, 255, 0.8);
     position: fixed;
-    top: 40px;
+    top: 30px;
     display: none;
     z-index: 9999;
 }
@@ -410,10 +450,12 @@
     width: 33.3333%;
     padding: 25px 0;
     border: 0.5px solid #f5f5f5;
+    box-sizing: border-box;
 }
 
 .icon {
     width: 30px;
+    height: 30px;
 }
 
 .menu-name {
@@ -434,8 +476,8 @@
     position: absolute;
     right: 5px;
     top: 14px;
-    font-size: 24px;
-    color: #b6b6b6;
+    font-size: 40rpx;
+    color: #000;
 }
 
 .guide {
@@ -464,7 +506,7 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     font-weight: 500;
-        margin-top: 5px;
+    margin-top: 5px;
     margin-bottom: 5px;
 }
 
@@ -479,7 +521,7 @@
     background-color: #fff
 }
 
-.bot{
+.bot {
     font-size: 12px;
     margin-top: 5px;
     color: #999
@@ -606,4 +648,346 @@
     display: inline-block;
     font-size: 16px;
     margin-bottom: 12px;
+}
+
+.mui-input-row {
+    width: 92%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.mui-input-row input {
+    height: 52px;
+    margin-bottom: 0;
+    font-size: 14px;
+    padding: 10px 30px;
+    border-radius: 0;
+    border: 1px solid #e7e7e7;
+}
+
+.mui-input-row .mui-input-clear~.mui-icon-clear,
+.mui-input-row .mui-input-password~.mui-icon-eye,
+.mui-input-row .mui-input-speech~.mui-icon-speech {
+    top: 16px;
+}
+
+#PIN {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    background: #fff;
+    border: 0;
+    padding: 15px 0;
+    border-left: 1px solid #e7e7e7;
+    border-radius: 0;
+    color: #00ae66;
+    width: 30%;
+    font-size: 14px;
+}
+
+.mui-btn-block {
+    width: 96%;
+    margin: 0 auto;
+}
+
+.mui-input-row:nth-child(1) {
+    margin-top: 20px;
+}
+
+.mui-input-row:nth-child(1) input {
+    border-bottom: 0;
+}
+
+.mui-btn-block {
+    font-size: 18px;
+    display: block;
+    width: 92%;
+    margin: 0 auto;
+    margin-bottom: 14px;
+    padding: 11px 0;
+    background: #f0c43d;
+    font-size: 14px;
+    color: #363636;
+    border: 0;
+}
+
+.mui-content-padded {
+    margin: 28px 0;
+    text-align: center;
+}
+
+.mui-content-padded span {
+    font-size: 10px;
+    color: #a8a8a8;
+}
+
+.agreement {
+    color: #f0bc1b;
+}
+
+.appointment .gray {
+    background-color: #565656;
+}
+
+.login-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999999;
+    display: none;
+}
+
+.login-wrap {
+    background: #fff;
+    position: absolute;
+    width: 90%;
+    height: 45%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-title {
+    padding: 10px 0;
+    font-size: 18px;
+    text-align: center;
+    color: #323232;
+}
+
+#login-close {
+    top: 4px;
+}
+
+.button {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: #00ae66;
+    height: 40px;
+    line-height: 40px;
+    color: 18px;
+    text-align: center;
+    color: #fff;
+}
+
+.input-password {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0;
+    padding-top: 100rpx;
+    border-bottom: 1px solid #000;
+}
+
+.sixDigitPassword-box {
+    cursor: text;
+    background: #fff;
+    outline: none;
+    position: relative;
+    padding: 20rpx 0;
+    height: 90rpx;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    margin: 0 auto;
+    margin-top: 100rpx;
+    width: 80%;
+}
+
+.sixInput {
+    position: absolute;
+    top: 0;
+    height: 26px;
+    color: #fff;
+    font-size: 12px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-user-select: initial;
+    outline: 'none';
+    z-index: 999;
+    opacity: 0;
+}
+
+.sixDigitPassword-box i {
+    float: left;
+    display: block;
+    padding: 4px 0;
+    height: 70rpx;
+    line-height: 70rpx;
+
+    border-left: 1px solid #cccccc;
+}
+
+.sixDigitPassword-box .active {}
+
+.sixDigitPassword-box b {
+    display: block;
+    margin: 0 auto;
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 50rpx;
+    text-align: center;
+}
+
+.sixDigitPassword-box span {
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 0px;
+    height: 30px;
+    border: 1px solid rgba(82, 168, 236, .8);
+    border: 1px solid #00ffff\9;
+    border-radius: 2px;
+    visibility: hidden;
+    -webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.75), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+
+
+/** =======================
+ * Contenedor Principal
+ ===========================*/
+
+h1 {
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 80px;
+}
+
+h1 a {
+    color: #c12c42;
+    font-size: 16px;
+}
+
+.accordion {
+    position: absolute;
+    bottom: 0rpx;
+    width: 100%;
+    margin: 0px auto 0px;
+    background: #FFF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    z-index: 9999999999999;
+    display: none;
+}
+
+.accordion .link {
+    cursor: pointer;
+    display: block;
+    padding: 15px 15px 15px 42px;
+    color: #4D4D4D;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid #CCC;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.accordion li:last-child .link {
+    border-bottom: 0;
+}
+
+.accordion li i {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    font-size: 18px;
+    color: #595959;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.accordion li i.fa-chevron-down {
+    right: 12px;
+    left: auto;
+    font-size: 16px;
+}
+
+.accordion li.open .link {
+    color: #b63b4d;
+}
+
+.accordion li.open i {
+    color: #b63b4d;
+}
+
+.accordion li.open i.fa-chevron-down {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+
+/**
+ * Submenu
+ -----------------------------*/
+
+.submenu {
+    background: #444359;
+    font-size: 14px;
+}
+
+.submenu li {
+    border-bottom: 1px solid #4b4a5e;
+}
+
+.submenu a {
+    display: block;
+    text-decoration: none;
+    color: #d9d9d9;
+    padding: 12px;
+    padding-left: 42px;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+.submenu a:hover {
+    background: #b63b4d;
+    color: #FFF;
+}
+
+
+/*标题*/
+
+.header {
+    position: relative;
+}
+
+.accordion .close {
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+    font-size: 30rpx;
+    color: #f4b06f;
+}
+
+.title {
+    text-align: center;
+}
+.ft-btn{
+    width: 30%;
+    margin-right: 0;
+    border-radius: 0;
+    font-size: 28rpx;
+   
+}
+.footer{
+    position: relative;
+}
+.question{
+     font-size: 24rpx;
+    color: #000;
+     position: absolute;
+    top: 20rpx;
+    left: 20rpx;
 }

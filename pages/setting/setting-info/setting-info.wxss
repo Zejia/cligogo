@@ -1,0 +1,6 @@
+.container{
+    padding:20rpx;
+    margin:20rpx;
+    box-sizing: border-box;
+    text-align: justify;
+}
