@@ -1,0 +1,41 @@
+<!--pages/news-guanfang/guanfang.wxml-->
+
+<view class="ZhuTi">
+  <view class="KaPian">
+    <view class="TuPian">
+    <image mode="aspectFill" class='KaPiang' src="{{KaPian}}"></image>
+    </view>
+    <view class="height_20">
+      <view class="BiaoTi">雨天堵车不愁，最多赔10元
+      </view>
+    </view>
+    <view class="height_20">
+      <view class="NeiRong">雨天堵车不愁，最多赔10元
+      </view>
+    </view>
+    <view class="height_20">
+      <view class="XiangXi">查看详细>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="ZhuTi">
+  <view class="KaPian">
+    <view class="TuPian">
+    <image mode="aspectFill" class='KaPiang' src="{{KaPian}}"></image>
+    </view>
+    <view class="height_20">
+      <view class="BiaoTi">雨天堵车不愁，最多赔10元
+      </view>
+    </view>
+    <view class="height_20">
+      <view class="NeiRong">雨天堵车不愁，最多赔10元
+      </view>
+    </view>
+    <view class="height_20">
+      <view class="XiangXi">查看详细>
+      </view>
+    </view>
+  </view>
+</view>

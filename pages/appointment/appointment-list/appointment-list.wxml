@@ -1,0 +1,30 @@
+<!--logs.wxml-->
+<view class="container">
+        <view class='shoppingCart'><i class='iconfont icon-icon'></i>购物车<span id='total_price' style="float: right;padding-right: 12px;padding-top:14rpx;">￥<b>1212</b>元</span></view>
+         <ul class='info-ul'>
+            <li class="select">
+                <em aem="0" cart_id="84"></em>
+                <image src="../../../images/fruit.png"></image>
+                <div class="div_center">
+                    <view>新疆苹果</view>
+                     <p class="now_value"><i>￥</i><b class="qu_su">210.00</b></p>
+                </div>
+                <div class="div_right">
+                    <i ontouchstart="reducew(this)">-</i>
+                    <span class="zi">1</span>
+                    <i ontouchstart="plusw(this)">+</i>
+                </div>
+            </li>
+           
+        </ul>
+    </view>
+    <view class='shoppingCart-mask animated '>
+        <view class="shoppingCart-warp">
+            <ul class="foodlist">
+                <li>
+                    <span class="cellname">乡村童年情怀农庄</span>
+                    <span class="cellquantity">x 1</span>
+                    <span class="celltotal">¥920</span></li>
+            </ul>
+        </view>
+</view>

@@ -1,0 +1,144 @@
+/* pages/news-geren/news-geren.wxss */
+
+view {
+      /* border: 2rpx #f60 solid;     */
+}
+.ZhuTi {
+  width: 100%;
+}
+page{
+  background: #F3F4F6;
+}
+.DiBu {
+  width: 100%;
+  height: 140rpx;
+  position: absolute;
+  bottom: 0;
+  padding: 20rpx 0;
+  padding-top: 20rpx;
+  background-color: #fff;
+}
+.width_70{
+  width: 70%;
+  height: 140rpx;
+  float: left;
+}
+.width_15{
+  width: 15%;
+  height: 140rpx;
+  float: left;
+}
+.img_{
+  height: 60rpx;
+  width: 60rpx;
+}
+.YuYin{
+  margin: 29%;
+}
+.XiaoXi{
+  margin: 29%;
+}
+.NeiRong{
+  font-family: "微软雅黑","宋体";
+  color: #D2D2D2;
+  font-size: 28rpx;
+  margin-top: 8%;
+}
+.ShiJian{
+  height: 140rpx;
+}
+.ShiJian_{
+  line-height: 140rpx;
+  text-align: center;
+  font-family: "微软雅黑","宋体";
+  color: #777688;
+  font-size: 24rpx;
+}
+
+.DuiFangNeiRong_{
+ width:55%;
+margin-left:21%;
+padding-top:6.5%;
+padding-left:3%;
+padding-bottom:6.5%;
+background-color:#fff;
+font-size:24rpx;
+font-family:"微软雅黑","宋体";
+margin-top:1%;
+border-radius:0px 10px 10px 10px;
+
+}
+.WoDeNeiRong_{
+width:48%;
+margin-left:25%;
+padding-top:7.5%;
+padding-left:26%;
+padding-bottom:7.5%;
+font-size:24rpx;
+font-family:"微软雅黑","宋体";
+margin-top:1%;
+border-radius:10px 0px 10px 10px;
+background-color: #777688;
+color: #fff;
+}
+.WoDeNeiRong{
+  width: 80%;
+ float: left;
+}
+.DuiFangXiaoXi{
+  width: 100%;
+  margin-bottom: 5%;
+}
+.WoDeXiaoXi{
+  width: 100%;
+  margin-bottom: 5%;
+}
+.TouXiangKuang{
+  width: 20%;
+  float: left;
+}
+
+.TouXiangKuang_{
+  overflow: hidden;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  border: 2rpx silver solid;
+   margin-left: 9%; 
+   text-align: center;
+}
+.TouXiang {
+width:100%;
+height:100%;
+border-radius:50rpx;
+}
+
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  padding:20rpx;
+  box-sizing: border-box;
+  border-bottom:1px solid #bcbcc4;
+}
+.input-messages{
+   -webkit-box-flex: 10;
+    -webkit-flex: 10;
+    -ms-flex: 10;
+    flex: 10;
+    color:#bcbcc4;
+    font-size: 30rpx;
+}
+.send-messages{
+  width: 50rpx;
+  height: 40rpx;
+  -webkit-box-flex: 2;
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 1;
+    color: #bcbcc4;
+    font-size: 50rpx;
+}

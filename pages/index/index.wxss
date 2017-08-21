@@ -1,76 +1,5 @@
 /**index.wxss**/
 
-@font-face {
-    font-family: "iconfont";
-    src: url('//at.alicdn.com/t/font_360502_gjxolt5mzhicz0k9.eot?t=1503191218263');
-    /* IE9*/
-    src: url('//at.alicdn.com/t/font_360502_gjxolt5mzhicz0k9.eot?t=1503191218263#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('//at.alicdn.com/t/font_360502_gjxolt5mzhicz0k9.woff?t=1503191218263') format('woff'), /* chrome, firefox */
-    url('//at.alicdn.com/t/font_360502_gjxolt5mzhicz0k9.ttf?t=1503191218263') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-    url('//at.alicdn.com/t/font_360502_gjxolt5mzhicz0k9.svg?t=1503191218263#iconfont') format('svg');
-    /* iOS 4.1- */
-}
-
-.iconfont {
-    font-family: "iconfont" !important;
-    font-size: 16px;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-dizhi:before {
-    content: "\e621";
-}
-
-.icon-saoma:before {
-    content: "\e6e0";
-}
-
-.icon-datingtubiao:before {
-    content: "\e6c2";
-}
-
-.icon-qianbao-copy:before {
-    content: "\e600";
-}
-
-.icon-chevron-copy-copy-copy-copy-copy:before {
-    content: "\e720";
-}
-
-.icon-wodezhuangyuan:before {
-    content: "\e64a";
-}
-
-.icon-app-schedule-b:before {
-    content: "\e65c";
-}
-
-.icon-wode:before {
-    content: "\e6c0";
-}
-
-.icon-guanbi:before {
-    content: "\e635";
-}
-
-.icon-kefu:before {
-    content: "\e61e";
-}
-
-.icon-dingweigengxin:before {
-    content: "\e608";
-}
-
-.icon-icon:before {
-    content: "\e601";
-}
-
-.icon-shan-copy:before {
-    content: "\e6e1";
-}
-
 .page-section-spacing {
     position: relative;
 }
@@ -107,9 +36,9 @@
     background: #fff;
     padding: 0 10rpx;
     color: #969696;
-    -webkit-box-shadow: -16px 0px 27.4px 0px rgb(255, 255, 255);
+    /* -webkit-box-shadow: -16px 0px 27.4px 0px rgb(255, 255, 255);
     caption-side: -moz-box-shadow:-16px 0px 27.4px 0px rgb(255, 255, 255);
-    box-shadow: -16px 0px 27.4px 0px rgb(255, 255, 255);
+    box-shadow: -16px 0px 27.4px 0px rgb(255, 255, 255);*/
 }
 
 .mui-bar {
@@ -223,7 +152,7 @@
     background: #fff;
     position: fixed;
     top: 60rpx;
-    /*display: none;*/
+    display: none;
 }
 
 .info-mask i {
@@ -391,7 +320,6 @@
     padding: 20px;
     font-size: 28px;
     border-radius: 6px;
-    gradient: http: //colorzilla.com/gradient-editor/#2ca020+0,6eb260+99,6eb260+100 */
     background: rgb(44, 160, 32);
     /* Old browsers */
     background: -moz-linear-gradient(top, rgba(44, 160, 32, 1) 0%, rgba(110, 178, 96, 1) 99%, rgba(110, 178, 96, 1) 100%);
@@ -424,7 +352,6 @@
 }
 
 
-
 .menu-mask {
     width: 100%;
     min-height: 100%;
@@ -435,6 +362,14 @@
     z-index: 9999;
 }
 
+.farm-mask {
+    width: 100%;
+    min-height: 100%;
+    background: rgba(255, 255, 255, 1);
+    position: fixed;
+    top: 50rpx;
+    z-index: 9999999999999999;
+}
 
 .menu-mask-ul {
     background: #fff;
@@ -846,6 +781,8 @@
 
 
 
+
+
 /** =======================
  * Contenedor Principal
  ===========================*/
@@ -927,6 +864,8 @@ h1 a {
 }
 
 
+
+
 /**
  * Submenu
  -----------------------------*/
@@ -957,6 +896,8 @@ h1 a {
 }
 
 
+
+
 /*标题*/
 
 .header {
@@ -974,20 +915,188 @@ h1 a {
 .title {
     text-align: center;
 }
-.ft-btn{
+
+.ft-btn {
     width: 30%;
     margin-right: 0;
     border-radius: 0;
     font-size: 28rpx;
-   
 }
-.footer{
+
+.footer {
     position: relative;
 }
-.question{
-     font-size: 24rpx;
+
+.question {
+    font-size: 24rpx;
     color: #000;
-     position: absolute;
+    position: absolute;
     top: 20rpx;
     left: 20rpx;
+}
+
+._1dwlm {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+._1dwlm ._2RqbK {
+    width: 100%;
+    height: 340rpx;
+}
+
+._1dwlm ._3tQEs {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    z-index: 2;
+    color: #fff;
+    font-size: 14px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.resume_title {
+    color: #262626;
+    font-size: 13px;
+    padding: 30rpx;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.resume_main img {
+    width: 14px;
+    margin-left: 13px;
+    margin-right: 9px;
+    margin-top: -5px;
+}
+
+.resume_info {
+    color: #696969;
+    font-size: 12px;
+    margin-left: 80rpx;
+    margin-top: 30rpx;
+}
+
+.resume_info text {
+    margin-right: 56rpx;
+}
+
+.resume_info_last {
+    margin-left: 80rpx;
+    margin-top: 20rpx;
+    margin-bottom: 32rpx;
+}
+
+.resume_info_last text {
+    margin-right: 0px;
+}
+
+.resume_main {
+    margin-top: 18rpx;
+}
+
+.evaluate_main text {
+    font-size: 14px;
+    color: #8f8f94;
+    padding: 18px;
+    display: block;
+}
+
+.message {
+    margin-top: 16px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.message_user {
+    overflow: hidden;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.message_main_star {
+    width: 60%;
+    float: left;
+}
+
+.message_main_face {
+    text-align: center;
+    float: right;
+    margin-right: 29px;
+}
+
+.message_main_face img {
+    margin-bottom: 10px;
+    width: 50px;
+    margin-top: 7px;
+}
+
+.message_head {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 120rpx;
+    overflow: hidden;
+    float: left;
+    margin: 19px;
+    display: block;
+}
+
+.message_head img {
+    width: 100%;
+}
+
+.message_name {
+    float: left;
+    margin-top: 0em;
+    padding-top: 56rpx;
+    width: 70%;
+}
+
+.message_time {
+    font-size: 12px;
+    color: #ababab;
+    margin-bottom: 24rpx;
+    text-align: right;
+    margin-top: 28rpx;
+}
+
+.message_head {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 120rpx;
+    overflow: hidden;
+    float: left;
+    margin: 19px;
+    display: block;
+}
+
+.message_head .header {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 120rpx;
+}
+
+.uesrname {
+    font-size: 14px;
+    color: #8f8f94;
+}
+
+.evaluatecontent {
+    font-size: 14px;
+    color: #8f8f94;
+    margin-top: 10rpx;
+    display: inline-block;
+}
+
+.introduce {
+    padding: 20rpx;
+    box-sizing: border-box;
+    color: #8f8f94;
+    line-height:1.2;
+
+}
+.resume-wrap{
+    padding-bottom: 50rpx;
 }

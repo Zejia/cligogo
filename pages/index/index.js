@@ -37,7 +37,7 @@ Page({
             success: function(res) {
                 console.log(res.windowHeight)
                 that.setData({
-                    mapheight: res.windowHeight - 30,
+                    mapheight: res.windowHeight - 40,
                     'controls[0].position.top': res.windowHeight - 60,
                     'controls[1].position.top': res.windowHeight - 60,
                     'controls[2].position.top': res.windowHeight - 60,
@@ -60,7 +60,11 @@ Page({
                 active: e.currentTarget.dataset.index
             })
         }
-
-
+    },
+    previewImages() {
+        wx.previewImage({
+            current: 'https://img.supermonkey.com.cn/box/1015/301.jpg', // 当前显示图片的http链接
+            urls: ['https://img.supermonkey.com.cn/box/1015/301.jpg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png'] // 需要预览的图片http链接列表
+        })
     }
 })

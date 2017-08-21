@@ -1,0 +1,72 @@
+<!--logs.wxml-->
+<view class="container">
+        <view class='shoppingCart'><i class='iconfont icon-icon'></i>购物车<span id='total_price' style="float: right;padding-right: 12px;padding-top:14rpx;">￥<b>123123312</b>元</span></view>
+        <view class="nav_info_content wrap" style="display: none">
+            <view class="nav_info_content_tilte">
+                预约信息
+            </view>
+            <view class="nav_info_content_main pay-info">
+                <form id='order_content_form' class="mui-input-group" data-toggle="formcache">
+                    <!-- 服务时间 -->
+                    <view class="order_form" id="ycq">
+                        <view class="mui-input-row">
+                            <label>预约时间:</label>
+                            <!-- <input id='yc_time' type="text" name='time' class="btn mui-input-clear mui-input" placeholder="" disabled value="2016-12-12"> -->
+                             <input placeholder=""  value="2016-12-12" disabled="true" />
+                        </view>
+                         <ul class="yy_time">
+                                <li>星期四<br/>12号
+                                <view class="filled">已满</view>
+                                </li>
+                                <li>星期四<br/>13号</li>
+                                <li>星期四<br/>14号</li>
+                                <li>星期四<br/>15号</li>
+                                <li>星期四<br/>15号</li>
+                                <li>星期四<br/>15号</li>
+                                <li>星期四<br/>15号</li>
+                            </ul>
+                    </view>
+                    <!-- 服务时间地址 -->
+                    <view class="order_form">
+                        <view class="mui-input-row  Mar">
+                            <label>真实姓名</label>
+                              <input placeholder="" />
+
+                            <!-- <input type="text" name="name" class="mui-input-clear mui-input" placeholder=""> -->
+                        </view>
+                        <view class="mui-input-row  Mar">
+                            <label>联系手机</label>
+                              <input placeholder="" />
+
+                            <!-- <input type="tel" name="telphone" class="mui-input-clear mui-input" placeholder="" maxlength="11"> -->
+                        </view>
+                        <view class="mui-input-row  Mar">
+                            <label>预计人数</label>
+                              <input placeholder="" />
+                            <!-- <input type="tel" name='people' class="mui-input-clear mui-input" placeholder=""> -->
+                        </view>
+                    </view>
+                    <button class='next'>下一步:　选择服务</button>
+                </form>
+            </view>
+        </view>
+        <view class='value-added' >
+            <ul class='add-ul' id='add-ul'>
+                   <view class="view-li" data-name='1'>
+                    <P class="add-name">设备服务</P>
+                    <P class="add-tips">尚未选择设备</P><i class="arrowent"></i>
+                    </view>
+            </ul>
+            <button class='pandect btns'>确认订单</button>
+        </view>
+    </view>
+    <view class='shoppingCart-mask animated '>
+        <view class="shoppingCart-warp">
+            <ul class="foodlist">
+                <li>
+                    <span class="cellname">乡村童年情怀农庄</span>
+                    <span class="cellquantity">x 1</span>
+                    <span class="celltotal">¥920</span></li>
+            </ul>
+        </view>
+</view>

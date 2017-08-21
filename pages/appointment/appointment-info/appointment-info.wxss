@@ -1,0 +1,156 @@
+page{
+    background: #f3f4f5;
+}
+
+.foodlist {
+    padding: 10rpx 20rpx;
+    color: #666;
+    font-size: 34rpx;
+    border-bottom: 2rpx solid #eee;
+}
+
+.foodlist li {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    font-size: 34rpx;
+    color: inherit;
+    padding: 10rpx 0;
+    border-bottom: 1rpx solid #eee;
+}
+
+.foodlist li .cellname {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-box-flex: 8;
+    -webkit-flex: 8;
+    -ms-flex: 8;
+    flex: 8;
+    display: block;
+    width: 0;
+}
+
+.foodlist li .cellquantity {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+    display: block;
+    width: 0;
+    text-align: right;
+    color: #999;
+}
+.foodlist li  .cellquantity.flex_5{
+        -webkit-box-flex: 5;
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
+}
+.foodlist li .celltotal {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+    display: block;
+    width: 0;
+    text-align: right;
+}
+
+.total {
+    padding: 10rpx 20rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 34rpx;
+    color: #666
+}
+
+footer {
+    height: 75rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #3c3c3c
+}
+
+footer span {
+color:#fff;
+font-size:32rpx;
+padding-left:20rpx;
+line-height:2.5;
+}
+
+footer small {
+    color: #999;
+    font-size: 34rpx
+}
+
+footer a {
+    line-height: 34rpx;
+    vertical-align: top
+}
+
+footer .submitbtn {
+position:absolute;
+top:0;
+right:0;
+bottom:0;
+background:#f98523;
+border:none;
+color:#fff;
+font-size:32rpx;
+border-radius:1px;
+
+}
+
+footer .submitbtn.disabled {
+    background: #666
+}
+.wrap-foodlist{
+    padding:0 20rpx;
+
+    background: #fff;
+}
+.wrap-company{
+    background: #fff;
+    padding:20rpx;
+    color: #eb8118;
+    border-radius: 10rpx;
+     border-bottom: 1rpx solid #eee;
+
+}
+.company-contact{
+    padding: 10rpx 0;
+    margin: 10rpx 0;
+    display: flex;
+
+}
+.company-name{
+    font-size: 35rpx;
+    margin-bottom: 10rpx;
+}
+.contact-name{
+    font-size: 29rpx;
+    margin-bottom: 10rpx;
+    color: #a4a4a4;
+}
+.pr-10{
+    padding-right: 40rpx;
+}

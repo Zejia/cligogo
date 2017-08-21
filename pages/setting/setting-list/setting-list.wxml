@@ -1,19 +1,19 @@
 <!--logs.wxml-->
 <view class="container">
      <ul class='setting-list'>
-      <navigator url="../setting-info/setting-info" open-type="redirect" hover-class="other-navigator-hover">
+      <navigator url="../setting-info/setting-info"   hover-class="other-navigator-hover">
             <view>
                 用户指南
             </view>
-        </navigator> <navigator url="../setting-info/setting-info" open-type="redirect" hover-class="other-navigator-hover">
+        </navigator> <navigator url="../setting-info/setting-info"   hover-class="other-navigator-hover">
             <view>
                 用户指南
             </view>
-        </navigator> <navigator url="../setting-info/setting-info" open-type="redirect" hover-class="other-navigator-hover">
+        </navigator> <navigator url="../setting-info/setting-info"   hover-class="other-navigator-hover">
             <view>
                 用户指南
             </view>
-        </navigator> <navigator url="../setting-info/setting-info" open-type="redirect" hover-class="other-navigator-hover">
+        </navigator> <navigator url="../setting-info/setting-info"   hover-class="other-navigator-hover">
             <view>
                 用户指南
             </view>

@@ -1,0 +1,58 @@
+<!--pages/news-geren/news-geren.wxml-->
+<view class="ZhuTi">
+  <view class="ShiJian">
+    <view class="ShiJian_">星期四 21点23分</view>
+  </view>
+
+  <view class="DuiFangXiaoXi">
+    <view class="TouXiangKuang">
+      <view class="TouXiangKuang_">
+        <image class='TouXiang' src="{{TouXiang}}">
+        </image>
+      </view>
+    </view>
+
+    <view class="DuiFangNeiRong">
+      <view class="DuiFangNeiRong_">
+        你好，我马上到，请稍候
+      </view>
+    </view>
+  </view>
+
+ <view class="DuiFangXiaoXi">
+    <view class="TouXiangKuang">
+      <view class="TouXiangKuang_">
+        <image class='TouXiang' src="{{TouXiang}}">
+        </image>
+      </view>
+    </view>
+
+    <view class="DuiFangNeiRong">
+      <view class="DuiFangNeiRong_">
+        你好，我马上到，请稍候
+      </view>
+    </view>
+  </view>
+
+  <view class="WoDeXiaoXi">
+   <view class="WoDeNeiRong">
+      <view class="WoDeNeiRong_">
+        你好，我马上到，请稍候
+      </view>
+    </view>
+    <view class="TouXiangKuang">
+      <view class="TouXiangKuang_">
+        <image class='TouXiang' src="{{TouXiang}}">
+        </image>
+      </view>
+    </view>
+
+   
+  </view>
+
+
+  <view class="footer">
+     <input class='input-messages' placeholder="点击发送消息" />
+      <i class='send-messages iconfont icon-message'></i>
+  </view>
+</view>

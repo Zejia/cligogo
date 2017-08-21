@@ -19,7 +19,10 @@
             </view>
             <view class="bot">
                 <text class="star star-5"></text>
-                <text class="itemNum">低消¥<text class="price">920</text>/日<text class="itemNum-val">最大容纳<text id='itemNum-val'></text>人</text>
+                <text class="itemNum">低消¥
+                    <text class="price">920</text>/日
+                    <text class="itemNum-val">最大容纳
+                        <text id='itemNum-val'></text>人</text>
                 </text>
             </view>
         </view>
@@ -76,7 +79,7 @@
             </view>
         </view>
     </view>
-    <!-- Contenedor -->
+    <!-- Contenedor 常见问题question -->
     <ul id="accordion" class="accordion">
         <view class='header'>
             <text class='close'>关闭</text>
@@ -128,21 +131,100 @@
         <i id='menu-mask-close' class="iconfont icon-guanbi close"></i>
         <view class='info-mask-ul menu-mask-ul' id='menu-mask-ul'>
             <li>
-                <image class='icon'  src="../../images/mountain.png"></image>
+                <image class='icon' src="../../images/mountain.png"></image>
                 <view class='menu-name'>列表一</view>
             </li>
             <li>
-                <image class='icon'  src="../../images/mountain.png"></image>
+                <image class='icon' src="../../images/mountain.png"></image>
                 <view class='menu-name'>列表一</view>
             </li>
             <li>
-                <image class='icon'  src="../../images/mountain.png"></image>
+                <image class='icon' src="../../images/mountain.png"></image>
                 <view class='menu-name'>列表一</view>
             </li>
             <li>
-                <image class='icon'  src="../../images/mountain.png"></image>
+                <image class='icon' src="../../images/mountain.png"></image>
                 <view class='menu-name'>列表一</view>
             </li>
         </view>
     </view>
+    <!--农庄详情页蒙层 -->
+    <scroll-view scroll-y style="width: 100%; height: {{mapheight}}px;" class='farm-mask masks animated'>
+        <div class="_1dwlm">
+            <div bindtap='previewImages'>
+                <image src="https://img.supermonkey.com.cn/box/1015/301.jpg" mode='aspectFit' class="_2RqbK"></image>
+                <div class="_3tQEs"><span>1</span>
+                    <image src="https://img.supermonkey.com.cn/webapp/wx2/box/box_image_icon.png" style="height: 12px; width: 14px;"></image>
+                </div>
+            </div>
+        </div>
+            <!-- 场地介绍 -->
+        <view class="introduce-wrap ">
+            <view class="resume_title">
+                场地介绍
+            </view>
+            <view class="resume_main introduce">
+                这里是场地介绍得详情
+                这里是场地介绍得详情
+                这里是场地介绍得详情
+                这里是场地介绍得详情
+                这里是场地介绍得详情
+                这里是场地介绍得详情
+                这里是场地介绍得详情这里是场地介绍得详情这里是场地介绍得详情这里是场地介绍得详情这里是场地介绍得详情这里是场地介绍得详情
+            </view>
+        </view>
+        <!-- 用户评价 -->
+        <view class="resume-wrap">
+            <view class="resume_title">
+                用户评价
+            </view>
+            <view class="resume_main">
+                <view class="message_user">
+                    <view class="message_head">
+                        <image class='header' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png"></image>
+                    </view>
+                    <view class='message_name'>
+                        <view class="uesrname">张张张</view>
+                        <view class="evaluatecontent">这应该是评价吧俺爸爸</view>
+                        <view class="message_time">
+                            <test class="createtime">评论时间:2018-08-21 17:22:22</test>
+                        </view>
+                    </view>
+                </view><view class="message_user">
+                    <view class="message_head">
+                        <image class='header' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png"></image>
+                    </view>
+                    <view class='message_name'>
+                        <view class="uesrname">张张张</view>
+                        <view class="evaluatecontent">这应该是评价吧俺爸爸</view>
+                        <view class="message_time">
+                            <test class="createtime">评论时间:2018-08-21 17:22:22</test>
+                        </view>
+                    </view>
+                </view><view class="message_user">
+                    <view class="message_head">
+                        <image class='header' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png"></image>
+                    </view>
+                    <view class='message_name'>
+                        <view class="uesrname">张张张</view>
+                        <view class="evaluatecontent">这应该是评价吧俺爸爸</view>
+                        <view class="message_time">
+                            <test class="createtime">评论时间:2018-08-21 17:22:22</test>
+                        </view>
+                    </view>
+                </view><view class="message_user">
+                    <view class="message_head">
+                        <image class='header' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png"></image>
+                    </view>
+                    <view class='message_name'>
+                        <view class="uesrname">张张张</view>
+                        <view class="evaluatecontent">这应该是评价吧俺爸爸</view>
+                        <view class="message_time">
+                            <test class="createtime">评论时间:2018-08-21 17:22:22</test>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
 </view>

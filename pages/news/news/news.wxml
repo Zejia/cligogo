@@ -1,0 +1,43 @@
+<!--pages/news/news.wxml-->
+<view class='wrap'>
+    <view class="ZhuTi height90px">
+        <navigator url="../news-geren/news-geren"   hover-class="other-navigator-hover">
+            <view class="Zuo float_left">
+                <view class="ZhuTi-LiangBian TouXiangKuang float_left"></view>
+            </view>
+            <view class="ZhuTi-Zhong float_left">
+                <view class="Zhong-MingZi">滴滴顺风车</view>
+                <view class="Zhong-NeiRong">今日立秋，注意温差，别...</view>
+            </view>
+            <view class="ZhuTi_LiangBian ShiJian">
+                08月07日
+            </view>
+        </navigator>
+    </view>
+    <view class="ZhuTi height90px">
+        <navigator url="../news-guanfang/news-guanfang"   hover-class="other-navigator-hover">
+            <view class="Zuo float_left">
+                <view class="ZhuTi-LiangBian TouXiangKuang float_left"></view>
+            </view>
+            <view class="ZhuTi-Zhong float_left">
+                <view class="Zhong-MingZi">滴滴顺风车</view>
+                <view class="Zhong-NeiRong">今日立秋，注意温差，别...</view>
+            </view>
+            <view class="ZhuTi_LiangBian ShiJian">
+                08月07日
+            </view>
+        </navigator>
+    </view>
+    <view class="ZhuTi height90px">
+        <view class="Zuo float_left">
+            <view class="ZhuTi-LiangBian TouXiangKuang float_left"></view>
+        </view>
+        <view class="ZhuTi-Zhong float_left">
+            <view class="Zhong-MingZi">滴滴顺风车</view>
+            <view class="Zhong-NeiRong">今日立秋，注意温差，别...</view>
+        </view>
+        <view class="ZhuTi_LiangBian ShiJian">
+            08月07日
+        </view>
+    </view>
+</view>

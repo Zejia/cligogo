@@ -1,13 +1,20 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs",
+    "pages/me/me",
     "pages/schedule/schedule",
     "pages/schedule-info/schedule-info",
     "pages/coupon/coupon",
     "pages/setting/setting/setting",
     "pages/setting/setting-info/setting-info",
-    "pages/setting/setting-list/setting-list"
+    "pages/setting/setting-list/setting-list",
+    "pages/news/news/news",
+    "pages/news/news-geren/news-geren",
+    "pages/news/news-guanfang/news-guanfang",
+    "pages/appointment/appointment/appointment",
+    "pages/appointment/appointment-list/appointment-list",
+    "pages/appointment/appointment-info/appointment-info"
+
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -28,7 +35,7 @@
       {
         "selectedIconPath": "images/me.png",
         "iconPath": "images/me.png",
-        "pagePath": "pages/setting/setting/setting",
+        "pagePath": "pages/me/me",
         "text": "我的"
       }
     ]
