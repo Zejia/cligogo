@@ -1,14 +1,14 @@
 <!--index.wxml-->
 <view class="container">
     <view class="page-section-spacing">
-        <image class='menu' src="{{mallsrc}}"></image>
+        <image class='menu' src="{{mallsrc}}" bindtap="menuClick"></image>
         <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
-            <view wx:for="{{swiper}}" wx:for-item='swipers' bindtap="swipersActivity" class="scroll-view-item_H demo-text-1">{{swipers.name}}</view>
+            <view wx:for="{{swiper}}" wx:for-item='swipers' bindtap="swipersActivity" data-index="{{index}}"  class="scroll-view-item_H demo-text-1 {{swiperIndex==index?'swipersActivity':''}}">{{swipers.name}}</view>
         </scroll-view>
     </view>
-    <map id='map' style="width: 100%; height: {{mapheight}}px;" latitude="{{latitude}}" longitude="{{longitude}}" covers="{{covers}}" markers="{{markers}}" bindmarkertap="markertap" show-location>
+    <map id='map' style="width: 100%; height: {{mapheight}}px;" latitude="{{latitude}}" longitude="{{longitude}}" covers="{{covers}}" markers="{{markers}}" bindmarkertap="markertap"  controls="{{controls}}" bindcontroltap="controltap" show-location>
     </map>
-    <view class='info-mask  animated fadeInDown masks'>
+    <view class='info-mask  animated  masks'>
         <view class='info-address'> <i class='iconfont icon-dizhi'></i>
             <text class='address'>青山村</text>
         </view>
@@ -42,7 +42,7 @@
             </view>
         </view>
     </view>
-    <view class='password-mask  animated fadeInDown masks'>
+    <view class='password-mask  animated  masks'>
         <view class='title'>NO.2222解锁码</view>
         <ul class="password-list">
             <li>4</li>
@@ -51,25 +51,25 @@
             <li>3</li>
         </ul>
     </view>
-    <view class='mask'>
+ <!--    <view class='mask'>
         <view class='mask-icon' id='reset'>
             <i class='iconfont icon-dingweigengxin'></i>
         </view>
-        <view class='scanCode' id='scanCode'>
+        <view class='scanCode' id='scanCode' bindtap='scanCode'>
             <i class='iconfont icon-saoma'></i>
             <span class='mask-name'>扫码开锁</span>
         </view>
-        <view class='mask-icon'>
+        <view class='mask-icon' bindtap='accordion'>
             <i class='iconfont icon-kefu'></i>
         </view>
-    </view>
+    </view> -->
     <view class='login-mask animated fadeIn masks'>
         <view class='login-wrap'>
             <i id='login-close' class="iconfont icon-guanbi close"></i>
             <view class='login-title'>输入手机号码</view>
-            <!-- <input class='input-password' placeholder="这是一个可以自动聚焦的input" auto-focus/> -->
+            <!-- <input class='input-password' placeholder="这是一个可以自动聚焦的input" /> -->
             <view class="sixDigitPassword-box">
-                <input class='sixInput' maxlength="4" auto-focus/>
+                <input class='sixInput' maxlength="4" />
                 <i style="width: 24%; border-color: transparent;" class="">
                 <b>1</b>
                 </i>
@@ -80,9 +80,9 @@
         </view>
     </view>
     <!-- Contenedor 常见问题question -->
-    <ul id="accordion" class="accordion">
+    <ul id="accordion" class="accordion"  style="display: {{accordionFlag==1?'block':'none'}}">
         <view class='header'>
-            <text class='close'>关闭</text>
+            <text class='close' bindtap='accordion'>关闭</text>
             <view class='title'>常见问题</view>
         </view>
         <li data-index='1' bindtap="toggle" class="{{active==1?'open':''}}">
@@ -122,13 +122,13 @@
         </li>
         <view class='footer'>
             <text class='question'>问题还没有解决?</text>
-            <button class='ft-btn' type="primary" size='100'>联系客服 </button>
+            <button class='ft-btn' type="primary" size='100' bindtap='calling'>联系客服 </button>
         </view>
     </ul>
     <!-- 服务选择蒙层 -->
-    <view class='menu-mask masks animated'>
+    <view  class="menu-mask masks animated {{menuFlag==1?'fadeInDown':'fadeOutUp'}}">
         <view class='menu-title'>服务选择</view>
-        <i id='menu-mask-close' class="iconfont icon-guanbi close"></i>
+        <i id='menu-mask-close' class="iconfont icon-guanbi close" bindtap="menuClick"></i>
         <view class='info-mask-ul menu-mask-ul' id='menu-mask-ul'>
             <li>
                 <image class='icon' src="../../images/mountain.png"></image>

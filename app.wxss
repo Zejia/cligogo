@@ -1,4 +1,6 @@
-
+page{
+  font-family: -apple-system, PingFang SC, Hiragino Sans GB, Arial, Microsoft YaHei, Helvetica Neue, sans-serif;
+}
 @font-face {font-family: "iconfont";
   src: url('//at.alicdn.com/t/font_360502_1g3dixi0d9c6jemi.eot?t=1503283978582'); /* IE9*/
   src: url('//at.alicdn.com/t/font_360502_1g3dixi0d9c6jemi.eot?t=1503283978582#iefix') format('embedded-opentype'), /* IE6-IE8 */

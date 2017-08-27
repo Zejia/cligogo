@@ -47,7 +47,12 @@ page{
     text-align: right;
     color: #999;
 }
-
+.foodlist li  .cellquantity.flex_5{
+        -webkit-box-flex: 5;
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
+}
 .foodlist li .celltotal {
     -webkit-box-flex: 2;
     -webkit-flex: 2;
@@ -77,7 +82,7 @@ page{
 }
 
 footer {
-    height: 60rpx;
+    height: 75rpx;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -87,9 +92,9 @@ footer {
 
 footer span {
 color:#fff;
-font-size:30rpx;
+font-size:32rpx;
 padding-left:20rpx;
-line-height:2;
+line-height:2.5;
 }
 
 footer small {
@@ -110,7 +115,7 @@ bottom:0;
 background:#f98523;
 border:none;
 color:#fff;
-font-size:26rpx;
+font-size:32rpx;
 border-radius:1px;
 
 }
@@ -142,7 +147,7 @@ footer .submitbtn.disabled {
     margin-bottom: 10rpx;
 }
 .contact-name{
-    font-size: 28rpx;
+    font-size: 29rpx;
     margin-bottom: 10rpx;
     color: #a4a4a4;
 }

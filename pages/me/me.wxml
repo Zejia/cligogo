@@ -1,4 +1,24 @@
-<!--logs.wxml-->
 <view class="container">
- 
+    <view class="header">
+        <view class="header-img">
+        </view>
+        <view class='header-title'>用户名</view>
+    </view>
+    <ul class='setting-list'>
+        <navigator url="../schedule/schedule"   hover-class="other-navigator-hover">
+            <view>
+                行程
+            </view>
+        </navigator>
+        <navigator url="../coupon/coupon"   hover-class="other-navigator-hover">
+            <view>
+                优惠
+            </view>
+        </navigator>
+        <navigator url="../setting/setting/setting"   hover-class="other-navigator-hover">
+            <view>
+                设置
+            </view>
+        </navigator>
+    </ul>
 </view>
