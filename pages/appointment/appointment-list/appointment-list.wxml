@@ -1,7 +1,7 @@
 <!--logs.wxml-->
 <view class="container">
-        <view class='shoppingCart'><i class='iconfont icon-icon'></i>购物车<span id='total_price' style="float: right;padding-right: 12px;padding-top:14rpx;">￥<b>1212</b>元</span></view>
-         <ul class='info-ul'>
+    <view class='shoppingCart'><i class='iconfont icon-icon'></i>购物车<span id='total_price' style="float: right;padding-right: 12px;">￥<b>1212</b>元</span></view>
+    <!--   <ul class='info-ul'>
             <li class="select">
                 <em aem="0" cart_id="84"></em>
                 <image src="../../../images/fruit.png"></image>
@@ -16,15 +16,33 @@
                 </div>
             </li>
            
+        </ul> -->
+    <view class="container carts-list">
+        <view wx:for="{{carts}}" class="carts-item" data-title="{{item.title}}" data-url="{{item.url}}" bindtap="bindViewTap">
+            <view>
+                <image class="carts-image" src="{{item.image}}" mode="aspectFill" />
+            </view>
+            <view class="carts-text">
+                <text class="carts-title">{{item.title}}</text>
+                <view class="carts-subtitle">
+                    <text class="carts-price">{{item.sum}}</text>
+                        <div class="div_right" >
+                            <i class="{{minusStatuses[index]}}" data-index="{{index}}" bindtap="bindMinus">-</i>
+                            <span  class="zi">{{item.num}}</span>
+                            <i class="normal" data-index="{{index}}" bindtap="bindPlus">+</i>
+                        </div>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='shoppingCart-mask animated '>
+    <view class="shoppingCart-warp">
+        <ul class="foodlist">
+            <li>
+                <span class="cellname">乡村童年情怀农庄</span>
+                <span class="cellquantity">x 1</span>
+                <span class="celltotal">¥920</span></li>
         </ul>
     </view>
-    <view class='shoppingCart-mask animated '>
-        <view class="shoppingCart-warp">
-            <ul class="foodlist">
-                <li>
-                    <span class="cellname">乡村童年情怀农庄</span>
-                    <span class="cellquantity">x 1</span>
-                    <span class="celltotal">¥920</span></li>
-            </ul>
-        </view>
 </view>

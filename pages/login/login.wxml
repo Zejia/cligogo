@@ -1,0 +1,33 @@
+<view class="container">
+        <!-- <view class='login-mask'>
+                <view class='login-wrap'>
+                    <view class='login-title'>输入手机号码</view>
+                    <input class='input-password' placeholder="" />
+                    <view class="sixDigitPassword-box">
+                        <input class='sixInput' maxlength="4" />
+                        <i style="width: 24%; border-color: transparent;" class="">
+                        <b>1</b>
+                        </i>
+                        <i style="width: 24%;"><b>1</b></i>
+                        <i style="width: 24%;"><b>2</b></i>
+                        <i style="width: 24%;"><b>3</b></i>
+                    </view>
+                </view>
+            </view> -->
+            <view class='login-mask'>
+                    <view class='login-wrap'>
+                        <view id='login-form'>
+                            <view class="mui-input-row">
+                                <input id='account' type="tel" class="mui-input" placeholder="输入手机号" maxlength="11" />
+                            </view>
+                            <view class="mui-input-row">
+                                <input id='verifyCode' type="tel" class="mui-input" placeholder="验证码" />
+                                <view id='PIN' class="mui-btn mui-btn-block mui-btn-primary">获取验证码</view>
+                            </view>
+                        </view>
+                        <view class="button">
+                            登录
+                        </view>
+                    </view>
+                </view>
+</view>

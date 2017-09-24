@@ -3,31 +3,26 @@
     <view class="page-section-spacing">
         <image class='menu' src="{{mallsrc}}" bindtap="menuClick"></image>
         <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
-            <view wx:for="{{swiper}}" wx:for-item='swipers' bindtap="swipersActivity" data-index="{{index}}"  class="scroll-view-item_H demo-text-1 {{swiperIndex==index?'swipersActivity':''}}">{{swipers.name}}</view>
+            <view wx:for="{{swiper}}" wx:for-item='swipers' bindtap="swipersActivity" data-index="{{index}}" data-id="{{swipers.id}}" class="scroll-view-item_H demo-text-1 {{swiperIndex==index?'swipersActivity':''}}">{{swipers.name}}</view>
         </scroll-view>
     </view>
-    <map id='map' style="width: 100%; height: {{mapheight}}px;" latitude="{{latitude}}" longitude="{{longitude}}" covers="{{covers}}" markers="{{markers}}" bindmarkertap="markertap"  controls="{{controls}}" bindcontroltap="controltap" show-location>
-    </map>
-    <view class='info-mask  animated  masks'>
-        <view class='info-address'> <i class='iconfont icon-dizhi'></i>
+</view>
+<map id='map' style="width: 100%; height: {{mapheight}}px;" latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}" covers="{{covers}}" markers="{{markers}}" bindmarkertap="markertap" bindtap='hidemask' show-location>
+    <!-- <cover-view class='info-mask  animated  masks' style="display: {{infoMask==1?'block':'none'}}">
+        <cover-view class='info-address'>
             <text class='address'>青山村</text>
-        </view>
-        <view class="shopPicBg">
-            <view class="shop-name">
-                <text id='shop-name'>乡村童年情怀农庄</text>
-                <text class='shop-name-tips' id='shop-name-tips'>可以让你找回童年的地方</text>
-            </view>
-            <view class="bot">
-                <text class="star star-5"></text>
-                <text class="itemNum">低消¥
-                    <text class="price">920</text>/日
-                    <text class="itemNum-val">最大容纳
-                        <text id='itemNum-val'></text>人</text>
-                </text>
-            </view>
-        </view>
-        <view class="project">
-            <!--     <a href="">
+        </cover-view>
+        <cover-view class="shopPicBg" bindtap='showComment'>
+                <cover-view class='shop-name' id='shop-name'>乡村童年情怀农庄</cover-view>
+                <cover-view class='shop-name-tips' id='shop-name-tips'>可以让你找回童年的地方</cover-view>
+
+            <cover-view class="bot">
+               <cover-view class="star star-5"></cover-view>
+                <cover-view class="itemNum">低消:¥920/日   最大容纳:23人</cover-view>
+                </cover-view>
+            </cover-view>
+        <cover-view class="project">
+            <a href="">
                     <h3 class="title-item"> 娱乐项目(112) <i class="arrowent"></i> </h3>
                 </a>
                 <ul class='project-items'>
@@ -36,195 +31,38 @@
                     <li>野炊</li>
                     <li>烧烤</li>
                     <li>烧烤</li>
-                </ul> -->
-            <view class="appointment" id='appointment' data-type=''>
-                <view class='btn gray'>预约已满</view>
-            </view>
-        </view>
-    </view>
-    <view class='password-mask  animated  masks'>
-        <view class='title'>NO.2222解锁码</view>
-        <ul class="password-list">
-            <li>4</li>
-            <li>3</li>
-            <li>1</li>
-            <li>3</li>
-        </ul>
-    </view>
- <!--    <view class='mask'>
-        <view class='mask-icon' id='reset'>
-            <i class='iconfont icon-dingweigengxin'></i>
-        </view>
-        <view class='scanCode' id='scanCode' bindtap='scanCode'>
-            <i class='iconfont icon-saoma'></i>
-            <span class='mask-name'>扫码开锁</span>
-        </view>
-        <view class='mask-icon' bindtap='accordion'>
-            <i class='iconfont icon-kefu'></i>
-        </view>
-    </view> -->
-    <view class='login-mask animated fadeIn masks'>
-        <view class='login-wrap'>
-            <i id='login-close' class="iconfont icon-guanbi close"></i>
-            <view class='login-title'>输入手机号码</view>
-            <!-- <input class='input-password' placeholder="这是一个可以自动聚焦的input" /> -->
-            <view class="sixDigitPassword-box">
-                <input class='sixInput' maxlength="4" />
-                <i style="width: 24%; border-color: transparent;" class="">
-                <b>1</b>
-                </i>
-                <i style="width: 24%;"><b>1</b></i>
-                <i style="width: 24%;"><b>2</b></i>
-                <i style="width: 24%;"><b>3</b></i>
-            </view>
-        </view>
-    </view>
-    <!-- Contenedor 常见问题question -->
-    <ul id="accordion" class="accordion"  style="display: {{accordionFlag==1?'block':'none'}}">
-        <view class='header'>
-            <text class='close' bindtap='accordion'>关闭</text>
-            <view class='title'>常见问题</view>
-        </view>
-        <li data-index='1' bindtap="toggle" class="{{active==1?'open':''}}">
-            <div class="link">问题一<i class="iconfont icon-chevron-copy-copy-copy-copy-copy fa-chevron-down"></i></div>
-            <ul class="submenu" wx:if="{{active=='1'}}">
-                <li><a href="#">Photoshop</a></li>
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">CSS</a></li>
-                <li><a href="#">Maquetacion web</a></li>
-            </ul>
-        </li>
-        <li data-index='2' bindtap="toggle" class="{{active==2?'open':''}}">
-            <div class="link">问题二<i class="iconfont icon-chevron-copy-copy-copy-copy-copy fa-chevron-down"></i></div>
-            <ul class="submenu" wx:if="{{active=='2'}}">
-                <li><a href="#">Javascript</a></li>
-                <li><a href="#">jQuery</a></li>
-                <li><a href="#">Frameworks javascript</a></li>
-            </ul>
-        </li>
-        <li data-index='3' bindtap="toggle" class="{{active==3?'open':''}}">
-            <div class="link">问题三<i class="iconfont icon-chevron-copy-copy-copy-copy-copy fa-chevron-down"></i></div>
-            <ul class="submenu" wx:if="{{active=='3'}}">
-                <li><a href="#">Tablets</a></li>
-                <li><a href="#">Dispositivos mobiles</a></li>
-                <li><a href="#">Medios de escritorio</a></li>
-                <li><a href="#">Otros dispositivos</a></li>
-            </ul>
-        </li>
-        <li data-index='4' bindtap="toggle" class="{{active==4?'open':''}}">
-            <div class="link">问题四<i class="iconfont icon-chevron-copy-copy-copy-copy-copy fa-chevron-down"></i></div>
-            <ul class="submenu" wx:if="{{active=='4'}}">
-                <li><a href="#">Google</a></li>
-                <li><a href="#">Bing</a></li>
-                <li><a href="#">Yahoo</a></li>
-                <li><a href="#">Otros buscadores</a></li>
-            </ul>
-        </li>
-        <view class='footer'>
-            <text class='question'>问题还没有解决?</text>
-            <button class='ft-btn' type="primary" size='100' bindtap='calling'>联系客服 </button>
-        </view>
-    </ul>
+                </ul> 
+            <cover-view class="appointment" id='appointment' bindtap='appointment'>
+                <cover-view class='btn '>点击预约</cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view> -->
+    <cover-view class='password-mask  animated  masks' style='display: none'>
+        <cover-view class='title'>NO.2222解锁码</cover-view>
+        <cover-view class="password-list">
+            <cover-view>4</cover-view>
+            <cover-view>3</cover-view>
+            <cover-view>1</cover-view>
+            <cover-view>3</cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view class='mask'>
+            <cover-image id='reset' src='../../images/reset.png' bindtap='reset'></cover-image>
+            <cover-image id='scanCode' bindtap='scanCode' src='../../images/scan.png'></cover-image>
+            <cover-image id='kefu' bindtap='accordion' src='../../images/kefu.png'></cover-image>
+    </cover-view>
+   
+   
     <!-- 服务选择蒙层 -->
-    <view  class="menu-mask masks animated {{menuFlag==1?'fadeInDown':'fadeOutUp'}}">
-        <view class='menu-title'>服务选择</view>
-        <i id='menu-mask-close' class="iconfont icon-guanbi close" bindtap="menuClick"></i>
-        <view class='info-mask-ul menu-mask-ul' id='menu-mask-ul'>
-            <li>
-                <image class='icon' src="../../images/mountain.png"></image>
-                <view class='menu-name'>列表一</view>
-            </li>
-            <li>
-                <image class='icon' src="../../images/mountain.png"></image>
-                <view class='menu-name'>列表一</view>
-            </li>
-            <li>
-                <image class='icon' src="../../images/mountain.png"></image>
-                <view class='menu-name'>列表一</view>
-            </li>
-            <li>
-                <image class='icon' src="../../images/mountain.png"></image>
-                <view class='menu-name'>列表一</view>
-            </li>
-        </view>
-    </view>
-    <!--农庄详情页蒙层 -->
-    <scroll-view scroll-y style="width: 100%; height: {{mapheight}}px;" class='farm-mask masks animated'>
-        <div class="_1dwlm">
-            <div bindtap='previewImages'>
-                <image src="https://img.supermonkey.com.cn/box/1015/301.jpg" mode='aspectFit' class="_2RqbK"></image>
-                <div class="_3tQEs"><span>1</span>
-                    <image src="https://img.supermonkey.com.cn/webapp/wx2/box/box_image_icon.png" style="height: 12px; width: 14px;"></image>
-                </div>
-            </div>
-        </div>
-            <!-- 场地介绍 -->
-        <view class="introduce-wrap ">
-            <view class="resume_title">
-                场地介绍
-            </view>
-            <view class="resume_main introduce">
-                这里是场地介绍得详情
-                这里是场地介绍得详情
-                这里是场地介绍得详情
-                这里是场地介绍得详情
-                这里是场地介绍得详情
-                这里是场地介绍得详情
-                这里是场地介绍得详情这里是场地介绍得详情这里是场地介绍得详情这里是场地介绍得详情这里是场地介绍得详情这里是场地介绍得详情
-            </view>
-        </view>
-        <!-- 用户评价 -->
-        <view class="resume-wrap">
-            <view class="resume_title">
-                用户评价
-            </view>
-            <view class="resume_main">
-                <view class="message_user">
-                    <view class="message_head">
-                        <image class='header' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png"></image>
-                    </view>
-                    <view class='message_name'>
-                        <view class="uesrname">张张张</view>
-                        <view class="evaluatecontent">这应该是评价吧俺爸爸</view>
-                        <view class="message_time">
-                            <test class="createtime">评论时间:2018-08-21 17:22:22</test>
-                        </view>
-                    </view>
-                </view><view class="message_user">
-                    <view class="message_head">
-                        <image class='header' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png"></image>
-                    </view>
-                    <view class='message_name'>
-                        <view class="uesrname">张张张</view>
-                        <view class="evaluatecontent">这应该是评价吧俺爸爸</view>
-                        <view class="message_time">
-                            <test class="createtime">评论时间:2018-08-21 17:22:22</test>
-                        </view>
-                    </view>
-                </view><view class="message_user">
-                    <view class="message_head">
-                        <image class='header' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png"></image>
-                    </view>
-                    <view class='message_name'>
-                        <view class="uesrname">张张张</view>
-                        <view class="evaluatecontent">这应该是评价吧俺爸爸</view>
-                        <view class="message_time">
-                            <test class="createtime">评论时间:2018-08-21 17:22:22</test>
-                        </view>
-                    </view>
-                </view><view class="message_user">
-                    <view class="message_head">
-                        <image class='header' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png"></image>
-                    </view>
-                    <view class='message_name'>
-                        <view class="uesrname">张张张</view>
-                        <view class="evaluatecontent">这应该是评价吧俺爸爸</view>
-                        <view class="message_time">
-                            <test class="createtime">评论时间:2018-08-21 17:22:22</test>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </view>
-    </scroll-view>
-</view>
+    <cover-view class="menu-mask masks animated {{menuFlag==1?'fadeInDown':'fadeOutUp'}}">
+        <cover-view class='menu-title' bindtap="menuClick">服务选择</cover-view>
+        <cover-view id='menu-mask-close' bindtap="menuClick"  >X</cover-view>
+        <cover-view class='info-mask-ul menu-mask-ul' id='menu-mask-ul'>
+            <cover-view class='cover-li' wx:for="{{swiper}}" wx:for-item='swipers' data-id='{{swipers.id}}' data-index='{{index}}' bindtap='selectAddress'>
+                <cover-image class='icon' src="{{swipers.icon}}"></cover-image>
+                <cover-view class='menu-name'>{{swipers.name}}</cover-view>
+            </cover-view>
+           
+        </cover-view>
+    </cover-view>
+</map>

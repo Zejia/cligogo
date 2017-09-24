@@ -1,74 +1,33 @@
-//index.js
 //获取应用实例
 var app = getApp()
 Page({
+    //index.js
     data: {
+        mapCtx: null,
         active: '0',
         menuFlag: 0,
         accordionFlag: 0,
         swiperIndex: 0,
-        swiper: [{ "createtime": "2017-07-29 17:07:48", "display": 1, "icon": "1501552299384.png", "id": 1, "name": "无人农庄", "sort": 0 }, { "createtime": "2017-07-29 17:08:37", "display": 1, "icon": "1501577439641.png", "id": 2, "name": "美丽乡村", "sort": 0 }, { "createtime": "2017-07-29 17:08:45", "display": 1, "icon": "1501552443375.png", "id": 3, "name": "农活/采摘", "sort": 0 }, { "createtime": "2017-08-01 16:00:49", "display": 1, "icon": "1501577388747.png", "id": 4, "name": "农厨好味", "sort": 0 }],
-        "contentlist": [{ "address": "青山村", "contact": "杨士海", "createtime": "2017-07-29 17:20:51", "display": 1, "icon": "1501680452927.png", "id": 1, "loglat": "109.948915,18.48357", "maxman": 100, "minimun": 200.0, "name": "乡村童年", "price": 200.0, "star": 5, "telophone": "21234242223", "title": "小时候渴望长大，长大了希望停留在小时候，去到乡村童年，遇见那时的自己", "typeid": 1 }],
+        commentMask: 0,
+        swiper: null,
         circular: true,
         userInfo: {},
         mapheight: '',
         mallsrc: '../../images/mall.png',
-        latitude: 23.099994,
-        longitude: 113.324520,
-        markers: [{
-            iconPath: "../../images/index.png",
-            id: 0,
-            latitude: 23.099994,
-            longitude: 113.324520,
-            width: 50,
-            height: 50
-        }, {
-            iconPath: "../../images/index.png",
-            id: 1,
-            latitude: 23.099994,
-            longitude: 113.334520,
-            width: 50,
-            height: 50
-        }],
-        controls: [{
-            id: 0,
-            iconPath: '../../images/position.png',
-            position: {
-                left: 0,
-                top: 300 - 50,
-                width: 50,
-                height: 50
-            },
-            clickable: true
-        }, {
-            id: 1,
-            iconPath: '../../images/saoma.png',
-            position: {
-                left: 0,
-                top: 300 - 50,
-                width: 50,
-                height: 50
-            },
-            clickable: true
-        }, {
-            id: 2,
-            iconPath: '../../images/faq.png',
-            position: {
-                left: 0,
-                top: 300 - 50,
-                width: 50,
-                height: 50
-            },
-            clickable: true
-        }]
-
+        latitude: null,
+        longitude: null,
+        scale: 14,
+        markers: null
     },
-    onLoad: function() {
+    onReady: function () {
+        this.mapCtx = wx.createMapContext('map')
+    },
+    onLoad: function () {
         console.log('onLoad')
         var that = this
         // 获取手机高度 设置map高度
         wx.getSystemInfo({
-            success: function(res) {
+            success: function (res) {
                 console.log(res.windowHeight)
                 that.setData({
                     mapheight: res.windowHeight - 40,
@@ -80,26 +39,49 @@ Page({
                 })
             }
         })
+        app.getUserInfo(function (info) {
+            //更新数据
+            wx.request({
+                url: 'http://120.76.208.177:8087/clzz/index',
+                data: {
+                    // lat: app.globalData.latitude,
+                    // lng: app.globalData.longitude
+                    lat: '18.535607',
+                    lng: '110.033913'
+
+                },
+                success: function (res) {
+                    if (res.data.code > 1) {
+                        wx.showToast({
+                            title: "该城市暂未开通",
+                            icon: 'loading',
+                            duration: 2000
+                        })
+                    }
+                    that.setData({
+                        swiper: res.data.cct,
+                        markers: res.data.farmlist
+                    })
+                    wx.setNavigationBarTitle({
+                        title: res.data.city.name+"村里走走"
+                      })
+                }
+            })
+            that.setData({
+                latitude: '18.535607',
+                longitude: '110.033913'
+                // 'markers[0].latitude': '18.535607',
+                // 'markers[0].longitude': '110.033913',
+            })
+        })
     },
+    // 显示村庄详情页
     markertap(e) {
         console.log(e.markerId)
-    },
-    toggle(e) {
-        if (e.currentTarget.dataset.index == this.data.active) {
-            this.setData({
-                active: "0"
-            })
-        } else {
-            this.setData({
-                active: e.currentTarget.dataset.index
-            })
-        }
-    },
-    previewImages() {
-        wx.previewImage({
-            current: 'https://img.supermonkey.com.cn/box/1015/301.jpg', // 当前显示图片的http链接
-            urls: ['https://img.supermonkey.com.cn/box/1015/301.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png'] // 需要预览的图片http链接列表
+        wx.navigateTo({
+            url: '../cInfo/cInfo'
         })
+
     },
     // 顶部菜单栏
     menuClick() {
@@ -116,33 +98,35 @@ Page({
     },
     // 常见问题/客服
     accordion() {
-
-        if (this.data.accordionFlag == 0) {
-            this.setData({
-                accordionFlag: 1
-            })
-        } else {
-            this.setData({
-                accordionFlag: 0
-            })
-        }
-    },
-    // 客服拨打电话
-    calling() {
-        wx.makePhoneCall({
-            phoneNumber: '12345678900', //此号码并非真实电话号码，仅用于测试
-            success: function() {
-                console.log("拨打电话成功！")
-            },
-            fail: function() {
-                console.log("拨打电话失败！")
-            }
+        wx.navigateTo({
+            url: '../question/question'
         })
     },
+
     // 顶部滑动
     swipersActivity(e) {
+        var that = this;
+        wx.request({
+            url: 'http://120.76.208.177:8087/clzz/farmByType',
+            data: {
+                typeid: e.currentTarget.dataset.id
+            },
+            success: function (res) {
+                that.setData({
+                    markers: res.data.farm
+                })
+            }
+        })
         this.setData({
             swiperIndex: e.currentTarget.dataset.index
+        })
+    },
+    scanCode() {
+        wx.scanCode({
+            onlyFromCamera: true,
+            success: (res) => {
+                console.log(res)
+            }
         })
     },
     controltap(e) {
@@ -167,5 +151,57 @@ Page({
                 }
                 break;
         }
+    },
+    // 进入预约页面
+    appointment() {
+        wx.navigateTo({
+            url: '../appointment/appointment/appointment'
+        })
+    },
+    // 点击地图事件
+    hidemask() {
+        this.setData({
+            infoMask: 0
+        })
+    },
+    reset() {
+        this.mapCtx.moveToLocation();
+        /*wx.getLocation({
+            type: 'wgs84',
+            success: function(res) {
+                that.setData({
+                    latitude: res.latitude,
+                    longitude: res.longitude,
+                    'scale': 16
+                })
+            }
+        })*/
+    },
+    selectAddress(e) {
+        // var index = $(this).index();
+        // var id = $(this).attr('data-id');
+        // $('.swiper-slide').removeClass('swiper-activity')
+        // $('.swiper-slide').eq(index).addClass('swiper-activity')
+        // swiper.slideTo(index)
+        // map.clearOverlays();
+        var that = this;
+        console.log(e.currentTarget.dataset.id)
+        wx.request({
+            url: 'http://120.76.208.177:8087/clzz/farmByType',
+            data: {
+                typeid: e.currentTarget.dataset.id
+            },
+            success: function (res) {
+                that.setData({
+                    markers: res.data.farm
+                })
+            }
+        })
+        this.setData({
+            menuFlag: 0
+        })
+        this.setData({
+            swiperIndex: e.currentTarget.dataset.index
+        })
     }
 })

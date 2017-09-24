@@ -1,0 +1,84 @@
+page{
+    background: #f3f4f5;
+}
+.schedule-list{
+    background: #fff;
+    width: 90%;
+    margin: 0 auto;
+    border-bottom: 8rpx solid #eb8118;
+    color: #eb8118;
+    border-radius: 10rpx;
+}
+.schedule-header{
+    padding: 20rpx;
+    margin: 20rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.schedule-footer{
+    padding: 0 20rpx;
+    margin: 0 20rpx;
+    margin-bottom: 10rpx;
+    text-align: center;
+    border:1px solid #eb8118;
+    padding: 10rpx;
+    border-radius: 10rpx;
+}
+.big-title{
+    font-size: 45rpx;
+    margin-bottom: 10rpx;
+}
+.sec-title{
+    font-size: 28rpx;
+    margin-bottom: 10rpx;
+
+}
+.schedule-price{
+    font-size: 35rpx;
+    border:1px solid #eb8118;
+    border-radius: 5rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding:0 20rpx;
+    position: relative;
+}
+.schedule-price-info{
+    font-size:30rpx;
+    position:absolute;
+    top:-14rpx;
+    background:#fff;
+    border:1px solid #eb8118;
+    border-radius:30rpx;
+    padding:0 30rpx;
+    height:31rpx;
+    line-height:30rpx;
+    
+}
+.gray{
+    color: #a4a4a4;
+}
+.none-data{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30rpx;
+    color: #a4a4a4;
+    width: 100%;
+    text-align: center;
+}
+.tips-share{
+    margin-top: 20rpx;
+    text-decoration: underline;
+    color: #ff0000;
+}
+.tips{
+    font-size: 30rpx;
+    color: #a4a4a4;
+    width: 100%;
+    text-align: center;
+    margin: 20rpx auto;
+}
+.line-through{
+    text-decoration: line-through;
+}

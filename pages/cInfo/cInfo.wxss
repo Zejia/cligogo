@@ -1,0 +1,204 @@
+
+
+/*标题*/
+
+.header {
+    position: relative;
+}
+
+.accordion .close {
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+    font-size: 30rpx;
+    color: #f4b06f;
+}
+
+.title {
+    text-align: center;
+}
+
+.ft-btn {
+    width: 30%;
+    margin-right: 0;
+    border-radius: 0;
+    font-size: 28rpx;
+}
+
+.footer {
+    position: relative;
+}
+
+.question {
+    font-size: 24rpx;
+    color: #000;
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+}
+
+._1dwlm {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+._1dwlm ._2RqbK {
+    width: 100%;
+    height: 340rpx;
+}
+
+._1dwlm ._3tQEs {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    z-index: 2;
+    color: #fff;
+    font-size: 14px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.resume_title {
+    color: #262626;
+    font-size: 13px;
+    padding: 30rpx;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.resume_main img {
+    width: 14px;
+    margin-left: 13px;
+    margin-right: 9px;
+    margin-top: -5px;
+}
+
+.resume_info {
+    color: #696969;
+    font-size: 12px;
+    margin-left: 80rpx;
+    margin-top: 30rpx;
+}
+
+.resume_info text {
+    margin-right: 56rpx;
+}
+
+.resume_info_last {
+    margin-left: 80rpx;
+    margin-top: 20rpx;
+    margin-bottom: 32rpx;
+}
+
+.resume_info_last text {
+    margin-right: 0px;
+}
+
+.resume_main {
+    margin-top: 18rpx;
+}
+
+.evaluate_main text {
+    font-size: 14px;
+    color: #8f8f94;
+    padding: 18px;
+    display: block;
+}
+
+.message {
+    margin-top: 16px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.message_user {
+    overflow: hidden;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.message_main_star {
+    width: 60%;
+    float: left;
+}
+
+.message_main_face {
+    text-align: center;
+    float: right;
+    margin-right: 29px;
+}
+
+.message_main_face img {
+    margin-bottom: 10px;
+    width: 50px;
+    margin-top: 7px;
+}
+
+.message_head {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 120rpx;
+    overflow: hidden;
+    float: left;
+    margin: 19px;
+    display: block;
+}
+
+.message_head img {
+    width: 100%;
+}
+
+.message_name {
+    float: left;
+    margin-top: 0em;
+    padding-top: 56rpx;
+    width: 70%;
+}
+
+.message_time {
+    font-size: 12px;
+    color: #ababab;
+    margin-bottom: 24rpx;
+    text-align: right;
+    margin-top: 28rpx;
+}
+
+.message_head {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 120rpx;
+    overflow: hidden;
+    float: left;
+    margin: 19px;
+    display: block;
+}
+
+.message_head .header {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 120rpx;
+}
+
+.uesrname {
+    font-size: 14px;
+    color: #8f8f94;
+}
+
+.evaluatecontent {
+    font-size: 14px;
+    color: #8f8f94;
+    margin-top: 10rpx;
+    display: inline-block;
+}
+
+.introduce {
+    padding: 20rpx;
+    box-sizing: border-box;
+    color: #8f8f94;
+    line-height: 1.2;
+}
+
+.resume-wrap {
+    padding-bottom: 50rpx;
+}

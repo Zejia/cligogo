@@ -1,0 +1,22 @@
+<!--logs.wxml-->
+<view class="container">
+    <view class='schedule-list'>
+        <view class='schedule-header'>
+            <view class='schedule-title'>
+                <view class='big-title'>新用户体验包</view>
+                <view class='sec-title'>1人/次,有效期一年</view>
+            </view>
+            <view class='schedule-price'>
+                ￥20 <span class='line-through'>原价:50</span>
+                <view class="schedule-price-info">省40元</view>
+            </view>
+        </view>
+        <view class='schedule-footer'>
+                立即购买
+           
+        </view>
+    </view>
+     
+    <view class='tips'>推荐给朋友，可获得最高200元优惠券，
+    </view>
+</view>

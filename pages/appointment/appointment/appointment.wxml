@@ -1,7 +1,7 @@
 <!--logs.wxml-->
 <view class="container">
-        <view class='shoppingCart'><i class='iconfont icon-icon'></i>购物车<span id='total_price' style="float: right;padding-right: 12px;padding-top:14rpx;">￥<b>123123312</b>元</span></view>
-        <view class="nav_info_content wrap" style="display: none">
+        <view class='shoppingCart'><i class='iconfont icon-icon'></i>购物车<span id='total_price' style="float: right;padding-right: 12px;">￥<b>123123312</b>元</span></view>
+        <view class="nav_info_content wrap" style="display: {{next==0?'block':'none'}}" >
             <view class="nav_info_content_tilte">
                 预约信息
             </view>
@@ -46,18 +46,18 @@
                             <!-- <input type="tel" name='people' class="mui-input-clear mui-input" placeholder=""> -->
                         </view>
                     </view>
-                    <button class='next'>下一步:　选择服务</button>
+                    <button class='next' bindtap='next'>下一步:　选择服务</button>
                 </form>
             </view>
         </view>
-        <view class='value-added' >
+        <view class='value-added' style="display: {{next==1?'block':'none'}}">
             <ul class='add-ul' id='add-ul'>
-                   <view class="view-li" data-name='1'>
+                   <view class="view-li" data-name='1' bindtap='list'>
                     <P class="add-name">设备服务</P>
                     <P class="add-tips">尚未选择设备</P><i class="arrowent"></i>
                     </view>
             </ul>
-            <button class='pandect btns'>确认订单</button>
+            <button class='pandect btns' bindtap='confirm'>确认订单</button>
         </view>
     </view>
     <view class='shoppingCart-mask animated '>

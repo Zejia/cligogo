@@ -1,8 +1,16 @@
 <view class="container">
     <view class="header">
-        <view class="header-img">
+        <view class="header-name-img">
+                <view class="header-img"></view>
+                <view class='header-title'>
+                        <view>用户名</view><view>1382023820382</view>
+                </view>
         </view>
-        <view class='header-title'>用户名</view>
+       
+        <view class='card-num'>
+                <view>剩余20次</view>
+                <view class='pay-card'>购买旅游卡</view>
+        </view>
     </view>
     <ul class='setting-list'>
         <navigator url="../schedule/schedule"   hover-class="other-navigator-hover">
@@ -10,15 +18,32 @@
                 行程
             </view>
         </navigator>
-        <navigator url="../coupon/coupon"   hover-class="other-navigator-hover">
+        <navigator url="../coupon/coupon"   hover-class="other-navigator-hover" style="border-bottom:40rpx solid #f4f4f4;">
             <view>
-                优惠
-            </view>
-        </navigator>
-        <navigator url="../setting/setting/setting"   hover-class="other-navigator-hover">
-            <view>
-                设置
+                旅游卡消费记录
             </view>
         </navigator>
     </ul>
+    <ul class='setting-list'>
+            <navigator url="../setting/setting-list/setting-list"   hover-class="other-navigator-hover">
+                <view>
+                    用户指南
+                </view>
+            </navigator>
+            <navigator url="../setting/setting-list/setting-list"   hover-class="other-navigator-hover">
+                <view>
+                    法律条款
+                </view>
+            </navigator>
+            <navigator url="../setting/setting-list/setting-list"   hover-class="other-navigator-hover">
+                <view>
+                    服务规则
+                </view>
+            </navigator>
+            <navigator url="../setting/setting-list/setting-list"   hover-class="other-navigator-hover">
+                <view>
+                    关于村里走走
+                </view>
+            </navigator>
+        </ul>
 </view>

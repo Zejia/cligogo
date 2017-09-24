@@ -4,38 +4,62 @@
         <view class="company-name">
             乡村童年
         </view>
-        <view class="company-contact">
-            <view class="contact-name pr-10">
-                出行时间:2018-08-07
-            </view>
-            <view class="contact-name">
-                联系人:陈先生
-            </view>
-        </view>
-        <view class="company-contact">
-            <view class="contact-name pr-10">
-                出行人数:2018-08-07
-            </view>
-            <view class="contact-name">
-                联系电话:17007555555
-            </view>
+        <view class="wrap-foodlist">
+            <ul class="foodlist">
+                <li class='foodlist-warp'>
+                    <span class="cellname">联系人 </span>
+                    <input class="cellquantity" value='' placeholder="请填写联系人" />
+                </li>
+                <li class='foodlist-warp'>
+                    <span class="cellname">联系电话 </span>
+                    <input class="cellquantity" value='' placeholder="请填写联系电话" />
+                </li>
+                <li>
+                    <!-- <span class="cellname">出行时间 </span> -->
+                    <!-- <input class="cellquantity" value='' placeholder="出行时间"/>-->
+                    <picker class='cellquantity' mode="date" value="{{date}}" start="{{startTime}}" bindchange="bindDateChange" fields='day'>
+                        <view class="picker">
+                            出行时间: {{date}}
+                        </view>
+                    </picker>
+                </li>
+                <li>
+                    <!-- <span class="cellname">出行时间 </span> -->
+                    <!-- <input class="cellquantity" value='' placeholder="出行时间"/>-->
+                    <picker class='cellquantity' mode="time" value="{{time}}" start="09:00" end="21:01" bindchange="bindTimeChange">
+                        <view class="picker">
+                            预计到店时间: {{time}}
+                        </view>
+                    </picker>
+                </li>
+                <li class='foodlist-warp'>
+                    <span class="cellname">成年人 </span>
+                    <div class="div_right">
+                        <i class="{{minusStatuses[0]}}" data-index="0" bindtap="bindMinus">-</i>
+                        <span class="zi">{{carts[0].num}}</span>
+                        <i class="normal" data-index="0" bindtap="bindPlus">+</i>
+                    </div>
+                </li>
+                <li class='foodlist-warp'>
+                    <span class="cellname">儿童 </span>
+                    <div class="div_right">
+                        <i class="{{minusStatuses[0]}}" data-index="1" bindtap="bindMinus">-</i>
+                        <span class="zi">{{carts[1].num}}</span>
+                        <i class="normal" data-index="1" bindtap="bindPlus">+</i>
+                    </div>
+                </li>
+                <view class='foodlist-warp'>
+                        
+                        
+                    <view>出游卡剩余5人次<navigator class='paynow' url="../../pay/pay" open-type="switchTab">购卡</navigator></view>
+                    <view class='tips'> 扣卡说明：成人每人扣除1次，儿童每人扣除0.5次</view>
+                </view>
+            </ul>
         </view>
     </view>
-    <view class="wrap-foodlist">
-        <ul class="foodlist">
-            <li><span class="cellname">name</span><span class="cellquantity">x 10</span><span class="celltotal">¥200</span></li>
-        </ul>
-        <ul class="foodlist">
-            <li><span class="cellname">总价1</span><span class="cellquantity">x 20</span><span class="celltotal">¥2000</span></li>
-        </ul>
-         <ul class="foodlist">
-            <li><span class="cellname">优惠</span><span class="cellquantity flex_5">1个红包可以用 ></span></li>
-        </ul>
-    </view>
+
     <image style="width: 100%; height: 400px" mode='scaleToFill' src="../../../images/schedule.png"></image>
     <footer>
-        <span>订单金额 ¥totalPrice</span>
-        <span>等待付款</span>
         <button class="submitbtn">
             确认下单
         </button>

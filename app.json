@@ -13,7 +13,11 @@
     "pages/news/news-guanfang/news-guanfang",
     "pages/appointment/appointment/appointment",
     "pages/appointment/appointment-list/appointment-list",
-    "pages/appointment/appointment-info/appointment-info"
+    "pages/appointment/appointment-info/appointment-info",
+    "pages/question/question",
+    "pages/cInfo/cInfo",
+    "pages/pay/pay",
+    "pages/login/login"
 
   ],
   "window":{
@@ -29,8 +33,14 @@
       {
         "selectedIconPath": "images/index-sec.png",
         "iconPath": "images/index.png",
+        "pagePath": "pages/pay/pay",
+        "text": "购卡"
+      },
+      {
+        "selectedIconPath": "images/index-sec.png",
+        "iconPath": "images/index.png",
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "预约"
       },
       {
         "selectedIconPath": "images/me.png",
