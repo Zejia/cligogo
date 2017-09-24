@@ -2,9 +2,10 @@
     <view  class='farm-mask masks animated'>
         <div class="_1dwlm">
             <div bindtap='previewImages'>
-                <image src="https://img.supermonkey.com.cn/box/1015/301.jpg" mode='aspectFit' class="_2RqbK"></image>
-                <div class="_3tQEs"><span>1</span>
-                    <image src="https://img.supermonkey.com.cn/webapp/wx2/box/box_image_icon.png" style="height: 12px; width: 14px;                     "></image>
+                <image src="{{current}}" mode='aspectFit' class="_2RqbK"></image>
+                <div class="_3tQEs">
+                    <span class='num'>{{imgs.length}}</span>
+                    <image class="_3tQEs_img" src="https://img.supermonkey.com.cn/webapp/wx2/box/box_image_icon.png" style="height: 12px; width: 14px;                     "></image>
                 </div>
             </div>
         </div>
@@ -14,7 +15,7 @@
                 场地介绍
             </view>
             <view class="resume_main introduce">
-                这里是场地介绍得详情 这里是场地介绍得详情 这里是场地介绍得详情 这里是场地介绍得详情 这里是场地介绍得详情 这里是场地介绍得详情 这里是场地介绍得详情这里是场地介绍得详情这里是场地介绍得详情这里是场地介绍得详情这里是场地介绍得详情这里是场地介绍得详情
+                {{farm.content}}
             </view>
         </view>
         <!-- 用户评价 -->
@@ -22,55 +23,20 @@
             <view class="resume_title">
                 用户评价
             </view>
-            <view class="resume_main">
-                <view class="message_user">
+            <view class="resume_main" >
+                <view class="message_user" wx:for='{{evaluate}}' wx:for-item='evaluates'>
                     <view class="message_head">
-                        <image class='header' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png"></image>
+                        <image class='header' src="{{evaluates.headurl}}"></image>
                     </view>
                     <view class='message_name'>
-                        <view class="uesrname">张张张</view>
-                        <view class="evaluatecontent">这应该是评价吧俺爸爸</view>
+                        <view class="uesrname">{{evaluates.nickname}}</view>
+                        <view class="evaluatecontent">{{evaluates.content}}</view>
                         <view class="message_time">
-                            <test class="createtime">评论时间:2018-08-21 17:22:22</test>
+                            <test class="createtime">评论时间:{{evaluates.createtime}}</test>
                         </view>
                     </view>
                 </view>
-                <view class="message_user">
-                    <view class="message_head">
-                        <image class='header' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png"></image>
-                    </view>
-                    <view class='message_name'>
-                        <view class="uesrname">张张张</view>
-                        <view class="evaluatecontent">这应该是评价吧俺爸爸</view>
-                        <view class="message_time">
-                            <test class="createtime">评论时间:2018-08-21 17:22:22</test>
-                        </view>
-                    </view>
-                </view>
-                <view class="message_user">
-                    <view class="message_head">
-                        <image class='header' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png"></image>
-                    </view>
-                    <view class='message_name'>
-                        <view class="uesrname">张张张</view>
-                        <view class="evaluatecontent">这应该是评价吧俺爸爸</view>
-                        <view class="message_time">
-                            <test class="createtime">评论时间:2018-08-21 17:22:22</test>
-                        </view>
-                    </view>
-                </view>
-                <view class="message_user">
-                    <view class="message_head">
-                        <image class='header' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png"></image>
-                    </view>
-                    <view class='message_name'>
-                        <view class="uesrname">张张张</view>
-                        <view class="evaluatecontent">这应该是评价吧俺爸爸</view>
-                        <view class="message_time">
-                            <test class="createtime">评论时间:2018-08-21 17:22:22</test>
-                        </view>
-                    </view>
-                </view>
+               
             </view>
         </view>
         <button type='primary' bindtap="appointment">马上预约</button>

@@ -202,3 +202,19 @@
 .resume-wrap {
     padding-bottom: 50rpx;
 }
+
+.num{
+    vertical-align: middle;
+}
+._3tQEs{  
+    text-align:center;
+}  
+.num{  
+    height:100%;  
+    vertical-align:middle;  
+    line-height: 30rpx;
+    padding:0 10rpx;
+}  
+._3tQEs_img{  
+    vertical-align:middle;
+}  
