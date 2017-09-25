@@ -16,6 +16,7 @@
             </view>
             <view class="resume_main introduce">
                 {{farm.content}}
+                
             </view>
         </view>
         <!-- 用户评价 -->
@@ -23,7 +24,7 @@
             <view class="resume_title">
                 用户评价
             </view>
-            <view class="resume_main" >
+            <view class="resume_main">
                 <view class="message_user" wx:for='{{evaluate}}' wx:for-item='evaluates'>
                     <view class="message_head">
                         <image class='header' src="{{evaluates.headurl}}"></image>

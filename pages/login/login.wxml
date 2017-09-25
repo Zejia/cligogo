@@ -18,14 +18,14 @@
                     <view class='login-wrap'>
                         <view id='login-form'>
                             <view class="mui-input-row">
-                                <input id='account' type="tel" class="mui-input" placeholder="输入手机号" maxlength="11" />
+                                <input id='account' bindinput="bindKeyInput" type="tel" class="mui-input" placeholder="输入手机号" maxlength="11" />
                             </view>
                             <view class="mui-input-row">
-                                <input id='verifyCode' type="tel" class="mui-input" placeholder="验证码" />
-                                <view id='PIN' class="mui-btn mui-btn-block mui-btn-primary">获取验证码</view>
+                                <input id='verifyCode' type="tel" class="mui-input" bindinput="bindKeyPin" placeholder="验证码" />
+                                <view id='PIN' class="mui-btn mui-btn-block mui-btn-primary" bindtap='getCode'>{{second}}</view>
                             </view>
                         </view>
-                        <view class="button">
+                        <view class="button" bindtap='login'>
                             登录
                         </view>
                     </view>

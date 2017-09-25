@@ -23,9 +23,12 @@ Page({
         this.mapCtx = wx.createMapContext('map')
     },
     onLoad: function () {
-        app.getUserInfo(function (info) {
-           console.log(app.globalData.latitude)
-        })
+        wx.getStorage({
+            key: 'openid',
+            success: function(res) {
+                console.log(res.data.openid)
+            } 
+          })
         console.log('onLoad')
         var that = this
         // 获取手机高度 设置map高度

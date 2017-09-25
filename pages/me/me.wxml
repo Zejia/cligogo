@@ -1,9 +1,9 @@
 <view class="container">
     <view class="header">
         <view class="header-name-img">
-                <view class="header-img"></view>
+                <view class="header-img" style="background:url({{avatarUrl}});background-size:100%;"></view>
                 <view class='header-title'>
-                        <view>用户名</view><view>1382023820382</view>
+                        <view>{{nickName}}</view><view>{{tel}}</view>
                 </view>
         </view>
        

@@ -19,13 +19,22 @@ App({
           wx.getUserInfo({
             success: function (res) {
             that.globalData.userInfo = res.userInfo
+            wx.setStorage({
+              key:'userInfo',
+              data:res.userInfo
+            })
               wx.request({
                 url: 'http://120.76.208.177:8087/clzz/getOpenid',
                 data: {
                   code: code,
                 },
                 success: function (res) {
-                  console.log(res.data.openid)
+                  // console.log(res.data.openid)
+                  let openid = res.data.openid;
+                  wx.setStorage({
+                    key:'openid',
+                    data:openid
+                  })
                   that.globalData.openid = res.data.openid
                 }
               })
