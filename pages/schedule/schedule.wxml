@@ -3,22 +3,22 @@
 <!-- <view class="none-data">
     你还没有旅行计划!
 </view> -->
-    <navigator url="../schedule-info/schedule-info"   hover-class="other-navigator-hover" class='schedule-list'>
+    <navigator wx:for='{{logs}}' wx:for-item='log' url="../schedule-info/schedule-info?orderid={{log.id}}"   hover-class="other-navigator-hover" class='schedule-list'>
          <view class='schedule-header'>
             <view class='schedule-title'>
-                <view class='big-title'>乡村童年</view> 
-                <view class='sec-title'>出行时间 : 2018-08-12</view> 
+                <view class='big-title'>{{log.name}}</view> 
+                <view class='sec-title'>出行时间 :{{log.traveltime}}</view> 
             </view>   
             <view class='schedule-price'>
-                ￥ <text class="schedule-price-info">2333</text>
+                 <!-- <text class="schedule-price-info">成人{{log.man}}人,小孩{{log.kid}}</text> -->
             </view> 
         </view>
         <view class='schedule-footer'>
             <view class='schedule-title'>
-                <view class='gray sec-title'>待出行</view> 
+                <view class='gray sec-title'>{{log.status}}</view> 
             </view>   
             <view class='schedule-price'>
-                <view class='sec-title'>20人</view> 
+                <view class='sec-title'>成人{{log.man}}人,小孩{{log.kid}}</view> 
             </view> 
         </view>
 </navigator>

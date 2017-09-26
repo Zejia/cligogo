@@ -8,8 +8,8 @@
         </view>
        
         <view class='card-num'>
-                <view>剩余20次</view>
-                <view class='pay-card'>购买旅游卡</view>
+                <view>剩余{{logs}}次</view>
+                <navigator class='pay-card' url="../pay/pay" open-type="switchTab">购买旅游卡</navigator>
         </view>
     </view>
     <ul class='setting-list'>

@@ -130,7 +130,7 @@ button, input, optgroup, select, textarea {
 
 .mui-input-row {
     width: 92%;
-    margin: 0 auto;
+    margin: 20rpx auto;
     position: relative;
 }
 .mui-input-row {
@@ -140,9 +140,7 @@ button, input, optgroup, select, textarea {
     clear: left;
     overflow: hidden;
 }
-.mui-input-row:nth-child(1) input {
-    border-bottom: 0;
-}
+
 
 .mui-input-row input {
     height: 52px;
@@ -157,15 +155,15 @@ button, input, optgroup, select, textarea {
 
 #PIN {
     position: absolute;
-    top: 4px;
-    right: 5px;
+    top: 8rpx;
+    right: 30rpx;
     background: #fff;
     border: 0;
     /* padding: 15px 0; */
     border-left: 1px solid #e7e7e7;
     border-radius: 0;
     color: #00ae66;
-    width: 30%;
+    width: 125rpx;
     font-size: 14px;
     z-index:9999999;
 }

@@ -1,13 +1,14 @@
 <!--index.wxml-->
-<view class="container">
-    <view class="page-section-spacing">
-        <image class='menu' src="{{mallsrc}}" bindtap="menuClick"></image>
-        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
-            <view wx:for="{{swiper}}" wx:for-item='swipers' bindtap="swipersActivity" data-index="{{index}}" data-id="{{swipers.id}}" class="scroll-view-item_H demo-text-1 {{swiperIndex==index?'swipersActivity':''}}">{{swipers.name}}</view>
-        </scroll-view>
-    </view>
-</view>
+<cover-view class="container">
+        <cover-view class="page-section-spacing">
+            <cover-image class='menu' src="{{mallsrc}}" bindtap="menuClick"></cover-image>
+            <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+                <cover-view wx:for="{{swiper}}" wx:for-item='swipers' bindtap="swipersActivity" data-index="{{index}}" data-id="{{swipers.id}}" class="scroll-view-item_H demo-text-1 {{swiperIndex==index?'swipersActivity':''}}">{{swipers.name}}</cover-view>
+            </scroll-view>
+        </cover-view>
+    </cover-view>
 <map id='map' style="width: 100%; height: {{mapheight}}px;" latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}" covers="{{covers}}" markers="{{markers}}" bindmarkertap="markertap" bindtap='hidemask' show-location>
+       
     <!-- <cover-view class='info-mask  animated  masks' style="display: {{infoMask==1?'block':'none'}}">
         <cover-view class='info-address'>
             <text class='address'>青山村</text>
@@ -37,15 +38,15 @@
             </cover-view>
         </cover-view>
     </cover-view> -->
-    <cover-view class='password-mask  animated  masks' style='display: none'>
-        <cover-view class='title'>NO.2222解锁码</cover-view>
+    <!-- <cover-view class='password-mask  animated  masks' style='display: none'>
+        <cover-view style='display: none' class='title'>NO.2222解锁码</cover-view>
         <cover-view class="password-list">
             <cover-view>4</cover-view>
             <cover-view>3</cover-view>
             <cover-view>1</cover-view>
             <cover-view>3</cover-view>
         </cover-view>
-    </cover-view>
+    </cover-view> -->
     <cover-view class='mask'>
             <cover-image id='reset' src='../../images/reset.png' bindtap='reset'></cover-image>
             <cover-image id='scanCode' bindtap='scanCode' src='../../images/scan.png'></cover-image>

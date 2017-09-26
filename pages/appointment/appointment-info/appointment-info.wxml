@@ -8,15 +8,15 @@
             <ul class="foodlist">
                 <li class='foodlist-warp'>
                     <span class="cellname">联系人 </span>
-                    <input class="cellquantity" value='' placeholder="请填写联系人" />
+                    <input class="cellquantity"  value="{{name}}" bindinput="bindnameInput" placeholder="请填写联系人" />
                 </li>
                 <li class='foodlist-warp'>
                     <span class="cellname">联系电话 </span>
-                    <input class="cellquantity" value='' placeholder="请填写联系电话" />
+                    <input class="cellquantity" value="{{tel}}" bindinput="bindtelInput" placeholder="请填写联系电话" maxlength="11"/>
                 </li>
                 <li>
                     <!-- <span class="cellname">出行时间 </span> -->
-                    <!-- <input class="cellquantity" value='' placeholder="出行时间"/>-->
+                    <!-- <input class="cellquantity" value="{{id}}" placeholder="出行时间"/>-->
                     <picker class='cellquantity' mode="date" value="{{date}}" start="{{startTime}}" bindchange="bindDateChange" fields='day'>
                         <view class="picker">
                             出行时间: {{date}}
@@ -25,7 +25,7 @@
                 </li>
                 <li>
                     <!-- <span class="cellname">出行时间 </span> -->
-                    <!-- <input class="cellquantity" value='' placeholder="出行时间"/>-->
+                    <!-- <input class="cellquantity" value="{{id}}" placeholder="出行时间"/>-->
                     <picker class='cellquantity' mode="time" value="{{time}}" start="09:00" end="21:01" bindchange="bindTimeChange">
                         <view class="picker">
                             预计到店时间: {{time}}
@@ -49,9 +49,7 @@
                     </div>
                 </li>
                 <view class='foodlist-warp'>
-                        
-                        
-                    <view>出游卡剩余5人次<navigator class='paynow' url="../../pay/pay" open-type="switchTab">购卡</navigator></view>
+                    <view>出游卡剩余{{logs}}人次<navigator class='paynow' url="../../pay/pay" open-type="switchTab">购卡</navigator></view>
                     <view class='tips'> 扣卡说明：成人每人扣除1次，儿童每人扣除0.5次</view>
                 </view>
             </ul>
@@ -60,7 +58,7 @@
 
     <image style="width: 100%; height: 400px" mode='scaleToFill' src="../../../images/schedule.png"></image>
     <footer>
-        <button class="submitbtn">
+        <button class="submitbtn" bindtap='submitbtn'>
             确认下单
         </button>
     </footer>

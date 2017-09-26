@@ -54,10 +54,10 @@ page{
     flex: 5;
 }
 .foodlist li .celltotal {
-    -webkit-box-flex: 2;
-    -webkit-flex: 2;
-    -ms-flex: 2;
-    flex: 2;
+    -webkit-box-flex:4;
+    -webkit-flex: 4;
+    -ms-flex: 4;
+    flex: 4;
     display: block;
     width: 0;
     text-align: right;
@@ -108,6 +108,7 @@ footer a {
 }
 
 footer .submitbtn {
+    width: 100%;
 position:absolute;
 top:0;
 right:0;

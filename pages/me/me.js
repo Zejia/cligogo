@@ -3,10 +3,11 @@ Page({
   data: {
     nickName:null,
     avatarUrl:null,
-    tel:null
+    tel:null,
+    logs:null
   },
-  onload(){
-    
+  onLoad(){
+    this.useTime();
   },
   onShow(){
     try {
@@ -28,5 +29,24 @@ Page({
       avatarUrl:userInfo.avatarUrl,
       tel:user.tel
     })
-  }
+  },
+  useTime(){
+     var user = wx.getStorageSync('user')
+     let that = this;
+     wx.request({
+       url: 'http://120.76.208.177:8087/clzz/useTime',
+       data: {
+         userid: user.id
+       },
+       header: {
+           'content-type': 'application/json' // 默认值
+       },
+       success: function(res) {
+         console.log(res.data)
+         that.setData({
+           logs:res.data.time
+         })
+       }
+     })
+   }
 })

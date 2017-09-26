@@ -36,7 +36,7 @@ Page({
             success: function (res) {
                 console.log(res.windowHeight)
                 that.setData({
-                    mapheight: res.windowHeight - 40,
+                    mapheight: res.windowHeight,
                     'controls[0].position.top': res.windowHeight - 100,
                     'controls[1].position.top': res.windowHeight - 100,
                     'controls[2].position.top': res.windowHeight - 100,

@@ -5,10 +5,13 @@ Page({
     urls:null,
     evaluate:null,
     current:null,
-
+    farmid:''
   },
   onLoad: function (option) {
     console.log(option.id)
+    this.setData({
+      farmid:option.id
+    })
     var that = this;
     wx.request({
       url: 'http://120.76.208.177:8087/clzz/farm',
@@ -34,8 +37,9 @@ Page({
   },
   // 常见问题/客服
    appointment() {
+     let that = this;
     wx.navigateTo({
-       url: '../appointment/appointment-info/appointment-info'
+       url: '../appointment/appointment-info/appointment-info?farmid='+that.data.farmid
    })
 },
 })

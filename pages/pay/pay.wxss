@@ -4,7 +4,7 @@ page{
 .schedule-list{
     background: #fff;
     width: 90%;
-    margin: 0 auto;
+    margin: 60rpx  auto;
     border-bottom: 8rpx solid #eb8118;
     color: #eb8118;
     border-radius: 10rpx;
@@ -25,7 +25,7 @@ page{
     border-radius: 10rpx;
 }
 .big-title{
-    font-size: 45rpx;
+    font-size: 32rpx;
     margin-bottom: 10rpx;
 }
 .sec-title{
@@ -37,19 +37,19 @@ page{
     font-size: 35rpx;
     border:1px solid #eb8118;
     border-radius: 5rpx;
-    height: 80rpx;
-    line-height: 80rpx;
+    height: 70rpx;
+    line-height: 70rpx;
     padding:0 20rpx;
     position: relative;
 }
 .schedule-price-info{
     font-size:30rpx;
     position:absolute;
-    top:-14rpx;
+    top:-34rpx;
     background:#fff;
     border:1px solid #eb8118;
     border-radius:30rpx;
-    padding:0 30rpx;
+    padding:8rpx 30rpx;
     height:31rpx;
     line-height:30rpx;
     
@@ -81,4 +81,39 @@ page{
 }
 .line-through{
     text-decoration: line-through;
+}
+
+
+.red_color{
+    border:1px solid #ff0000;
+    background: #ff0000;
+    color: #fff;
+}
+.black_color{
+    color:#74d9ce;
+}
+.black_border_color{
+    border: 1px solid #74d9ce;
+    
+}
+.black_border_bottom_color{
+    border-bottom: 8px solid #74d9ce;
+}
+.green_color{
+    color: green;
+}
+.green_border_color{
+    border: 1px solid green;
+}
+.green_border_bottom_color{
+    border-bottom: 8px solid green;
+}
+.blue_color{
+    color: rgba(5, 113, 255, 0.82);
+}
+.blue_border_color{
+    border: 1px solid rgba(5, 113, 255, 0.82);
+}
+.blue_border_bottom_color{
+    border-bottom: 8px solid rgba(5, 113, 255, 0.82);
 }

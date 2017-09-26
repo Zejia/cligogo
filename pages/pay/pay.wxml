@@ -1,22 +1,66 @@
 <!--logs.wxml-->
 <view class="container">
-    <view class='schedule-list'>
+    <view class='schedule-list black_color black_border_bottom_color' wx:if="{{logs}}">
         <view class='schedule-header'>
             <view class='schedule-title'>
                 <view class='big-title'>新用户体验包</view>
-                <view class='sec-title'>1人/次,有效期一年</view>
+                <view class='sec-title'>1人/次,有效期1年</view>
             </view>
-            <view class='schedule-price'>
-                ￥20 <span class='line-through'>原价:50</span>
-                <view class="schedule-price-info">省40元</view>
+            <view class='schedule-price black_border_color'>
+                ￥59 <span class='line-through'>原价:99</span>
+                <view class="schedule-price-info red_color bubble bubble-bottom">省40元</view>
             </view>
         </view>
-        <view class='schedule-footer'>
+        <view class='schedule-footer black_border_color'>
                 立即购买
            
         </view>
     </view>
-     
-    <view class='tips'>推荐给朋友，可获得最高200元优惠券，
+    <view class='schedule-list blue_color blue_border_bottom_color'>
+            <view class='schedule-header'>
+                <view class='schedule-title '>
+                    <view class='big-title'>单人(次)</view>
+                    <view class='sec-title'>1人/次,有效期1周</view>
+                </view>
+                <view class='schedule-price blue_border_color'>
+                    ￥99
+                    <!-- <view class="schedule-price-info red_color">省40元</view> -->
+                </view>
+            </view>
+            <view class='schedule-footer blue_border_color'>
+                    立即购买
+            </view>
+        </view>
+        <view class='schedule-list green_color green_border_bottom_color'>
+                <view class='schedule-header'>
+                    <view class='schedule-title'>
+                        <view class='big-title'>众享包</view>
+                        <view class='sec-title'>10人/次,有效期1年</view>
+                    </view>
+                    <view class='schedule-price green_border_color'>
+                        ￥890 <span class='line-through'>原价:100</span>
+                        <view class="schedule-price-info red_color">每人89,省100</view>
+                    </view>
+                </view>
+                <view class='schedule-footer green_border_color'>
+                        立即购买
+                </view>
+        </view>
+        <view class='schedule-list'>
+                <view class='schedule-header'>
+                    <view class='schedule-title'>
+                        <view class='big-title'>特惠包</view>
+                        <view class='sec-title'>20人/次,有效期2年</view>
+                    </view>
+                    <view class='schedule-price'>
+                        ￥1580 <span class='line-through'>原价:1980</span>
+                        <view class="schedule-price-info red_color">每人79,省400</view>
+                    </view>
+                </view>
+                <view class='schedule-footer'>
+                        立即购买
+                </view>
+        </view>
+    <view class='tips'>提示用语
     </view>
 </view>
