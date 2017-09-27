@@ -97,8 +97,8 @@ Page({
                 key: 'user',
                 data: res.data.user
               })
-              wx.switchTab({
-                url: '../me/me'
+              wx.navigateBack({
+                delta: 1
               })
             }
           }

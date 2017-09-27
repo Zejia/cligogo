@@ -103,18 +103,18 @@ Page({
     var num = this.data.carts[index].num;
     var times = this.data.time;
     // 自增
-    if(this.data.logs){
-    num++;
-    if (index == 1) {
-      this.setData({
-        logs: this.data.logs - 0.5
-      });
-    } else {
-      this.setData({
-        logs: this.data.logs - 1
-      });
+    if (this.data.logs) {
+      num++;
+      if (index == 1) {
+        this.setData({
+          logs: this.data.logs - 0.5
+        });
+      } else {
+        this.setData({
+          logs: this.data.logs - 1
+        });
+      }
     }
-  }
     console.log(times)
     // 只有大于一件的时候，才能normal状态，否则disable状态
     var minusStatus = num <= 0 ? 'disabled' : 'normal';
@@ -141,6 +141,38 @@ Page({
       kid = that.data.carts[1].num,
       farmid = that.data.farmid,
       userid = user.id
+    if (!tel) {
+      wx.showToast({
+        title: '手机号码错误',
+        image: '../../../images/error.png',
+        duration: 2000
+      })
+      return false;
+    }
+    if (!name) {
+      wx.showToast({
+        title: '联系人错误',
+        image: '../../../images/error.png',
+        duration: 2000
+      })
+      return false;
+    }
+    if (!traveltime) {
+      wx.showToast({
+        title: '到达时间错误',
+        image: '../../../images/error.png',
+        duration: 2000
+      })
+      return false;
+    }
+    if (!arrivaltime) {
+      wx.showToast({
+        title: '到店时间错误',
+        image: '../../../images/error.png',
+        duration: 2000
+      })
+      return false;
+    }
     wx.request({
       url: 'http://120.76.208.177:8087/clzz/submitOrder', //仅为示例，并非真实的接口地址
       data: {
@@ -157,6 +189,16 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
+        if (res.data.code == 1) {
+          wx.navigateBack({
+            delta: 2
+          })
+        }
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'success',
+          duration: 2000
+        })
         console.log(res.data)
       }
     })
@@ -175,8 +217,8 @@ Page({
       success: function (res) {
         console.log(res.data)
         that.setData({
-         logs: res.data.time-1
-          
+          logs: res.data.time - 1
+
         })
         if (that.data.logs <= 0) {
           wx.showModal({
@@ -185,7 +227,7 @@ Page({
             success: function (res) {
               if (res.confirm) {
                 wx.switchTab({
-                url:'../../pay/pay'
+                  url: '../../pay/pay'
                 })
               } else if (res.cancel) {
                 wx.navigateBack({

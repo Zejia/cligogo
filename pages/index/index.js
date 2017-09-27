@@ -169,7 +169,7 @@ Page({
         this.setData({
             infoMask: 0
         })
-    },
+    },  
     reset() {
         this.mapCtx.moveToLocation();
         /*wx.getLocation({

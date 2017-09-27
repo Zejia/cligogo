@@ -62,3 +62,28 @@ page{
     text-align: center;
     margin: 20rpx auto;
 }
+/**index.wxss**/  
+.swiper-tab{  
+    width: 100%;  
+    text-align: center;  
+    line-height: 80rpx;
+    background:#fff;
+}  
+.swiper-tab-list{  font-size: 30rpx;  
+    display: inline-block;  
+    width: 33.33%;  
+    color: #777777;  
+}  
+.on{ color: #FF8800;  
+    border-bottom: 5rpx solid #FF8800;}  
+  
+.swiper-box{ display: block;  width: 100%; overflow: hidden; }  
+.swiper-box view{  
+   text-align:left;
+}  
+.schedule-price-info-s{
+    font-size: 40rpx;
+}
+swiper-item{
+    height: auto!important;
+}

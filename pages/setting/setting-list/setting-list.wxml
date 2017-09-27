@@ -1,21 +1,9 @@
 <!--logs.wxml-->
 <view class="container">
      <ul class='setting-list'>
-      <navigator url="../setting-info/setting-info"   hover-class="other-navigator-hover">
+      <navigator wx:for='{{textContent}}' wx:for-item = 'textContents' url="../setting-info/setting-info?id={{textContents.id}}"   hover-class="other-navigator-hover">
             <view>
-                用户指南
-            </view>
-        </navigator> <navigator url="../setting-info/setting-info"   hover-class="other-navigator-hover">
-            <view>
-                用户指南
-            </view>
-        </navigator> <navigator url="../setting-info/setting-info"   hover-class="other-navigator-hover">
-            <view>
-                用户指南
-            </view>
-        </navigator> <navigator url="../setting-info/setting-info"   hover-class="other-navigator-hover">
-            <view>
-                用户指南
+                {{textContents.title}}
             </view>
         </navigator>
     </ul>

@@ -4,22 +4,25 @@ Page({
     nickName:null,
     avatarUrl:null,
     tel:null,
-    logs:null
+    logs:null,
+    textCatalogue:null
   },
   onLoad(){
-    this.useTime();
+    this.textCatalogue();
   },
   onShow(){
     try {
-      var value = wx.getStorageSync('openid')
+      var value = wx.getStorageSync('user')
       if (!value) {
-        console.log('123123')
+        wx.switchTab({
+          url: '../index/index'
+      })
         wx.navigateTo({
           url: '../login/login'
       })
       }
     } catch (e) {
-    alert('请刷新')
+    console.log('请刷新')
       // Do something when catch error
     }
     var userInfo = wx.getStorageSync('userInfo')
@@ -29,6 +32,7 @@ Page({
       avatarUrl:userInfo.avatarUrl,
       tel:user.tel
     })
+    this.useTime();
   },
   useTime(){
      var user = wx.getStorageSync('user')
@@ -45,6 +49,22 @@ Page({
          console.log(res.data)
          that.setData({
            logs:res.data.time
+         })
+       }
+     })
+   },
+   textCatalogue(){
+    var that = this;
+     wx.request({
+       url: 'http://120.76.208.177:8087/clzz/textCatalogue',
+       data:"",
+       header: {
+           'content-type': 'application/json' // 默认值
+       },
+       success: function(res) {
+         console.log(res.data)
+         that.setData({
+          textCatalogue:res.data.list
          })
        }
      })

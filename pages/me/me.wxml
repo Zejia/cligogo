@@ -25,24 +25,9 @@
         </navigator>
     </ul>
     <ul class='setting-list'>
-            <navigator url="../setting/setting-list/setting-list"   hover-class="other-navigator-hover">
+            <navigator wx:for = "{{textCatalogue}}" wx:for-item='textCatalogues' url="../setting/setting-list/setting-list?id={{textCatalogues.id}}&name={{textCatalogues.name}}"   hover-class="other-navigator-hover">
                 <view>
-                    用户指南
-                </view>
-            </navigator>
-            <navigator url="../setting/setting-list/setting-list"   hover-class="other-navigator-hover">
-                <view>
-                    法律条款
-                </view>
-            </navigator>
-            <navigator url="../setting/setting-list/setting-list"   hover-class="other-navigator-hover">
-                <view>
-                    服务规则
-                </view>
-            </navigator>
-            <navigator url="../setting/setting-list/setting-list"   hover-class="other-navigator-hover">
-                <view>
-                    关于村里走走
+                    {{textCatalogues.name}}
                 </view>
             </navigator>
         </ul>

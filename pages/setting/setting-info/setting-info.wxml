@@ -1,5 +1,5 @@
 <!--logs.wxml-->
 <view class="container">
 
-
+{{textInfo.content}}
 </view>

@@ -1,22 +1,23 @@
 <!--logs.wxml-->
 <view class="container">
-    <view class='schedule-list black_color black_border_bottom_color' wx:if="{{logs}}">
+        <view class='tips'>提示用语
+            </view>
+    <view class='schedule-list black_color black_border_bottom_color' wx:for='{{card}}' wx:for-item = 'cards' >
         <view class='schedule-header'>
             <view class='schedule-title'>
-                <view class='big-title'>新用户体验包</view>
-                <view class='sec-title'>1人/次,有效期1年</view>
+                <view class='big-title'>{{cards.cardname}}</view>
+                <view class='sec-title'>{{cards.title}}</view>
             </view>
             <view class='schedule-price black_border_color'>
-                ￥59 <span class='line-through'>原价:99</span>
-                <view class="schedule-price-info red_color bubble bubble-bottom">省40元</view>
+                ￥{{cards.price}} 　<span class='line-through'>原价:{{cards.oprice}}</span>
+                <view class="schedule-price-info red_color">{{cards.littletitle}}</view>
             </view>
         </view>
-        <view class='schedule-footer black_border_color'>
+        <view class='schedule-footer black_border_color' data-cardid='{{cards.id}}' bindtap='buyCard'>
                 立即购买
-           
         </view>
     </view>
-    <view class='schedule-list blue_color blue_border_bottom_color'>
+    <!-- <view class='schedule-list blue_color blue_border_bottom_color'>
             <view class='schedule-header'>
                 <view class='schedule-title '>
                     <view class='big-title'>单人(次)</view>
@@ -24,7 +25,6 @@
                 </view>
                 <view class='schedule-price blue_border_color'>
                     ￥99
-                    <!-- <view class="schedule-price-info red_color">省40元</view> -->
                 </view>
             </view>
             <view class='schedule-footer blue_border_color'>
@@ -60,7 +60,6 @@
                 <view class='schedule-footer'>
                         立即购买
                 </view>
-        </view>
-    <view class='tips'>提示用语
-    </view>
+        </view> -->
+  
 </view>

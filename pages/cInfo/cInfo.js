@@ -25,6 +25,9 @@ Page({
            current:res.data.current,
            evaluate:res.data.evaluate
         })
+        wx.setNavigationBarTitle({
+          title: res.data.farm.name
+        })
       }
   })
   },
@@ -38,8 +41,22 @@ Page({
   // 常见问题/客服
    appointment() {
      let that = this;
-    wx.navigateTo({
-       url: '../appointment/appointment-info/appointment-info?farmid='+that.data.farmid
-   })
+     try {
+      var value = wx.getStorageSync('user')
+      if (!value) {
+        wx.navigateTo({
+          url: '../login/login'
+      })
+      }else{
+        wx.navigateTo({
+          url: '../appointment/appointment-info/appointment-info?farmid='+that.data.farmid
+      })
+      }
+    } catch (e) {
+    console.log('请刷新')
+      // Do something when catch error
+    }
+  
+  
 },
 })

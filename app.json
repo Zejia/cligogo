@@ -31,8 +31,8 @@
     "borderStyle": "white",
     "list": [
       {
-        "selectedIconPath": "images/index-sec.png",
-        "iconPath": "images/index.png",
+        "selectedIconPath": "images/pay.png",
+        "iconPath": "images/pay-gray.png",
         "pagePath": "pages/pay/pay",
         "text": "购卡"
       },
@@ -44,7 +44,7 @@
       },
       {
         "selectedIconPath": "images/me.png",
-        "iconPath": "images/me.png",
+        "iconPath": "images/me-gray.png",
         "pagePath": "pages/me/me",
         "text": "我的"
       }
