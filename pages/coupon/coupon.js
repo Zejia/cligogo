@@ -56,7 +56,7 @@ Page({
     let user = wx.getStorageSync('user');
    
     wx.request({
-      url: 'http://120.76.208.177:8087/clzz/cardIO', //仅为示例，并非真实的接口地址
+      url: 'https://www.supermaker.com.cn/clzz/cardIO', //仅为示例，并非真实的接口地址
       data: {
         userid: user.id,
         type:ex

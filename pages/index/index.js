@@ -48,12 +48,12 @@ Page({
         app.getUserInfo(function (info) {
             //更新数据
             wx.request({
-                url: 'http://120.76.208.177:8087/clzz/index',
+                url: 'https://www.supermaker.com.cn/clzz/index',
                 data: {
-                    // lat: app.globalData.latitude,
-                    // lng: app.globalData.longitude
-                    lat: '18.535607',
-                    lng: '110.033913'
+                    lat: app.globalData.latitude,
+                    lng: app.globalData.longitude
+                    // lat: '18.535607',
+                    // lng: '110.033913'
 
                 },
                 success: function (res) {
@@ -74,8 +74,8 @@ Page({
                 }
             })
             that.setData({
-                latitude: '18.535607',
-                longitude: '110.033913'
+                latitude:app.globalData.latitude,
+                longitude: app.globalData.longitude
                 // 'markers[0].latitude': '18.535607',
                 // 'markers[0].longitude': '110.033913',
             })
@@ -113,7 +113,7 @@ Page({
     swipersActivity(e) {
         var that = this;
         wx.request({
-            url: 'http://120.76.208.177:8087/clzz/farmByType',
+            url: 'https://www.supermaker.com.cn/clzz/farmByType',
             data: {
                 typeid: e.currentTarget.dataset.id
             },
@@ -193,7 +193,7 @@ Page({
         var that = this;
         console.log(e.currentTarget.dataset.id)
         wx.request({
-            url: 'http://120.76.208.177:8087/clzz/farmByType',
+            url: 'https://www.supermaker.com.cn/clzz/farmByType',
             data: {
                 typeid: e.currentTarget.dataset.id
             },

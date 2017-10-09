@@ -48,7 +48,7 @@ Page({
         countdown(that)
 
         wx.request({
-          url: 'http://120.76.208.177:8087/clzz/telLogin',
+          url: 'https://www.supermaker.com.cn/clzz/telLogin',
           data: {
             tel: that.data.phone
           },
@@ -83,7 +83,7 @@ Page({
         console.log(userInfo.nickName)
         console.log(userInfo.avatarUrl)
         wx.request({
-          url: 'http://120.76.208.177:8087/clzz/bindingTel',
+          url: 'https://www.supermaker.com.cn/clzz/bindingTel',
           data: {
             tel: that.data.phone,
             openid: openid.openid,

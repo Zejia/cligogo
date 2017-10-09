@@ -13,7 +13,7 @@ Page({
       typeid: op.id
     })
     wx.request({
-      url: 'http://120.76.208.177:8087/clzz/textContent', //仅为示例，并非真实的接口地址
+      url: 'https://www.supermaker.com.cn/clzz/textContent', //仅为示例，并非真实的接口地址
       data: {
         typeid: that.data.typeid
       },

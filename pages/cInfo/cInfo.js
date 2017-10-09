@@ -14,7 +14,7 @@ Page({
     })
     var that = this;
     wx.request({
-      url: 'http://120.76.208.177:8087/clzz/farm',
+      url: 'https://www.supermaker.com.cn/clzz/farm',
       data: {
           farmid:option.id
       },

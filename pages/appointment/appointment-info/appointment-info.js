@@ -174,7 +174,7 @@ Page({
       return false;
     }
     wx.request({
-      url: 'http://120.76.208.177:8087/clzz/submitOrder', //仅为示例，并非真实的接口地址
+      url: 'https://www.supermaker.com.cn/clzz/submitOrder', //仅为示例，并非真实的接口地址
       data: {
         tel: tel,
         name: name,
@@ -207,7 +207,7 @@ Page({
     var user = wx.getStorageSync('user')
     let that = this;
     wx.request({
-      url: 'http://120.76.208.177:8087/clzz/useTime',
+      url: 'https://www.supermaker.com.cn/clzz/useTime',
       data: {
         userid: user.id
       },

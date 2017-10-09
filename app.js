@@ -24,7 +24,7 @@ App({
               data:res.userInfo
             })
               wx.request({
-                url: 'http://120.76.208.177:8087/clzz/getOpenid',
+                url: 'https://www.supermaker.com.cn/clzz/getOpenid',
                 data: {
                   code: code,
                 },
@@ -58,6 +58,6 @@ App({
     longitude: null,
     openid: null,
     city: null,
-    hosturl: 'http://120.76.208.177:8087/clzz/'
+    hosturl: 'https://www.supermaker.com.cn/clzz/'
   }
 })
