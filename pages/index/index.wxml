@@ -1,14 +1,25 @@
 <!--index.wxml-->
-<cover-view class="container">
+<!-- <cover-view class="container">
+    <cover-view class="page-section-spacing">
+        <cover-image class='menu' src="{{mallsrc}}" bindtap="menuClick"></cover-image>
+        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+            <cover-view wx:for="{{swiper}}" wx:for-item='swipers' bindtap="swipersActivity" data-index="{{index}}" data-id="{{swipers.id}}"
+                class="scroll-view-item_H demo-text-1 {{swiperIndex==index?'swipersActivity':''}}">{{swipers.name}}</cover-view>
+        </scroll-view>
+    </cover-view>
+</cover-view> -->
+
+<map id='map' style="width: 100%; height: {{mapheight}}px;" latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}"
+    covers="{{covers}}" markers="{{markers}}" bindmarkertap="markertap" bindtap='hidemask' show-location>
+    <!-- <cover-view class="container">
         <cover-view class="page-section-spacing">
             <cover-image class='menu' src="{{mallsrc}}" bindtap="menuClick"></cover-image>
             <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
-                <cover-view wx:for="{{swiper}}" wx:for-item='swipers' bindtap="swipersActivity" data-index="{{index}}" data-id="{{swipers.id}}" class="scroll-view-item_H demo-text-1 {{swiperIndex==index?'swipersActivity':''}}">{{swipers.name}}</cover-view>
+                <cover-view wx:for="{{swiper}}" wx:for-item='swipers' bindtap="swipersActivity" data-index="{{index}}" data-id="{{swipers.id}}"
+                    class="scroll-view-item_H demo-text-1 {{swiperIndex==index?'swipersActivity':''}}">{{swipers.name}}</cover-view>
             </scroll-view>
         </cover-view>
-    </cover-view>
-<map id='map' style="width: 100%; height: {{mapheight}}px;" latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}" covers="{{covers}}" markers="{{markers}}" bindmarkertap="markertap" bindtap='hidemask' show-location>
-       
+     </cover-view> -->
     <!-- <cover-view class='info-mask  animated  masks' style="display: {{infoMask==1?'block':'none'}}">
         <cover-view class='info-address'>
             <text class='address'>青山村</text>
@@ -47,23 +58,28 @@
             <cover-view>3</cover-view>
         </cover-view>
     </cover-view> -->
-    <cover-view class='mask'>
-            <cover-image id='reset' src='../../images/reset.png' bindtap='reset'></cover-image>
-            <cover-image id='scanCode' bindtap='scanCode' src='../../images/scan.png'></cover-image>
-            <cover-image id='kefu' bindtap='accordion' src='../../images/kefu.png'></cover-image>
+    <cover-view class='type' bindtap='selectType'>
+        <cover-image class="type-img"  src='../../images/type.png' ></cover-image>
+        <cover-view>选择类别</cover-view>
     </cover-view>
-   
-   
+    <cover-view class='mask'>
+        <cover-image id='reset' src='../../images/reset.png' bindtap='reset'></cover-image>
+        <cover-image id='scanCode' bindtap='scanCode' src='../../images/scan.png'></cover-image>
+        <cover-image id='kefu' bindtap='accordion' src='../../images/kefu.png'></cover-image>
+    </cover-view>
+
+
     <!-- 服务选择蒙层 -->
-    <cover-view class="menu-mask masks animated {{menuFlag==1?'fadeInDown':'fadeOutUp'}}">
+    <!-- <cover-view class="menu-mask masks animated {{menuFlag==1?'fadeInDown':'fadeOutUp'}}">
+    <cover-view class="menu-mask masks" style="display:block">
         <cover-view class='menu-title' bindtap="menuClick">服务选择</cover-view>
-        <cover-view id='menu-mask-close' bindtap="menuClick"  >X</cover-view>
+        <cover-view id='menu-mask-close' bindtap="menuClick">X</cover-view>
         <cover-view class='info-mask-ul menu-mask-ul' id='menu-mask-ul'>
             <cover-view class='cover-li' wx:for="{{swiper}}" wx:for-item='swipers' data-id='{{swipers.id}}' data-index='{{index}}' bindtap='selectAddress'>
                 <cover-image class='icon' src="{{swipers.icon}}"></cover-image>
                 <cover-view class='menu-name'>{{swipers.name}}</cover-view>
             </cover-view>
-           
+
         </cover-view>
-    </cover-view>
+    </cover-view> -->
 </map>

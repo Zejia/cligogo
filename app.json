@@ -17,7 +17,8 @@
     "pages/question/question",
     "pages/cInfo/cInfo",
     "pages/pay/pay",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/service/service"
 
   ],
   "window":{

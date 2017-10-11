@@ -22,6 +22,17 @@ Page({
     onReady: function () {
         this.mapCtx = wx.createMapContext('map')
     },
+    onShow: function () {
+    if (!app.globalData.farm){
+        return;
+    }
+    this.setData({
+        markers: app.globalData.farm
+    });
+    console.log(app.globalData.farm)
+    console.log(this.data.markers)
+    app.globalData.farm = null;
+    },
     onLoad: function () {
         wx.getStorage({
             key: 'openid',
@@ -46,24 +57,30 @@ Page({
             }
         })
         app.getUserInfo(function (info) {
-            //更新数据
-            wx.request({
+            wx.getLocation({
+                type: 'wgs84',
+                success: function (res) {
+                   //更新数据
+                   console.log(res.latitude)
+                   console.log(res.longitude)
+                wx.request({
                 url: 'https://www.supermaker.com.cn/clzz/index',
                 data: {
-                    lat: app.globalData.latitude,
-                    lng: app.globalData.longitude
+                    lat: res.latitude,
+                    lng: res.longitude
                     // lat: '18.535607',
                     // lng: '110.033913'
 
                 },
                 success: function (res) {
-                    if (res.data.code > 1) {
-                        wx.showToast({
-                            title: "该城市暂未开通",
-                            icon: 'loading',
-                            duration: 2000
-                        })
-                    }
+                    
+                    // if (res.data.code > 1) {
+                    //     wx.showToast({
+                    //         title: "该城市暂未开通",
+                    //         icon: 'loading',
+                    //         duration: 2000
+                    //     })
+                    // }
                     that.setData({
                         swiper: res.data.cct,
                         markers: res.data.farmlist
@@ -74,11 +91,14 @@ Page({
                 }
             })
             that.setData({
-                latitude:app.globalData.latitude,
-                longitude: app.globalData.longitude
+                latitude:res.latitude,
+                longitude: res.longitude
                 // 'markers[0].latitude': '18.535607',
                 // 'markers[0].longitude': '110.033913',
             })
+                }
+              })
+           
         })
     },
     // 显示村庄详情页
@@ -209,5 +229,13 @@ Page({
         this.setData({
             swiperIndex: e.currentTarget.dataset.index
         })
+    },
+    selectType(){
+        wx.navigateTo({
+            url:'../service/service?latitude='+this.data.latitude+'&longitude='+this.data.longitude+'',
+
+        })
+        
     }
+
 })

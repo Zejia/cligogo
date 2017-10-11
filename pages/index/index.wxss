@@ -73,7 +73,9 @@
     color: #858585;
     font-size: 15px;
 }
-
+.container{
+    background:#fff;
+}
 .swiper-container {
     width: 100%;
     height: 40px;
@@ -1170,4 +1172,21 @@ cover-view {
     border: 0.5px solid #f5f5f5;
     box-sizing: border-box;
     text-align: center;
+}
+.type{
+    width:20%;
+    background: rgb(0, 0, 0); 
+    color:#fff;
+    font-size:24rpx;
+    text-align: center;  
+    position: absolute;
+    right:-5rpx;
+    bottom:200rpx;
+    border-radius: 20rpx;
+    padding: 10rpx 0 ;
+}
+.type-img{
+    width: 40rpx;
+    margin:auto;
+    
 }

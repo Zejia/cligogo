@@ -1,0 +1,9 @@
+<view class="menu-mask masks" style="display:block">
+   
+    <view class='info-mask-ul menu-mask-ul' id='menu-mask-ul'>
+        <view class='cover-li' wx:for="{{swiper}}" wx:for-item='swipers' data-id='{{swipers.id}}' data-index='{{index}}' bindtap='selectAddress'>
+            <image class='icon' src="{{swipers.icon}}"></image>
+            <view class='menu-name'>{{swipers.name}}</view>
+        </view>
+    </view>
+</view>
