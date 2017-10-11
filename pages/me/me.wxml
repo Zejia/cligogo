@@ -20,7 +20,7 @@
         </navigator>
         <navigator url="../coupon/coupon"   hover-class="other-navigator-hover" style="border-bottom:40rpx solid #f4f4f4;">
             <view>
-                旅游卡消费记录
+                旅游卡购销记录
             </view>
         </navigator>
     </ul>
