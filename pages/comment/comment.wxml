@@ -1,0 +1,15 @@
+<view class="container">
+    <view class="comment1-description" style="display:flex;flex-direction:row;">
+        <view  class="star-pos" style="display:flex;flex-direction:row;">
+            <view class="starsM  {{flag2>=1? '': 'hideStar'}}"  bindtap="changeColor11"></view>
+            <view class="starsM  {{flag2>=2? '': 'hideStar'}}"  bindtap="changeColor12"></view>
+            <view class="starsM  {{flag2>=3? '': 'hideStar'}}"  bindtap="changeColor13"></view>
+            <view class="starsM  {{flag2>=4? '': 'hideStar'}}"  bindtap="changeColor14"></view>
+            <view class="starsM  {{flag2>=5? '': 'hideStar'}}"  bindtap="changeColor15"></view>
+        </view>
+    </view>
+    <view class="section">
+        <textarea  bindinput="changeValue" value='{{comments}}'  />
+      </view>
+      <button type="primary"  loading="{{loading}}" disabled="{{disabled}}" bindtap="upload" hover-class="other-button-hover"> 提交评论 </button>
+</view>

@@ -9,8 +9,8 @@
 .header-img{
     background:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503288743056&di=486431acf9ab2f8c0f0134fa2764742e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201508%2F01%2F20150801104534_LS25k.thumb.700_0.png) no-repeat center center;
     background-size: cover;
-    width: 160rpx;
-    height: 160rpx;
+    width: 140rpx;
+    height: 140rpx;
     margin: 20rpx;
     border-radius:80rpx;
     border: 1rpx solid #f4f4f4;
@@ -19,13 +19,13 @@
     vertical-align: middle;
 }
 .header-title{
-    margin-left: 20rpx;
     font-size: 34rpx;
-    color: #d4d4d4;
+    color: #272626;
     margin:10rpx;
     text-align: left;
     display:inline-block;
     vertical-align: middle;
+    margin-left:30rpx;
 }
 
 .setting-list{
@@ -55,9 +55,16 @@ button[type='warn']{
 .card-num{
     font-size: 34rpx;
     margin-top: 10rpx;
-    color: #F78708;
+    color: #3fb84c;
 }
 .pay-card{
-    border:1px solid #F78708;
+    border:2px solid #3fb84c;
     padding:10rpx;
+    border-radius:3px;
+    
+}
+.header-tel{
+    font-size:30rpx;
+    margin-top: 10rpx;
+    color: #757575;
 }

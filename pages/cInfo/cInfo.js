@@ -49,7 +49,7 @@ Page({
       })
       }else{
         wx.navigateTo({
-          url: '../appointment/appointment-info/appointment-info?farmid='+that.data.farmid
+          url: '../appointment/appointment-info/appointment-info?farmid='+that.data.farmid+'&farmname='+that.data.farm.name
       })
       }
     } catch (e) {

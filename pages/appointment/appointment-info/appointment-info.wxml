@@ -2,7 +2,7 @@
 <view class="container">
     <view class="wrap-company">
         <view class="company-name">
-            乡村童年
+             {{farmname}}
         </view>
         <view class="wrap-foodlist">
             <ul class="foodlist">
@@ -49,9 +49,14 @@
                     </div>
                 </li>
                 <view class='foodlist-warp'>
-                    <view>出游卡剩余{{logs}}人次<navigator class='paynow' url="../../pay/pay" open-type="switchTab">购卡</navigator></view>
-                    <view class='tips'> 扣卡说明：成人每人扣除1次，儿童每人扣除0.5次</view>
+                    <view style="float:right;"><text >出游卡剩余{{logs}}人次　</text><navigator class='paynow' url="../../pay/pay" open-type="switchTab">购卡</navigator></view>
+                   
                 </view>
+                <view class='foodlist-warp'>
+                    <view class='tips'> 扣卡说明：成人每人扣除1次，儿童（1.2米以下儿童）每人扣除0.5次
+                    </view>
+                </view>
+              
             </ul>
         </view>
     </view>

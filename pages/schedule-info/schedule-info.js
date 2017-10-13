@@ -2,14 +2,15 @@
 Page({
   data: {
     logs: [],
-    orderid:null
+    orderid:null,
+    farmTel:null
   },
   onLoad: function (o) {
    let user = wx.getStorageSync('user');
    let orderid = this.data.orderid;
    let that = this;
   wx.request({
-         url: 'https://www.supermaker.com.cn/clzz/order', //仅为示例，并非真实的接口地址
+         url: 'https://www.supermaker.com.cn/clzz/order', 
          data: {
            orderid:o.orderid,
            userid:user.id
@@ -24,5 +25,11 @@ Page({
            })
          }
        })
+  },
+  callphone(){
+    var  that = this;
+    wx.makePhoneCall({
+      phoneNumber: that.data.logs.telphone //仅为示例，并非真实的电话号码
+    })
   }
 })

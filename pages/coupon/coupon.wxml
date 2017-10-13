@@ -4,55 +4,75 @@
  <view style="margin: 20rpx;">你还没有优惠券 !</view>
 <text class=''>推荐给朋友，可获得最高200元优惠券，<text class='tips-share'>去分享</text></text>
 </view> -->
-<view class="swiper-tab">  
-        <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">购买</view>  
-        <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">消费</view>  
-    </view>  
+
+    <view class="swiper-tab">
+        <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">购买</view>
+        <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">消费</view>
+    </view>
     <scroll-view scroll-y style="height:{{winHeight-31}}px">
-    <swiper current="{{currentTab}}" class="swiper-box" duration="300"  style="height:{{docHeight}}px" bindchange="bindChange">  
-        <!-- 我是哈哈 -->  
-        <swiper-item>  
-                <view  wx:for="{{swiper0}}" wx:for-item='log' class='schedule-list'>
-                        <view class='schedule-header'>
-                            <view class='schedule-title'>
-                                <view class='big-title'>{{log.name}}</view>
-                                <view class='sec-title'>购买时间:{{log.createtime}}</view>
-                            </view>
-                            <view class='schedule-price'>
-                                    <!-- <text > 剩余 </text> -->
-                                <text class="schedule-price-info">{{log.time*0.5}}<text class='schedule-price-info-s'> 人次 </text></text>
-                            </view>
+        <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{docHeight}}px" bindchange="bindChange">
+            <!-- 我是哈哈 -->
+
+            <swiper-item>
+                <view class="none-data" wx:if="{{swiper0.length <= 0}}">
+                    <image src='../../images/none.png'></image>
+                </view>
+                <view wx:for="{{swiper0}}" wx:for-item='log' class='schedule-list'>
+                    <view class='schedule-header'>
+                        <view class='schedule-title'>
+                            <view class='big-title'>{{log.name}}</view>
+                            <view class='sec-title'>购买时间:{{log.createtime}}</view>
                         </view>
-                        <view class='schedule-footer'>
-                            <view class='schedule-title'>
-                                <!-- <view class='gray sec-title'>所有城市适用</view> -->
-                            </view>
+                        <view class='schedule-price'>
+                                <!-- <view class='sec-title'>{{log.time*0.5}}人次</view>  -->
                         </view>
                     </view>
-        </swiper-item>  
-        <!-- 我是呵呵 -->  
-        <swiper-item>  
-                <view  wx:for="{{swiper1}}" wx:for-item='swiper1s' class='schedule-list gray'>
-                        <view class='schedule-header'>
+                    <!-- <view class='schedule-footer'>
+                        <view class='schedule-title'>
+                                <view class='sec-title'>{{log.time*0.5}}人次</view> 
+                        </view>
+                    </view> -->
+                    <view class='schedule-footer'>
                             <view class='schedule-title'>
-                                <view class='big-title'>{{swiper1s.name}}</view>
-                                <view class='sec-title'>消费时间:{{swiper1s.createtime}}</view>
-                            </view>
+                                <view class='gray sec-title'></view> 
+                            </view>   
                             <view class='schedule-price'>
-                                    
-                                <text class="schedule-price-info">{{swiper1s.time*0.5}}<text class="schedule-price-info-s">人次消费</text></text>
-                            </view>
+                                <view class='sec-title sec-title-bg'>{{log.time*0.5}}人次</view> 
+                            </view> 
                         </view>
-                        <view class='schedule-footer'>
-                            <view class='schedule-title'>
-                                <!-- <view class='gray sec-title'>所有城市适用</view> -->
-                            </view>
+                </view>
+            </swiper-item>
+            <!-- 我是呵呵 -->
+            <swiper-item>
+                <view class="none-data" wx:if="{{swiper1.length <= 0}}">
+                    <image src='../../images/none.png'></image>
+                </view>
+                <view wx:for="{{swiper1}}" wx:for-item='swiper1s' class='schedule-list gray'>
+                    <view class='schedule-header'>
+                        <view class='schedule-title'>
+                            <view class='big-title'>{{swiper1s.name}}</view>
+                            <view class='sec-title'>消费时间:{{swiper1s.createtime}}</view>
                         </view>
+                        <!-- <view class='schedule-price'>
+
+                            <text class="schedule-price-info">{{swiper1s.time*0.5}}
+                                <text class="schedule-price-info-s">人次消费</text>
+                            </text>
+                        </view> -->
                     </view>
-        </swiper-item>  
-      
-    </swiper> 
-</scroll-view>
+                    <view class='schedule-footer'>
+                            <view class='schedule-title'>
+                                <view class='gray sec-title'></view> 
+                            </view>   
+                            <view class='schedule-price'>
+                                <view class='sec-title sec-title-bg'>消费时间:{{swiper1s.time*0.5}}人次消费</view> 
+                            </view> 
+                        </view>
+                </view>
+            </swiper-item>
+
+        </swiper>
+    </scroll-view>
 
     <!-- <view class='schedule-list gray'>
         <view class='schedule-header'>
@@ -71,5 +91,5 @@
             </view>
         </view>
     </view> -->
-  
+
 </view>

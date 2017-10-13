@@ -59,6 +59,7 @@ App({
     openid: null,
     city: null,
     hosturl: 'https://www.supermaker.com.cn/clzz/',
-    farm:null
+    farm:null,
+    farmName:null
   }
 })

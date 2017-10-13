@@ -1,4 +1,4 @@
-page{
+page {
     background: #f3f4f5;
 }
 
@@ -47,14 +47,16 @@ page{
     text-align: right;
     color: #999;
 }
-.foodlist li  .cellquantity.flex_5{
-        -webkit-box-flex: 5;
+
+.foodlist li .cellquantity.flex_5 {
+    -webkit-box-flex: 5;
     -webkit-flex: 5;
     -ms-flex: 5;
     flex: 5;
 }
+
 .foodlist li .celltotal {
-    -webkit-box-flex:4;
+    -webkit-box-flex: 4;
     -webkit-flex: 4;
     -ms-flex: 4;
     flex: 4;
@@ -82,7 +84,7 @@ page{
 }
 
 footer {
-    height: 75rpx;
+    height: 100rpx;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -91,10 +93,10 @@ footer {
 }
 
 footer span {
-color:#fff;
-font-size:32rpx;
-padding-left:20rpx;
-line-height:2.5;
+    color: #fff;
+    font-size: 32rpx;
+    padding-left: 20rpx;
+    line-height: 2.5;
 }
 
 footer small {
@@ -109,49 +111,53 @@ footer a {
 
 footer .submitbtn {
     width: 100%;
-position:absolute;
-top:0;
-right:0;
-bottom:0;
-background:#f98523;
-border:none;
-color:#fff;
-font-size:32rpx;
-border-radius:1px;
-
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #1AAD19;
+    border: none;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 1px;
+    height: 100rpx;
+    line-height: 100rpx;
 }
 
 footer .submitbtn.disabled {
     background: #666
 }
-.wrap-foodlist{
-    padding:0 20rpx;
 
+.wrap-foodlist {
+    padding: 0 20rpx;
     background: #fff;
 }
-.wrap-company{
+
+.wrap-company {
     background: #fff;
-    padding:20rpx;
+    padding: 20rpx;
     color: #eb8118;
     border-radius: 10rpx;
-     border-bottom: 1rpx solid #eee;
-
+    border-bottom: 1rpx solid #eee;
 }
-.company-contact{
+
+.company-contact {
     padding: 10rpx 0;
     margin: 10rpx 0;
     display: flex;
-
 }
-.company-name{
+
+.company-name {
     font-size: 35rpx;
     margin-bottom: 10rpx;
 }
-.contact-name{
+
+.contact-name {
     font-size: 29rpx;
     margin-bottom: 10rpx;
     color: #a4a4a4;
 }
-.pr-10{
+
+.pr-10 {
     padding-right: 40rpx;
 }

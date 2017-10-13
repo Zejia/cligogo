@@ -59,6 +59,11 @@ Page({
               that.setData({
                 code: res.data.sendCode
               });
+              wx.showToast({
+                title: res.data.msg,
+                icon: 'success',
+                duration: 1000
+              })
             }
           }
         })

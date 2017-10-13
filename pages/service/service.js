@@ -13,9 +13,6 @@ Page({
           lat: e.latitude,
           lng: e.longitude,
           swiper:null
-          // lat: '18.535607',
-          // lng: '110.033913'
-
       },
       success: function (res) {
           if(res.data.code > 1){
@@ -42,6 +39,14 @@ Page({
   selectAddress(e){
     var that = this;
     console.log(e.currentTarget.dataset.id)
+    app.globalData.farmName = e.currentTarget.dataset.name
+    if(e.currentTarget.dataset.id == "-1"){
+        app.globalData.farm = -1
+        wx.navigateBack({
+            delta: 1
+          })
+      return false;
+    }
     wx.request({
         url: 'https://www.supermaker.com.cn/clzz/farmByType',
         data: {

@@ -1,25 +1,27 @@
 <!--logs.wxml-->
 <view class="container">
-<!-- <view class="none-data">
-    你还没有旅行计划!
-</view> -->
-    <navigator wx:for='{{logs}}' wx:for-item='log' url="../schedule-info/schedule-info?orderid={{log.id}}"   hover-class="other-navigator-hover" class='schedule-list'>
-         <view class='schedule-header'>
-            <view class='schedule-title'>
-                <view class='big-title'>{{log.name}}</view> 
-                <view class='sec-title'>出行时间 :{{log.traveltime}}</view> 
-            </view>   
-            <view class='schedule-price'>
-                 <!-- <text class="schedule-price-info">成人{{log.man}}人,小孩{{log.kid}}</text> -->
-            </view> 
-        </view>
-        <view class='schedule-footer'>
-            <view class='schedule-title'>
-                <view class='gray sec-title'>{{log.status}}</view> 
-            </view>   
-            <view class='schedule-price'>
-                <view class='sec-title'>成人{{log.man}}人,小孩{{log.kid}}</view> 
-            </view> 
-        </view>
-</navigator>
+<view class="none-data" wx:if="{{logs.length <= 0}}">
+   <image src='../../images/none.png'></image>
+</view>
+<view  wx:else>
+        <navigator  wx:for='{{logs}}' wx:for-item='log' url="../schedule-info/schedule-info?orderid={{log.id}}"   hover-class="other-navigator-hover" class='schedule-list' >
+            <view class='schedule-header'>
+               <view class='schedule-title'>
+                   <view class='big-title'>{{log.name}}</view> 
+                   <view class='sec-title'>出行时间 :{{log.traveltime}}</view> 
+               </view>   
+               <view class='schedule-price'>
+               </view> 
+           </view>
+           <view class='schedule-footer'>
+               <view class='schedule-title'>
+                   <view class='gray sec-title'>{{log.status}}</view> 
+               </view>   
+               <view class='schedule-price'>
+                   <view class='sec-title sec-title-bg'>成人{{log.man}}位<text wx:if='{{log.kid>0}}'>,儿童{{log.kid}}位</text></view> 
+               </view> 
+           </view>
+   </navigator> 
+</view>
+
 </view>

@@ -3,7 +3,7 @@
         <view class="header-name-img">
                 <view class="header-img" style="background:url({{avatarUrl}});background-size:100%;"></view>
                 <view class='header-title'>
-                        <view>{{nickName}}</view><view>{{tel}}</view>
+                        <view class="">{{nickName}}</view><view class='header-tel'>{{tel}}</view>
                 </view>
         </view>
        
@@ -20,7 +20,7 @@
         </navigator>
         <navigator url="../coupon/coupon"   hover-class="other-navigator-hover" style="border-bottom:40rpx solid #f4f4f4;">
             <view>
-                旅游卡购销记录
+                购销记录
             </view>
         </navigator>
     </ul>

@@ -2,7 +2,7 @@
 <view class="container">
     <view class="wrap-company">
         <view class="company-name">
-                乡村童年  <view style="float:right">{{logs.status}}</view>
+                {{logs.farmname}}  <view style="float:right">{{logs.status}}</view>
         </view>
     </view>
     <view class="wrap-foodlist">
@@ -26,11 +26,11 @@
                     <li><span class="cellname">联系电话</span><span class="celltotal">{{logs.tel}}</span></li>
                 </ul>
     </view>
-    <image style="width: 100%; height: 400px" mode='scaleToFill' src="../../images/schedule.png"></image>
+    <image style="width: 100%; height: 400px; padding-bottom:100rpx;" mode='scaleToFill' src="../../images/schedule.png"></image>
 
     <footer>
-        <button class="submitbtn">
+        <button class="submitbtn" bindtap= 'callphone'>
          联系农场主
-            </button>
+        </button>
     </footer>
 </view>

@@ -1,7 +1,11 @@
 <!--logs.wxml-->
 <view class="container">
-     <ul class='setting-list'>
-      <navigator wx:for='{{textContent}}' wx:for-item = 'textContents' url="../setting-info/setting-info?id={{textContents.id}}"   hover-class="other-navigator-hover">
+    <view class="none-data" wx:if="{{textContent <= 0}}">
+        <image src='../../../images/none.png'></image>
+    </view>
+    <ul class='setting-list'>
+        <navigator wx:for='{{textContent}}' wx:for-item='textContents' url="../setting-info/setting-info?id={{textContents.id}}"
+            hover-class="other-navigator-hover">
             <view>
                 {{textContents.title}}
             </view>

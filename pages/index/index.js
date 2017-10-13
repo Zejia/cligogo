@@ -23,14 +23,39 @@ Page({
         this.mapCtx = wx.createMapContext('map')
     },
     onShow: function () {
+        var that = this;
     if (!app.globalData.farm){
+        return;
+    }
+    if (app.globalData.farm == -1){
+        app.globalData.farm = null;
+        wx.request({
+            url: 'https://www.supermaker.com.cn/clzz/index',
+            data: {
+                lat: this.data.latitude,
+                lng: this.data.longitude
+            },
+            success: function (res) {
+                that.setData({
+                    swiper: res.data.cct,
+                    markers: res.data.farmlist
+                })
+                wx.setNavigationBarTitle({
+                    title: "村里走走"
+              })
+            }
+        })
+        console.log('全部')
         return;
     }
     this.setData({
         markers: app.globalData.farm
     });
-    console.log(app.globalData.farm)
-    console.log(this.data.markers)
+    wx.setNavigationBarTitle({
+        title: app.globalData.farmName
+  })
+    // console.log(app.globalData.farm)
+    // console.log(this.data.markers)
     app.globalData.farm = null;
     },
     onLoad: function () {
@@ -63,14 +88,13 @@ Page({
                    //更新数据
                    console.log(res.latitude)
                    console.log(res.longitude)
-                wx.request({
+            wx.request({
                 url: 'https://www.supermaker.com.cn/clzz/index',
                 data: {
                     lat: res.latitude,
                     lng: res.longitude
                     // lat: '18.535607',
                     // lng: '110.033913'
-
                 },
                 success: function (res) {
                     
@@ -85,9 +109,6 @@ Page({
                         swiper: res.data.cct,
                         markers: res.data.farmlist
                     })
-                    wx.setNavigationBarTitle({
-                        title: res.data.city.name+"村里走走"
-                      })
                 }
             })
             that.setData({
@@ -233,9 +254,6 @@ Page({
     selectType(){
         wx.navigateTo({
             url:'../service/service?latitude='+this.data.latitude+'&longitude='+this.data.longitude+'',
-
         })
-        
     }
-
 })

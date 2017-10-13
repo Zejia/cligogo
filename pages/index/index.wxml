@@ -9,8 +9,8 @@
     </cover-view>
 </cover-view> -->
 
-<map id='map' style="width: 100%; height: {{mapheight}}px;" latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}"
-    covers="{{covers}}" markers="{{markers}}" bindmarkertap="markertap" bindtap='hidemask' show-location>
+<map id='map' style="width: 100%; height: {{mapheight}}px;"  latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}"
+    covers="{{covers}}" markers="{{markers}}" bindmarkertap="markertap"  bindcallouttap="markertap" bindtap='hidemask' show-location>
     <!-- <cover-view class="container">
         <cover-view class="page-section-spacing">
             <cover-image class='menu' src="{{mallsrc}}" bindtap="menuClick"></cover-image>
@@ -58,9 +58,8 @@
             <cover-view>3</cover-view>
         </cover-view>
     </cover-view> -->
-    <cover-view class='type' bindtap='selectType'>
+    <cover-view class='type box-shadow' bindtap='selectType'>
         <cover-image class="type-img"  src='../../images/type.png' ></cover-image>
-        <cover-view class='type-font'>筛选</cover-view>
     </cover-view>
     <cover-view class='mask'>
         <cover-image id='reset' src='../../images/reset.png' bindtap='reset'></cover-image>

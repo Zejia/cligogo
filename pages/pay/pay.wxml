@@ -1,7 +1,6 @@
 <!--logs.wxml-->
 <view class="container">
-        <view class='tips'>提示用语
-            </view>
+        <view class='tips'>{{tips}}</view>
     <view class='schedule-list black_color black_border_bottom_color' wx:for='{{card}}' wx:for-item = 'cards' >
         <view class='schedule-header'>
             <view class='schedule-title'>

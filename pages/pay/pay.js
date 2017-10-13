@@ -2,7 +2,8 @@
 Page({
     data: {
         logs: null,
-        card: null
+        card: null,
+        tips:null
     },
     onLoad: function() {
         this.fetchCard();
@@ -15,9 +16,11 @@ Page({
                 wx.switchTab({
                     url: '../index/index'
                 })
-                wx.navigateTo({
-                    url: '../login/login'
-                })
+                setTimeout(function () {
+                    wx.navigateTo({
+                      url: '../login/login'
+                    })
+                  }, 400)
             }
         } catch (e) {
             console.log('请刷新')
@@ -39,7 +42,8 @@ Page({
             success: function(res) {
                 console.log(res.data)
                 that.setData({
-                    card: res.data.info
+                    card: res.data.info,
+                    tips: res.data.tips
                 })
             }
         })
@@ -74,7 +78,12 @@ Page({
                             duration: 2000
                         })
                     },
-                    'fail': function(res) {}
+                    'fail': function(res) {
+
+                    },
+                    'complete':function(res){
+                        that.fetchCard()
+                    }
                 })
 
             }

@@ -8,6 +8,9 @@ page{
     border-bottom: 8rpx solid #eb8118;
     color: #eb8118;
     border-radius: 10rpx;
+    -webkit-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.6);
+    box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.6);
 }
 .schedule-header{
     padding: 20rpx;
@@ -23,10 +26,15 @@ page{
     border:1px solid #eb8118;
     padding: 10rpx;
     border-radius: 10rpx;
+    background:#3fb84c;
+    color: #fff;
 }
 .big-title{
-    font-size: 32rpx;
+    font-size: 38rpx;
     margin-bottom: 10rpx;
+    color:#000;
+    font-weight:bold;
+
 }
 .sec-title{
     font-size: 28rpx;
@@ -90,24 +98,16 @@ page{
     color: #fff;
 }
 .black_color{
-    color:#74d9ce;
+    color:#3fb84c;
 }
 .black_border_color{
-    border: 1px solid #74d9ce;
+    border: 1px solid #3fb84c;
     
 }
 .black_border_bottom_color{
-    border-bottom: 8px solid #74d9ce;
+    border-bottom: 0rpx solid #3fb84c;
 }
-.green_color{
-    color: green;
-}
-.green_border_color{
-    border: 1px solid green;
-}
-.green_border_bottom_color{
-    border-bottom: 8px solid green;
-}
+
 .blue_color{
     color: rgba(5, 113, 255, 0.82);
 }

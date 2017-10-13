@@ -6,6 +6,7 @@ Page({
     date: '',
     time: '',
     farmid: '',
+    farmname:'',
     startTime: "",
     carts: [{
         num: '1',
@@ -25,7 +26,8 @@ Page({
     console.log(this.getCurrenTime())
     this.setData({
       startTime: this.getCurrenTime(),
-      farmid: option.farmid
+      farmid: option.farmid,
+      farmname:option.farmname
     })
   },
   bindDateChange: function (e) {
@@ -141,6 +143,14 @@ Page({
       kid = that.data.carts[1].num,
       farmid = that.data.farmid,
       userid = user.id
+      if (!name) {
+        wx.showToast({
+          title: '联系人错误',
+          image: '../../../images/error.png',
+          duration: 2000
+        })
+        return false;
+      }
     if (!tel) {
       wx.showToast({
         title: '手机号码错误',
@@ -149,14 +159,7 @@ Page({
       })
       return false;
     }
-    if (!name) {
-      wx.showToast({
-        title: '联系人错误',
-        image: '../../../images/error.png',
-        duration: 2000
-      })
-      return false;
-    }
+    
     if (!traveltime) {
       wx.showToast({
         title: '到达时间错误',
@@ -189,16 +192,20 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        if (res.data.code == 1) {
-          wx.navigateBack({
-            delta: 2
-          })
-        }
         wx.showToast({
           title: res.data.msg,
           icon: 'success',
           duration: 2000
         })
+        if (res.data.code == 1) {
+          // wx.navigateBack({
+          //   delta: 2
+          // })
+          wx.redirectTo({
+            url: '../../schedule-info/schedule-info?orderid='+res.data.oid
+        })
+        }
+      
         console.log(res.data)
       }
     })

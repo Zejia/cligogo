@@ -76,7 +76,7 @@ page{
 }
 
 footer {
-    height: 80rpx;
+    height: 100rpx;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -102,11 +102,13 @@ footer a {
 }
 
 footer .submitbtn {
-background:#f98523;
+background:#1AAD19;
 border:none;
 color:#fff;
 font-size:34rpx;
 border-radius:1px;
+height:100rpx;
+line-height:100rpx;
 
 }
 
@@ -121,7 +123,7 @@ footer .submitbtn.disabled {
 .wrap-company{
     background: #fff;
     padding:20rpx;
-    color: #eb8118;
+    color: #1AAD19;
     border-radius: 10rpx;
      border-bottom: 1rpx solid #eee;
 
@@ -149,6 +151,7 @@ footer .submitbtn.disabled {
 }
 .foodlist-warp{
     padding:20rpx!important;
+    overflow: hidden;
 }
 
 
@@ -336,7 +339,7 @@ p {
 /*价格*/
 
 .carts-price {
-    color: #f60;
+    color: #1AAD19;
 }
 .tips{
     font-size: 28rpx;

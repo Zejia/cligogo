@@ -18,8 +18,8 @@
     "pages/cInfo/cInfo",
     "pages/pay/pay",
     "pages/login/login",
-    "pages/service/service"
-
+    "pages/service/service",
+    "pages/comment/comment"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -32,20 +32,20 @@
     "borderStyle": "white",
     "list": [
       {
-        "selectedIconPath": "images/pay.png",
-        "iconPath": "images/pay-gray.png",
+        "selectedIconPath": "images/card.png",
+        "iconPath": "images/card-g.png",
         "pagePath": "pages/pay/pay",
         "text": "购卡"
       },
       {
-        "selectedIconPath": "images/index-sec.png",
-        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index-des.png",
+        "iconPath": "images/index-g.png",
         "pagePath": "pages/index/index",
         "text": "预约"
       },
       {
         "selectedIconPath": "images/me.png",
-        "iconPath": "images/me-gray.png",
+        "iconPath": "images/me-g.png",
         "pagePath": "pages/me/me",
         "text": "我的"
       }
