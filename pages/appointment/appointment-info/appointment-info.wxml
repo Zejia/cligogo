@@ -2,17 +2,17 @@
 <view class="container">
     <view class="wrap-company">
         <view class="company-name">
-             {{farmname}}
+            {{farmname}}
         </view>
         <view class="wrap-foodlist">
             <ul class="foodlist">
                 <li class='foodlist-warp'>
                     <span class="cellname">联系人 </span>
-                    <input class="cellquantity"  value="{{name}}" bindinput="bindnameInput" placeholder="请填写联系人" />
+                    <input class="cellquantity" value="{{name}}" bindinput="bindnameInput" placeholder="请填写联系人" />
                 </li>
                 <li class='foodlist-warp'>
                     <span class="cellname">联系电话 </span>
-                    <input class="cellquantity" value="{{tel}}" bindinput="bindtelInput" placeholder="请填写联系电话" maxlength="11"/>
+                    <input class="cellquantity" value="{{tel}}" bindinput="bindtelInput" placeholder="请填写联系电话" maxlength="11" />
                 </li>
                 <li>
                     <!-- <span class="cellname">出行时间 </span> -->
@@ -32,31 +32,64 @@
                         </view>
                     </picker>
                 </li>
-                <li class='foodlist-warp'>
-                    <span class="cellname">成年人 </span>
-                    <div class="div_right">
-                        <i class="{{minusStatuses[0]}}" data-index="0" bindtap="bindMinus">-</i>
-                        <span class="zi">{{carts[0].num}}</span>
-                        <i class="normal" data-index="0" bindtap="bindPlus">+</i>
-                    </div>
+                <li>
+                    <span class="cellname">项目选择
+                        <view class="cellname-title" style="float:right;">
+                            <text>出游卡剩余{{logs}}人次　</text>
+                            <navigator class='paynow' url="../../pay/pay" open-type="switchTab">购卡</navigator>
+                        </view>
+                    </span>
                 </li>
-                <li class='foodlist-warp'>
-                    <span class="cellname">儿童 </span>
-                    <div class="div_right">
-                        <i class="{{minusStatuses[0]}}" data-index="1" bindtap="bindMinus">-</i>
-                        <span class="zi">{{carts[1].num}}</span>
-                        <i class="normal" data-index="1" bindtap="bindPlus">+</i>
-                    </div>
+                <li class="project-choose">
+                    <radio-group class="radio-group" bindchange="radioChange">
+                        <label class="radio radio-warp">
+                            <view class="radio-common-left">
+                                <radio value="1" checked="true" />按出行人数
+                            </view>
+                            <view class="radio-common-right">
+                                <li>
+                                    <span class="cellname">成年人 </span>
+                                    <div class="div_right">
+                                        <i class="{{minusStatuses[0]}}" data-index="0" bindtap="bindMinus">-</i>
+                                        <span class="zi">{{carts[0].num}}</span>
+                                        <i class="normal" data-index="0" bindtap="bindPlus">+</i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="cellname">儿童 </span>
+                                    <div class="div_right">
+                                        <i class="{{minusStatuses[0]}}" data-index="1" bindtap="bindMinus">-</i>
+                                        <span class="zi">{{carts[1].num}}</span>
+                                        <i class="normal" data-index="1" bindtap="bindPlus">+</i>
+                                    </div>
+                                </li>
+                            </view>
+                        </label>
+                        <view class='foodlist-warp'>
+                                <view class='tips'> 扣卡说明：成人每人扣除1次，儿童（1.2米以下儿童）每人扣除0.5次
+                                </view>
+                        </view>
+                        <label class="radio radio-warp radio-special-warp"  wx:for="{{items}}" wx:for-item='project'>
+                            <view class="radio-special-left">
+                                <radio value="{{project.value}}" checked="{{project.checked}}" />{{project.name}}
+                            </view>
+                            <view class="radio-special-right">
+                                    {{project.content}}
+                            </view>
+                        </label>
+                      
+                    </radio-group>
                 </li>
-                <view class='foodlist-warp'>
-                    <view style="float:right;"><text >出游卡剩余{{logs}}人次　</text><navigator class='paynow' url="../../pay/pay" open-type="switchTab">购卡</navigator></view>
-                   
-                </view>
-                <view class='foodlist-warp'>
-                    <view class='tips'> 扣卡说明：成人每人扣除1次，儿童（1.2米以下儿童）每人扣除0.5次
+
+
+                <!-- <view class='foodlist-warp'>
+                    <view style="float:right;">
+                        <text>出游卡剩余{{logs}}人次　</text>
+                        <navigator class='paynow' url="../../pay/pay" open-type="switchTab">购卡</navigator>
                     </view>
-                </view>
+                </view> -->
               
+
             </ul>
         </view>
     </view>

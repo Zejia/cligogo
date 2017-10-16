@@ -19,7 +19,8 @@
     "pages/pay/pay",
     "pages/login/login",
     "pages/service/service",
-    "pages/comment/comment"
+    "pages/comment/comment",
+    "pages/list/list"
   ],
   "window":{
     "backgroundTextStyle":"light",

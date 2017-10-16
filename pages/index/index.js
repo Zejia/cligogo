@@ -24,47 +24,47 @@ Page({
     },
     onShow: function () {
         var that = this;
-    if (!app.globalData.farm){
-        return;
-    }
-    if (app.globalData.farm == -1){
-        app.globalData.farm = null;
-        wx.request({
-            url: 'https://www.supermaker.com.cn/clzz/index',
-            data: {
-                lat: this.data.latitude,
-                lng: this.data.longitude
-            },
-            success: function (res) {
-                that.setData({
-                    swiper: res.data.cct,
-                    markers: res.data.farmlist
-                })
-                wx.setNavigationBarTitle({
-                    title: "村里走走"
-              })
-            }
+        if (!app.globalData.farm) {
+            return;
+        }
+        if (app.globalData.farm == -1) {
+            app.globalData.farm = null;
+            wx.request({
+                url: 'https://www.supermaker.com.cn/clzz/index',
+                data: {
+                    lat: this.data.latitude,
+                    lng: this.data.longitude
+                },
+                success: function (res) {
+                    that.setData({
+                        swiper: res.data.cct,
+                        markers: res.data.farmlist
+                    })
+                    wx.setNavigationBarTitle({
+                        title: "村里走走"
+                    })
+                }
+            })
+            console.log('全部')
+            return;
+        }
+        this.setData({
+            markers: app.globalData.farm
+        });
+        wx.setNavigationBarTitle({
+            title: app.globalData.farmName
         })
-        console.log('全部')
-        return;
-    }
-    this.setData({
-        markers: app.globalData.farm
-    });
-    wx.setNavigationBarTitle({
-        title: app.globalData.farmName
-  })
-    // console.log(app.globalData.farm)
-    // console.log(this.data.markers)
-    app.globalData.farm = null;
+        // console.log(app.globalData.farm)
+        // console.log(this.data.markers)
+        app.globalData.farm = null;
     },
     onLoad: function () {
         wx.getStorage({
             key: 'openid',
-            success: function(res) {
+            success: function (res) {
                 console.log(res.data.openid)
-            } 
-          })
+            }
+        })
         console.log('onLoad')
         var that = this
         // 获取手机高度 设置map高度
@@ -85,48 +85,49 @@ Page({
             wx.getLocation({
                 type: 'wgs84',
                 success: function (res) {
-                   //更新数据
-                   console.log(res.latitude)
-                   console.log(res.longitude)
-            wx.request({
-                url: 'https://www.supermaker.com.cn/clzz/index',
-                data: {
-                    lat: res.latitude,
-                    lng: res.longitude
-                    // lat: '18.535607',
-                    // lng: '110.033913'
-                },
-                success: function (res) {
-                    
-                    // if (res.data.code > 1) {
-                    //     wx.showToast({
-                    //         title: "该城市暂未开通",
-                    //         icon: 'loading',
-                    //         duration: 2000
-                    //     })
-                    // }
+                    //更新数据
+                    console.log(res.latitude)
+                    console.log(res.longitude)
                     that.setData({
-                        swiper: res.data.cct,
-                        markers: res.data.farmlist
+                        latitude: res.latitude,
+                        longitude: res.longitude
+                        // 'markers[0].latitude': '18.535607',
+                        // 'markers[0].longitude': '110.033913',
                     })
+                    wx.request({
+                        url: 'https://www.supermaker.com.cn/clzz/index',
+                        data: {
+                            lat: res.latitude,
+                            lng: res.longitude
+                            // lat: '18.535607',
+                            // lng: '110.033913'
+                        },
+                        success: function (res) {
+
+                            // if (res.data.code > 1) {
+                            //     wx.showToast({
+                            //         title: "该城市暂未开通",
+                            //         icon: 'loading',
+                            //         duration: 2000
+                            //     })
+                            // }
+                            that.setData({
+                                swiper: res.data.cct,
+                                markers: res.data.farmlist
+                            })
+                        }
+                    })
+
                 }
             })
-            that.setData({
-                latitude:res.latitude,
-                longitude: res.longitude
-                // 'markers[0].latitude': '18.535607',
-                // 'markers[0].longitude': '110.033913',
-            })
-                }
-              })
-           
+
         })
     },
     // 显示村庄详情页
     markertap(e) {
         console.log(e.markerId)
         wx.navigateTo({
-            url: '../cInfo/cInfo?id='+e.markerId
+            url: '../cInfo/cInfo?id=' + e.markerId
         })
 
     },
@@ -169,12 +170,23 @@ Page({
         })
     },
     scanCode() {
-        wx.scanCode({
-            onlyFromCamera: true,
-            success: (res) => {
-                console.log(res)
+        wx.showModal({
+            title: '村里走走',
+            content: '到达无人农庄，扫码二维码可控制所有设施。',
+            success: function (res) {
+                if (res.confirm) {
+                    wx.scanCode({
+                        onlyFromCamera: true,
+                        success: (res) => {
+                            console.log(res)
+                        }
+                    })
+                } else if (res.cancel) {
+
+                }
             }
         })
+
     },
     controltap(e) {
         switch (e.controlId) {
@@ -210,7 +222,7 @@ Page({
         this.setData({
             infoMask: 0
         })
-    },  
+    },
     reset() {
         this.mapCtx.moveToLocation();
         /*wx.getLocation({
@@ -251,9 +263,9 @@ Page({
             swiperIndex: e.currentTarget.dataset.index
         })
     },
-    selectType(){
+    selectType() {
         wx.navigateTo({
-            url:'../service/service?latitude='+this.data.latitude+'&longitude='+this.data.longitude+'',
+            url: '../service/service?latitude=' + this.data.latitude + '&longitude=' + this.data.longitude + '',
         })
     }
 })

@@ -152,6 +152,7 @@ footer .submitbtn.disabled {
 .foodlist-warp{
     padding:20rpx!important;
     overflow: hidden;
+    border-bottom:1px solid #eee;
 }
 
 
@@ -348,4 +349,37 @@ p {
     float: right;
     color: blue;
     text-decoration: underline;
+}
+.radio-group{
+    width: 100%;
+}
+.cellname-title{
+    font-size:30rpx;
+}
+.project-choose{
+    border-bottom:0!important;
+}
+.radio-warp{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom:0;
+}
+.radio-common-left{
+    flex-basis: 50%;
+}
+.radio-common-right{
+    flex-basis: 50%;
+}
+.radio-common-right li{
+    border-bottom: 0;
+}
+.radio-special-left{
+    flex-basis: 30%;
+}
+.radio-special-right{
+    flex-basis: 70%;
+}
+.radio-special-warp{
+    border-bottom: 1px solid #eee;
 }

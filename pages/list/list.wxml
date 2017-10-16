@@ -6,59 +6,46 @@
 </view> -->
 
     <view class="swiper-tab">
-        <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">购买</view>
-        <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">消费</view>
+        <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">无人农庄</view>
+        <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">美丽乡村</view>
+        <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">农活采摘</view>
+        <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">乡村达人</view>
     </view>
     <scroll-view scroll-y style="height:{{winHeight-31}}px">
         <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{docHeight}}px" bindchange="bindChange">
             <!-- 我是哈哈 -->
 
             <swiper-item>
-                <view class="none-data" wx:if="{{swiper0.length <= 0}}">
-                    <image src='../../images/none.png'></image>
-                </view>
-                <view wx:for="{{swiper0}}" wx:for-item='log' class='schedule-list'>
+             
+                <view class='schedule-list'>
                     <view class='schedule-header'>
                         <view class='schedule-title'>
-                            <view class='big-title'>{{log.name}}</view>
-                            <view class='sec-title'>购买时间:{{log.createtime}}</view>
+                            <view class='big-title'><text>乡村童年</text> <view class="tag">童年达人</view> <view class="tag">童年达人</view><view class="tag">童年达人</view></view>
+                            <view class='sec-title'>if you say sth when i happy ,i pm you  i can believe you </view>
                         </view>
-                        <view class='schedule-price'>
-                                <!-- <view class='sec-title'>{{log.time*0.5}}人次</view>  -->
-                        </view>
+                   
                     </view>
-                    <!-- <view class='schedule-footer'>
-                        <view class='schedule-title'>
-                                <view class='sec-title'>{{log.time*0.5}}人次</view> 
-                        </view>
-                    </view> -->
+                
                     <view class='schedule-footer'>
                             <view class='schedule-title'>
-                                <view class='gray sec-title'></view> 
+                                <view class='sec-title'>地址:陵水光坡镇青山村委会</view> 
                             </view>   
                             <view class='schedule-price'>
-                                <view class='sec-title sec-title-bg'>{{log.time*0.5}}人次</view> 
+                                <!-- <view class='sec-title sec-title-bg'>{{log.time*0.5}}人次</view>  -->
                             </view> 
                         </view>
                 </view>
             </swiper-item>
             <!-- 我是呵呵 -->
             <swiper-item>
-                <view class="none-data" wx:if="{{swiper1.length <= 0}}">
-                    <image src='../../images/none.png'></image>
-                </view>
-                <view wx:for="{{swiper1}}" wx:for-item='swiper1s' class='schedule-list gray'>
+            
+                <view  class='schedule-list gray'>
                     <view class='schedule-header'>
                         <view class='schedule-title'>
                             <view class='big-title'>{{swiper1s.name}}</view>
                             <view class='sec-title'>消费时间:{{swiper1s.createtime}}</view>
                         </view>
-                        <!-- <view class='schedule-price'>
-
-                            <text class="schedule-price-info">{{swiper1s.time*0.5}}
-                                <text class="schedule-price-info-s">人次消费</text>
-                            </text>
-                        </view> -->
+                
                     </view>
                     <view class='schedule-footer'>
                             <view class='schedule-title'>
@@ -67,7 +54,7 @@
                             <view class='schedule-price'>
                                 <view class='sec-title sec-title-bg'>{{swiper1s.time*0.5}}人次消费</view> 
                             </view> 
-                        </view>
+                    </view>
                 </view>
             </swiper-item>
 

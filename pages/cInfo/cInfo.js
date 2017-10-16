@@ -59,4 +59,19 @@ Page({
   
   
 },
+openLocation(){
+  wx.getLocation({
+    type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+    success: function(res) {
+      var latitude = res.latitude
+      var longitude = res.longitude
+      wx.openLocation({
+        latitude:23.377404,
+        longitude: 116.718137,
+        scale: 28,
+        name:'汕头市'
+      })
+    }
+  })
+}
 })

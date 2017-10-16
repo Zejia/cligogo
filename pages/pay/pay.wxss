@@ -83,9 +83,9 @@ page{
 .tips{
     font-size: 30rpx;
     color: #a4a4a4;
-    width: 100%;
-    text-align: center;
-    margin: 20rpx auto;
+    width: 90%;
+    text-align: left;
+    margin: 40rpx;
 }
 .line-through{
     text-decoration: line-through;

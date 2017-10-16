@@ -6,10 +6,12 @@ Page({
      loading: false,
      comments:'非常满意,无可挑剔',
      farmid:null,
+     orderid:null
   },
-  onload(option){
+  onLoad(option){
     this.setData({
-      farmid: option.farmid
+      farmid: option.farmid,
+      orderid:option.orderid
     })
   },
   changeColor11:function(){
@@ -60,10 +62,11 @@ Page({
     wx.request({
       url: 'https://www.supermaker.com.cn/clzz/subEvaluate', 
       data: {
-        userid:this.data.userid,
-        farmid: this.data.farmid,
+        userid:userid,
+        farmid: farmid,
         star: this.data.flag2,
-        content: this.data.content
+        content: this.data.comments,
+        orderid:this.data.orderid
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -75,6 +78,20 @@ Page({
           duration: 2000
         })
         console.log(res.data)
+        setTimeout(function(){
+          wx.navigateBack({
+            delta: 1
+          })
+        },2000)
+        // wx.switchTab({
+        //   url:'../me/me'
+        // })
+      },
+      complete:function(){
+        that.setData({
+          loading: false,
+          disabled:false
+        })
       }
     })
   },

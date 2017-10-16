@@ -8,6 +8,7 @@ Page({
     farmid: '',
     farmname:'',
     startTime: "",
+    radio:"",
     carts: [{
         num: '1',
         selected: true
@@ -16,6 +17,12 @@ Page({
         num: '0',
         selected: true
       },
+    ],
+    items: [
+      {name: 'A套餐', value: 'A套餐',content:"套餐A详情套餐A详情套餐A详情套餐A详情套餐A详情套餐A详情"},
+      {name: 'B套餐', value: 'B套餐',content:"套餐B详情套餐B详情套餐B详情套餐B详情套餐B详情套餐B详情"},
+      {name: 'C套餐', value: 'C套餐',content:"套餐C详情套餐C详情套餐C详情套餐C详情套餐C详情套餐C详情"},
+      {name: 'D套餐', value: 'D套餐',content:"套餐D详情套餐D详情套餐D详情套餐D详情套餐D详情套餐D详情"},
     ],
     logs: null,
     minusStatuses: ['disabled', 'disabled', 'disabled', 'disabled', 'disabled']
@@ -245,6 +252,12 @@ Page({
           })
         }
       }
+    })
+  },
+  radioChange: function(e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      radio:e.detail.value
     })
   }
 })

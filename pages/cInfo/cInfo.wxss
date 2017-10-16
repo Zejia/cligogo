@@ -227,3 +227,25 @@
     width: 100%;
     background: #3c3c3c
 }
+.guide{
+    float: right;
+    color:blue;
+}
+.meal-warp{
+    display:flex;
+    align-items: center;
+    padding:10rpx 0;
+    border-bottom:1px solid #e7e7e7;
+}
+.meal-name{
+    flex-basis: 40%;
+    text-align: center;
+    font-size: 32rpx;
+}
+.meal-content{
+    flex-basis: 60%;
+    font-size: 26rpx;
+}
+.meal-name-lt{
+    font-size: 26rpx;
+}
