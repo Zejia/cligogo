@@ -12,7 +12,7 @@
          <!-- 地址 -->
          <view class="introduce-wrap ">
             <view class="resume_title" bindtap='openLocation'>
-                地址:陵水县陵水县陵水县 <text class="guide">导航 ></text>
+                地址:{{farm.address}} <text class="guide">导航 ></text>
             </view>
         </view>
          <!-- 套餐 -->
@@ -20,35 +20,19 @@
             <view class="resume_title">
                 套餐
             </view>
-            <view class="resume_main introduce">
+            <view class="resume_main introduce"  wx:for='{{tariff}}' wx:for-item='resume'>
                 <!-- 套餐A -->
                 <view class="meal-warp">
                     <view class="meal-name">
-                        A套餐
+                    {{resume.title}}
                         <view class="meal-name-lt">
-                            消费17个旅游点
+                            消费{{resume.man+resume.kid/2}}个旅游点
                         </view>
                     </view>
                     <view class="meal-content">
-                        套餐A详情套餐A详情套餐A详情套餐A详情套餐A详情套餐A详情
-                        套餐A详情套餐A详情套餐A详情套餐A详情套餐A详情套餐A详情
-                        套餐A详情套餐A详情套餐A详情套餐A详情套餐A详情套餐A详情
+                        {{resume.content}}
                     </view>
                 </view>
-                 <!-- 套餐B -->
-                 <view class="meal-warp">
-                        <view class="meal-name">
-                            B套餐
-                            <view class="meal-name-lt">
-                                消费17个旅游点
-                            </view>
-                        </view>
-                        <view class="meal-content">
-                            套餐B详情套餐B详情套餐B详情套餐B详情套餐B详情套餐B详情
-                            套餐B详情套餐B详情套餐B详情套餐B详情套餐B详情套餐B详情
-                            套餐B详情套餐B详情套餐B详情套餐B详情套餐B详情套餐B详情
-                        </view>
-                    </view>
             </view>
         </view>
         <!-- 场地介绍 -->

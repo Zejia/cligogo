@@ -65,21 +65,11 @@ Page({
           'content-type': 'application/json' // 默认值
       },
       success: function(res) {
-        console.log(ex)
         if(res.data.code==1){
-
-          console.log(res.data.time.length)
-         
-          if(ex==0){
-            that.setData({
-              swiper0:res.data.time
-            })
-          }else{
-            console.log('`31321231231212312312312123123')
-            that.setData({
-              swiper1:res.data.time
-            })
-          }
+          var key = "swiper"+ex
+          that.setData({
+          [key]:res.data.time
+          })
           wx.createSelectorQuery().selectAll('.schedule-list').boundingClientRect(function(rects){
             rects.forEach(function(rect){
               that.setData({

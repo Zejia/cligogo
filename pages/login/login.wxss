@@ -34,7 +34,8 @@ button, input, optgroup, select, textarea {
 }
 
 .button {
-    width: 100%;
+    width:92%;
+    margin:20rpx auto;
     background: #00ae66;
     height: 40px;
     line-height: 40px;

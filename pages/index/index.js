@@ -8,6 +8,7 @@ Page({
         menuFlag: 0,
         accordionFlag: 0,
         swiperIndex: 0,
+        cityid:null,
         commentMask: 0,
         swiper: null,
         circular: true,
@@ -54,8 +55,6 @@ Page({
         wx.setNavigationBarTitle({
             title: app.globalData.farmName
         })
-        // console.log(app.globalData.farm)
-        // console.log(this.data.markers)
         app.globalData.farm = null;
     },
     onLoad: function () {
@@ -86,34 +85,21 @@ Page({
                 type: 'wgs84',
                 success: function (res) {
                     //更新数据
-                    console.log(res.latitude)
-                    console.log(res.longitude)
                     that.setData({
                         latitude: res.latitude,
                         longitude: res.longitude
-                        // 'markers[0].latitude': '18.535607',
-                        // 'markers[0].longitude': '110.033913',
                     })
                     wx.request({
                         url: 'https://www.supermaker.com.cn/clzz/index',
                         data: {
                             lat: res.latitude,
                             lng: res.longitude
-                            // lat: '18.535607',
-                            // lng: '110.033913'
                         },
                         success: function (res) {
-
-                            // if (res.data.code > 1) {
-                            //     wx.showToast({
-                            //         title: "该城市暂未开通",
-                            //         icon: 'loading',
-                            //         duration: 2000
-                            //     })
-                            // }
                             that.setData({
                                 swiper: res.data.cct,
-                                markers: res.data.farmlist
+                                markers: res.data.farmlist,
+                                cityid:res.data.city.id
                             })
                         }
                     })
@@ -225,16 +211,6 @@ Page({
     },
     reset() {
         this.mapCtx.moveToLocation();
-        /*wx.getLocation({
-            type: 'wgs84',
-            success: function(res) {
-                that.setData({
-                    latitude: res.latitude,
-                    longitude: res.longitude,
-                    'scale': 16
-                })
-            }
-        })*/
     },
     selectAddress(e) {
         // var index = $(this).index();
@@ -266,6 +242,11 @@ Page({
     selectType() {
         wx.navigateTo({
             url: '../service/service?latitude=' + this.data.latitude + '&longitude=' + this.data.longitude + '',
+        })
+    },
+    selectlist(){
+        wx.navigateTo({
+            url: '../list/list?cityid=' + this.data.cityid
         })
     }
 })

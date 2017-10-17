@@ -36,7 +36,7 @@
         "selectedIconPath": "images/card.png",
         "iconPath": "images/card-g.png",
         "pagePath": "pages/pay/pay",
-        "text": "购卡"
+        "text": "购币"
       },
       {
         "selectedIconPath": "images/index-des.png",

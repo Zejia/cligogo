@@ -200,7 +200,7 @@
 }
 
 .resume-wrap {
-    padding-bottom: 50rpx;
+    padding-bottom: 100rpx;
 }
 
 .num{

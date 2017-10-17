@@ -53,7 +53,7 @@ button[type='warn']{
  border-radius: 0;
 }
 .card-num{
-    font-size: 34rpx;
+    font-size: 28rpx;
     margin-top: 10rpx;
     color: #3fb84c;
 }

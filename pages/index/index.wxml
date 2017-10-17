@@ -58,8 +58,11 @@
             <cover-view>3</cover-view>
         </cover-view>
     </cover-view> -->
-    <cover-view class='type box-shadow' bindtap='selectType'>
-        <cover-image class="type-img"  src='../../images/type.png' ></cover-image>
+    <cover-view class='type' bindtap='selectType'>
+            <cover-image class="type-img"  src='../../images/type.png' ></cover-image>
+        </cover-view>
+    <cover-view class='type list' bindtap='selectlist'>
+        <cover-image class="type-img"  src='../../images/list.png' ></cover-image>
     </cover-view>
     <cover-view class='mask'>
         <cover-image id='reset' src='../../images/reset.png' bindtap='reset'></cover-image>

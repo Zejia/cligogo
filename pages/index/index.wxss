@@ -1187,6 +1187,9 @@ cover-view {
     padding-top: 10rpx;
     padding-bottom: 10rpx;
 }
+.list{
+    top:0rpx;
+}
 .type-img{
     width:174rpx;
     height:90rpx;

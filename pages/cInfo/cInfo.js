@@ -5,6 +5,7 @@ Page({
     urls:null,
     evaluate:null,
     current:null,
+    tariff:null,
     farmid:''
   },
   onLoad: function (option) {
@@ -23,7 +24,8 @@ Page({
            farm:res.data.farm,
            urls:res.data.urls,
            current:res.data.current,
-           evaluate:res.data.evaluate
+           evaluate:res.data.evaluate,
+           tariff:res.data.tariff
         })
         wx.setNavigationBarTitle({
           title: res.data.farm.name
@@ -60,16 +62,17 @@ Page({
   
 },
 openLocation(){
+  var that = this;
   wx.getLocation({
     type: 'gcj02', //返回可以用于wx.openLocation的经纬度
     success: function(res) {
       var latitude = res.latitude
       var longitude = res.longitude
       wx.openLocation({
-        latitude:23.377404,
-        longitude: 116.718137,
+        latitude:that.data.farm.latitude,
+        longitude: that.data.farm.longitude,
         scale: 28,
-        name:'汕头市'
+        name:that.data.farm.address
       })
     }
   })

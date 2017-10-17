@@ -3,13 +3,13 @@
         <view class="header-name-img">
                 <view class="header-img" style="background:url({{avatarUrl}});background-size:100%;"></view>
                 <view class='header-title'>
-                        <view class="">{{nickName}}</view><view class='header-tel'>{{tel}}</view>
+                        <view class="">{{nickName}}</view><view class='header-tel'>会员卡 : 898000{{userid}}</view>
                 </view>
         </view>
        
         <view class='card-num'>
-                <view>剩余{{logs}}次</view>
-                <navigator class='pay-card' url="../pay/pay" open-type="switchTab">购买旅游卡</navigator>
+                <view>{{logs}}旅游币</view>
+                <navigator class='pay-card' url="../pay/pay" open-type="switchTab">购买旅游币</navigator>
         </view>
     </view>
     <ul class='setting-list'>
@@ -20,7 +20,7 @@
         </navigator>
         <navigator url="../coupon/coupon"   hover-class="other-navigator-hover" style="border-bottom:40rpx solid #f4f4f4;">
             <view>
-                购销记录
+                消费记录
             </view>
         </navigator>
     </ul>

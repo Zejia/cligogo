@@ -3,36 +3,25 @@
         <li data-index='1' bindtap="toggle" class="{{active==1?'open':''}}">
             <div class="link">问题一<i class="iconfont icon-chevron-copy-copy-copy-copy-copy fa-chevron-down"></i></div>
             <ul class="submenu" wx:if="{{active=='1'}}">
-                <li><a href="#">Photoshop</a></li>
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">CSS</a></li>
-                <li><a href="#">Maquetacion web</a></li>
+                <li><a href="#">问题一</a></li>
             </ul>
         </li>
         <li data-index='2' bindtap="toggle" class="{{active==2?'open':''}}">
             <div class="link">问题二<i class="iconfont icon-chevron-copy-copy-copy-copy-copy fa-chevron-down"></i></div>
             <ul class="submenu" wx:if="{{active=='2'}}">
-                <li><a href="#">Javascript</a></li>
-                <li><a href="#">jQuery</a></li>
-                <li><a href="#">Frameworks javascript</a></li>
+                <li><a href="#">问题二</a></li>
             </ul>
         </li>
         <li data-index='3' bindtap="toggle" class="{{active==3?'open':''}}">
             <div class="link">问题三<i class="iconfont icon-chevron-copy-copy-copy-copy-copy fa-chevron-down"></i></div>
             <ul class="submenu" wx:if="{{active=='3'}}">
-                <li><a href="#">Tablets</a></li>
-                <li><a href="#">Dispositivos mobiles</a></li>
-                <li><a href="#">Medios de escritorio</a></li>
-                <li><a href="#">Otros dispositivos</a></li>
+                <li><a href="#">问题三</a></li>
             </ul>
         </li>
         <li data-index='4' bindtap="toggle" class="{{active==4?'open':''}}">
             <div class="link">问题四<i class="iconfont icon-chevron-copy-copy-copy-copy-copy fa-chevron-down"></i></div>
             <ul class="submenu" wx:if="{{active=='4'}}">
-                <li><a href="#">Google</a></li>
-                <li><a href="#">Bing</a></li>
-                <li><a href="#">Yahoo</a></li>
-                <li><a href="#">Otros buscadores</a></li>
+                <li><a href="#">问题四</a></li>
             </ul>
         </li>
         <view class='footer'>

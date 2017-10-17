@@ -5,78 +5,42 @@
 <text class=''>推荐给朋友，可获得最高200元优惠券，<text class='tips-share'>去分享</text></text>
 </view> -->
 
-    <view class="swiper-tab">
-        <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">无人农庄</view>
-        <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">美丽乡村</view>
-        <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">农活采摘</view>
-        <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">乡村达人</view>
-    </view>
+    <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+        <view wx:for="{{info}}" wx:for-item='infos' bindtap="swichNav" data-current="{{index}}" class="scroll-view-item_H demo-text-1 {{currentTab==index ? 'on' : ''}}">{{infos}}</view>
+    </scroll-view>
     <scroll-view scroll-y style="height:{{winHeight-31}}px">
         <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{docHeight}}px" bindchange="bindChange">
             <!-- 我是哈哈 -->
 
-            <swiper-item>
-             
-                <view class='schedule-list'>
+            <swiper-item wx:for='{{swiper}}'>
+                <!-- <view class='none' wx:if="{{swiper.length<=0}}">
+                    <image mode='scaleToFill' src='../../../images/none.png'></image>
+                </view> -->
+                <navigator wx:for="{{swiper[index]}}" wx:for-item="swipers" url="../cInfo/cInfo?id={{swipers.id}}" class='schedule-list'>
                     <view class='schedule-header'>
                         <view class='schedule-title'>
-                            <view class='big-title'><text>乡村童年</text> <view class="tag">童年达人</view> <view class="tag">童年达人</view><view class="tag">童年达人</view></view>
-                            <view class='sec-title'>if you say sth when i happy ,i pm you  i can believe you </view>
+                            <view class='big-title'>
+                                <text>{{swipers.name}}</text>
+                                <view class="tag">童年达人</view>
+                                <view class="tag">童年达人</view>
+                                <view class="tag">童年达人</view>
+                            </view>
+                            <view class='sec-title'>{{swipers.content}}</view>
                         </view>
-                   
-                    </view>
-                
-                    <view class='schedule-footer'>
-                            <view class='schedule-title'>
-                                <view class='sec-title'>地址:陵水光坡镇青山村委会</view> 
-                            </view>   
-                            <view class='schedule-price'>
-                                <!-- <view class='sec-title sec-title-bg'>{{log.time*0.5}}人次</view>  -->
-                            </view> 
-                        </view>
-                </view>
-            </swiper-item>
-            <!-- 我是呵呵 -->
-            <swiper-item>
-            
-                <view  class='schedule-list gray'>
-                    <view class='schedule-header'>
-                        <view class='schedule-title'>
-                            <view class='big-title'>{{swiper1s.name}}</view>
-                            <view class='sec-title'>消费时间:{{swiper1s.createtime}}</view>
-                        </view>
-                
-                    </view>
-                    <view class='schedule-footer'>
-                            <view class='schedule-title'>
-                                <view class='gray sec-title'></view> 
-                            </view>   
-                            <view class='schedule-price'>
-                                <view class='sec-title sec-title-bg'>{{swiper1s.time*0.5}}人次消费</view> 
-                            </view> 
-                    </view>
-                </view>
-            </swiper-item>
 
+                    </view>
+
+                    <view class='schedule-footer'>
+                        <view class='schedule-title'>
+                            <view class='sec-title'>地址:{{swipers.address}}</view>
+                        </view>
+                        <view class='schedule-price'>
+                            <!-- <view class='sec-title sec-title-bg'>{{log.time*0.5}}人次</view>  -->
+                        </view>
+                    </view>
+                </navigator>
+            </swiper-item>
         </swiper>
     </scroll-view>
-
-    <!-- <view class='schedule-list gray'>
-        <view class='schedule-header'>
-            <view class='schedule-title'>
-                <view class='big-title'>乡村童年</view>
-                <view class='sec-title'>过期</view>
-            </view>
-            <view class='schedule-price'>
-                    消费
-                <text class="schedule-price-info">2</text>
-            </view>
-        </view>
-        <view class='schedule-footer'>
-            <view class='schedule-title'>
-               <view class='gray sec-title'>所有城市适用</view>
-            </view>
-        </view>
-    </view> -->
 
 </view>

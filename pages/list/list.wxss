@@ -1,93 +1,113 @@
-page{
-    background: #f3f4f5;
+page {
+    background: #f3f1f4;
 }
-.schedule-list{
+
+.schedule-list {
     background: #fff;
     width: 90%;
     margin: 0 auto;
     border-bottom: 8rpx solid #3fb84c;
     color: #3fb84c;
     border-radius: 10rpx;
-    -webkit-box-shadow: 0px 5px 21px 0px rgba(222,219,222,1);
-    -moz-box-shadow: 0px 5px 21px 0px rgba(222,219,222,1);
-    box-shadow: 0px 5px 21px 0px rgba(222,219,222,1);
+    -webkit-box-shadow: 0px 5px 21px 0px rgba(222, 219, 222, 1);
+    -moz-box-shadow: 0px 5px 21px 0px rgba(222, 219, 222, 1);
+    box-shadow: 0px 5px 21px 0px rgba(222, 219, 222, 1);
 }
-.schedule-header{
+
+.schedule-header {
     padding: 20rpx;
     margin: 40rpx 20rpx;
     display: flex;
     justify-content: space-between;
 }
-.schedule-footer{
+
+.schedule-footer {
     padding: 0 20rpx;
     margin: 0 20rpx;
     margin-bottom: 10rpx;
     display: flex;
     justify-content: space-between;
 }
-.big-title{
+
+.big-title {
     font-size: 45rpx;
     margin-bottom: 10rpx;
 }
-.sec-title{
+
+.sec-title {
     font-size: 28rpx;
     margin-bottom: 10rpx;
-
 }
-.schedule-price{
+
+.schedule-price {
     font-size: 40rpx;
 }
-.schedule-price-info{
+
+.schedule-price-info {
     font-size: 60rpx;
 }
-.gray{
+
+.gray {
     color: #a4a4a4;
 }
-.none-data{
+
+.none-data {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     font-size: 30rpx;
     color: #a4a4a4;
     width: 100%;
     text-align: center;
 }
-.tips-share{
+
+.tips-share {
     margin-top: 20rpx;
     text-decoration: underline;
     color: #ff0000;
 }
-.tips{
+
+.tips {
     font-size: 30rpx;
     color: #a4a4a4;
     width: 100%;
     text-align: center;
     margin: 20rpx auto;
 }
-/**index.wxss**/  
-.swiper-tab{  
-    width: 100%;  
-    text-align: center;  
+
+
+/**index.wxss**/
+
+.swiper-tab {
+    width: 100%;
+    text-align: center;
     line-height: 80rpx;
-    background:#fff;
-}  
-.swiper-tab-list{  font-size: 30rpx;  
-    display: inline-block;  
-    width: 25%;  
-    color: #777777;  
-}  
-.on{ color: #3fb84c;  
-    border-bottom: 5rpx solid #3fb84c;}  
-  
-.swiper-box{ display: block;  width: 100%; overflow: hidden; }  
-.swiper-box view{  
-   text-align:left;
-}  
-.schedule-price-info-s{
+    background: #fff;
+}
+
+.swiper-tab-list {
+    font-size: 30rpx;
+    display: inline-block;
+    width: 25%;
+    color: #777777;
+}
+
+.swiper-box {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.swiper-box view {
+    text-align: left;
+}
+
+.schedule-price-info-s {
     font-size: 40rpx;
 }
-swiper-item{
+
+swiper-item {
     height: auto!important;
 }
 
@@ -95,12 +115,57 @@ swiper-item{
     top: 10%;
 }
 
-.tag{
+.tag {
     display: inline-block;
     font-size: 24rpx;
     border-radius: 5rpx;
-    border:1px solid #3fb84c;
-    padding:5rpx 8rpx;
-    margin:10rpx;
+    border: 1px solid #3fb84c;
+    padding: 5rpx 8rpx;
+    margin: 10rpx;
     vertical-align: top;
+}
+
+.page-section-spacing {
+    position: relative;
+}
+
+.scroll-view_H {
+    white-space: nowrap;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    line-height: 80rpx;
+    background: #fff;
+}
+
+.scroll-view-item {
+    height: 80rpx;
+}
+
+.scroll-view-item_H {
+    font-size: 30rpx;
+    display: inline-block;
+    width: 28%;
+    color: #777777;
+}
+
+.swiper-activity {
+    color: #f09f5d;
+}
+
+.on {
+    color: #3fb84c;
+    border-bottom: 5rpx solid #3fb84c;
+}
+
+.none {
+    font-size: 30rpx;
+    width: 100%;
+    height: 100%;
+    background: #f3f1f4;
+}
+
+.none image {
+    width: 100%;
+    
 }

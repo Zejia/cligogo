@@ -5,7 +5,8 @@ Page({
     avatarUrl: null,
     tel: null,
     logs: null,
-    textCatalogue: null
+    textCatalogue: null,
+    userid:null,
   },
   onLoad() {
     this.textCatalogue();
@@ -33,7 +34,8 @@ Page({
     this.setData({
       nickName: userInfo.nickName,
       avatarUrl: userInfo.avatarUrl,
-      tel: user.tel
+      tel: user.tel,
+      userid:user.id
     })
     this.useTime();
   },
