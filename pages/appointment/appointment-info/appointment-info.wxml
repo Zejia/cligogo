@@ -71,7 +71,15 @@
                         </view>
                         <label class="radio radio-warp radio-special-warp"  wx:for="{{items}}" wx:for-item='project'>
                             <view class="radio-special-left">
-                                <radio value="{{index}}" checked="{{project.checked}}" />{{project.title}}
+                                <radio value="{{index}}" checked="{{project.checked}}" />
+                                
+                            </view>
+                            <view class="radio-special-middle">
+                                {{project.title}}
+                                <view class="meal-name-lt">
+                                    (消费{{project.man+project.kid/2}}个旅游点)
+                                </view>
+                                
                             </view>
                             <view class="radio-special-right">
                                     {{project.content}}

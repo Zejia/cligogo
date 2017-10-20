@@ -238,21 +238,7 @@ Page({
 
         })
         if (that.data.logs <= 0) {
-          wx.showModal({
-            title: '提示',
-            content: '您出游卡次数不足请及时够买',
-            success: function (res) {
-              if (res.confirm) {
-                wx.switchTab({
-                  url: '../../pay/pay'
-                })
-              } else if (res.cancel) {
-                wx.navigateBack({
-                  delta: 1
-                })
-              }
-            }
-          })
+          this.showModel()
         }
       }
     })
@@ -269,11 +255,16 @@ Page({
     console.log('radio发生change事件，携带value值为：', e.detail.value)
     var key1 = "carts[0].num"
     var key2 = "carts[1].num"
-    console.log(this.data.items[e.detail.value].man)
+    let logsNum = this.data.logs - this.data.items[e.detail.value].man+(this.data.items[e.detail.value].kid/2)+1;
+    console.log(logsNum)
+    // console.log(this.data.items[e.detail.value].man)
+    if(logsNum<0){
+      this.showModel()
+    }
     this.setData({
       [key1]:this.data.items[e.detail.value].man,
       [key2]:this.data.items[e.detail.value].kid,
-      logs: this.data.logs - this.data.items[e.detail.value].man+(this.data.items[e.detail.value].kid/2)+1,
+      logs: logsNum,
       tarifftype:this.data.items[e.detail.value].id
     })
   },
@@ -303,6 +294,23 @@ Page({
       [key1]:1,
       [key2]:0,
       logs:this.data._num,
+    })
+  },
+  showModel(){
+    wx.showModal({
+      title: '提示',
+      content: '您出游卡次数不足请及时够买',
+      success: function (res) {
+        if (res.confirm) {
+          wx.switchTab({
+            url: '../../pay/pay'
+          })
+        } else if (res.cancel) {
+          wx.navigateBack({
+            delta: 1
+          })
+        }
+      }
     })
   }
 })

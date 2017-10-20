@@ -67,7 +67,7 @@
     <cover-view class='mask'>
         <cover-image id='reset' src='../../images/reset.png' bindtap='reset'></cover-image>
         <cover-image id='scanCode' bindtap='scanCode' src='../../images/scan.png'></cover-image>
-        <cover-image id='kefu' bindtap='accordion' src='../../images/kefu.png'></cover-image>
+        <!-- <cover-image id='kefu' bindtap='accordion' src='../../images/kefu.png'></cover-image> -->
     </cover-view>
 
 

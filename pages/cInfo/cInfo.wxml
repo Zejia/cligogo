@@ -1,68 +1,71 @@
- <!--农庄详情页蒙层 -->
- <import src="../../wxParse/wxParse.wxml"/>
-    <view  class='farm-mask masks animated'>
-        <div class="_1dwlm" bindtap='previewImages'>
-                <image src="{{current}}" mode='widthFix' class="_2RqbK"></image>
-                <div class="_3tQEs">
-                    <span class='num'>{{urls.length}}</span>
-                    <image class="_3tQEs_img" src="https://img.supermonkey.com.cn/webapp/wx2/box/box_image_icon.png" style="height: 12px; width: 14px;                     "></image>
-                </div>
+<!--农庄详情页蒙层 -->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='farm-mask masks animated'>
+    <div class="_1dwlm" bindtap='previewImages'>
+        <image src="{{current}}" mode='widthFix' class="_2RqbK"></image>
+        <div class="_3tQEs">
+            <span class='num'>{{urls.length}}</span>
+            <image class="_3tQEs_img" src="https://img.supermonkey.com.cn/webapp/wx2/box/box_image_icon.png" style="height: 12px; width: 14px;                     "></image>
         </div>
-         <!-- 地址 -->
-         <view class="introduce-wrap ">
-            <view class="resume_title" bindtap='openLocation'>
-                地址:{{farm.address}} <text class="guide">导航 ></text>
-            </view>
+    </div>
+    <!-- 地址 -->
+    <view class="introduce-wrap ">
+        <view class="resume_title" bindtap='openLocation'>
+            地址:{{farm.address}}
+            <text class="guide">导航 ></text>
         </view>
-         <!-- 套餐 -->
-         <view class="introduce-wrap ">
-            <view class="resume_title">
-                套餐
-            </view>
-            <view class="resume_main introduce"  wx:for='{{tariff}}' wx:for-item='resume'>
-                <!-- 套餐A -->
-                <view class="meal-warp">
-                    <view class="meal-name">
-                    {{resume.title}}
-                        <view class="meal-name-lt">
-                            消费{{resume.man+resume.kid/2}}个旅游点
-                        </view>
-                    </view>
-                    <view class="meal-content">
-                        {{resume.content}}
-                    </view>
-                </view>
-            </view>
-        </view>
-        <!-- 场地介绍 -->
-        <view class="introduce-wrap ">
-            <view class="resume_title">
-                场地介绍
-            </view>
-            <view class="resume_main introduce">
-         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
-            </view>
-        </view>
-        <!-- 用户评价 -->
-        <view class="resume-wrap">
-            <view class="resume_title">
-                用户评价
-            </view>
-            <view class="resume_main">
-                <view class="message_user" wx:for='{{evaluate}}' wx:for-item='evaluates'>
-                    <view class="message_head">
-                        <image class='header' src="{{evaluates.headurl}}"></image>
-                    </view>
-                    <view class='message_name'>
-                        <view class="uesrname">{{evaluates.nickname}}</view>
-                        <view class="evaluatecontent">{{evaluates.content}}</view>
-                        <view class="message_time">
-                            <test class="createtime">评论时间:{{evaluates.createtime}}</test>
-                        </view>
-                    </view>
-                </view>
-               
-            </view>
-        </view>
-        <button class='appBtn'  type='primary' bindtap="appointment">马上预约</button>
     </view>
+    <!-- 套餐 -->
+    <view class="introduce-wrap ">
+        <view class="resume_title">
+            套餐
+        </view>
+        <view class="resume_main introduce" wx:for='{{tariff}}' wx:for-item='resume'>
+            <!-- 套餐A -->
+            <view class="meal-warp">
+                <view class="meal-name">
+                    <view class="meal-name-big">
+                        {{resume.title}}
+                    </view>
+                    <view class="meal-name-lt">
+                        (消费{{resume.man+resume.kid/2}}个旅游点)
+                    </view>
+                </view>
+                <view class="meal-content">
+                    {{resume.content}}
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 场地介绍 -->
+    <view class="introduce-wrap ">
+        <view class="resume_title">
+            场地介绍
+        </view>
+        <view class="resume_main introduce">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        </view>
+    </view>
+    <!-- 用户评价 -->
+    <view class="resume-wrap">
+        <view class="resume_title">
+            用户评价
+        </view>
+        <view class="resume_main">
+            <view class="message_user" wx:for='{{evaluate}}' wx:for-item='evaluates'>
+                <view class="message_head">
+                    <image class='header' src="{{evaluates.headurl}}"></image>
+                </view>
+                <view class='message_name'>
+                    <view class="uesrname">{{evaluates.nickname}}</view>
+                    <view class="evaluatecontent">{{evaluates.content}}</view>
+                    <view class="message_time">
+                        <test class="createtime">评论时间:{{evaluates.createtime}}</test>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+    <button class='appBtn' type='primary' bindtap="appointment">马上预约</button>
+</view>

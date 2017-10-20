@@ -84,9 +84,9 @@ Page({
   onShareAppMessage: function () {
     var that = this;
    return {
-     title: '村里走走',
-     desc: '村里走走'+that.data.logs.name,
-     path: 'pages/schedule-info/schedule-info?orderid='+that.data.orderid
+     title: '农餐、农宿、农玩、农游、果场、赏花、农品购物',
+     imageUrl:"http://cdnimg.bama77.com/13.jpg",
+     path: 'pages/index/index'
    }
  }
 })

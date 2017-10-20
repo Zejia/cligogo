@@ -375,12 +375,22 @@ p {
     border-bottom: 0;
 }
 .radio-special-left{
-    flex-basis: 40%;
+    flex-basis: 10%;
+}
+.radio-special-middle{
+    text-align: center;
+    color:rgb(39, 38, 38);
+    
 }
 .radio-special-right{
-    flex-basis: 60%;
+    flex-basis: 50%;
+    font-size: 25rpx;
 }
 .radio-special-warp{
     border-bottom: 1px solid #eee;
     font-size: 30rpx;
+}
+.meal-name-lt{
+    font-size: 25rpx;
+    color: #666;
 }
