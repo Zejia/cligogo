@@ -2,7 +2,7 @@
 var app = getApp();
 Page({
   data: {
-    
+    swiper:null
   },
   onLoad(e) {
     console.log(e)
@@ -11,8 +11,7 @@ Page({
       url: 'https://www.supermaker.com.cn/clzz/index',
       data: {
           lat: e.latitude,
-          lng: e.longitude,
-          swiper:null
+          lng: e.longitude
       },
       success: function (res) {
           if(res.data.code > 1){

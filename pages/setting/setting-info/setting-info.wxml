@@ -1,5 +1,6 @@
 <!--logs.wxml-->
+<import src="../../../wxParse/wxParse.wxml"/>
 <view class="container">
 
-{{textInfo.content}}
+ <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
 </view>

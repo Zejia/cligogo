@@ -1,5 +1,5 @@
 
-
+@import "../../wxParse/wxParse.wxss";
 /*标题*/
 
 .header {
@@ -41,17 +41,17 @@
     width: 100%;
     height: auto;
     position: relative;
+    
 }
 
 ._1dwlm ._2RqbK {
     width: 100%;
-    height: 340rpx;
 }
 
 ._1dwlm ._3tQEs {
     position: absolute;
     left: 14px;
-    bottom: 14px;
+    bottom: 30px;
     z-index: 2;
     color: #fff;
     font-size: 14px;
@@ -62,7 +62,7 @@
 
 .resume_title {
     color: #262626;
-    font-size: 13px;
+    font-size: 14px;
     padding: 30rpx;
     border-bottom: 1px solid #e7e7e7;
 }
@@ -193,7 +193,7 @@
 }
 
 .introduce {
-    padding: 20rpx;
+    padding:0  20rpx;
     box-sizing: border-box;
     color: #8f8f94;
     line-height: 1.2;

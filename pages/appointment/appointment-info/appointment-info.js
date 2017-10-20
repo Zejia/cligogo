@@ -1,6 +1,7 @@
 //logs.js
 Page({
   data: {
+    _num:null,
     tel: '',
     name: '',
     date: '',
@@ -9,6 +10,7 @@ Page({
     farmname:'',
     startTime: "",
     radio:"",
+    tarifftype:"",
     carts: [{
         num: '1',
         selected: true
@@ -19,10 +21,7 @@ Page({
       },
     ],
     items: [
-      {name: 'A套餐', value: 'A套餐',content:"套餐A详情套餐A详情套餐A详情套餐A详情套餐A详情套餐A详情"},
-      {name: 'B套餐', value: 'B套餐',content:"套餐B详情套餐B详情套餐B详情套餐B详情套餐B详情套餐B详情"},
-      {name: 'C套餐', value: 'C套餐',content:"套餐C详情套餐C详情套餐C详情套餐C详情套餐C详情套餐C详情"},
-      {name: 'D套餐', value: 'D套餐',content:"套餐D详情套餐D详情套餐D详情套餐D详情套餐D详情套餐D详情"},
+      
     ],
     logs: null,
     minusStatuses: ['disabled', 'disabled', 'disabled', 'disabled', 'disabled']
@@ -36,6 +35,7 @@ Page({
       farmid: option.farmid,
       farmname:option.farmname
     })
+    this.tariffByfarm();
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -149,7 +149,8 @@ Page({
       man = that.data.carts[0].num,
       kid = that.data.carts[1].num,
       farmid = that.data.farmid,
-      userid = user.id
+      userid = user.id,
+      tarifftyps = that.data.tarifftype
       if (!name) {
         wx.showToast({
           title: '联系人错误',
@@ -193,7 +194,8 @@ Page({
         man: man,
         kid: kid,
         farmid: farmid,
-        userid: userid
+        userid: userid,
+        tarifftype:tarifftyps
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -231,7 +233,8 @@ Page({
       success: function (res) {
         console.log(res.data)
         that.setData({
-          logs: res.data.time - 1
+          logs: res.data.time - 1,
+          _num: res.data.time - 1
 
         })
         if (that.data.logs <= 0) {
@@ -255,9 +258,51 @@ Page({
     })
   },
   radioChange: function(e) {
+    this.changeStatus()
+    
+    if(!e.detail.value){
+      this.setData({
+        tarifftype:""
+      })
+      return false;
+    }
     console.log('radio发生change事件，携带value值为：', e.detail.value)
+    var key1 = "carts[0].num"
+    var key2 = "carts[1].num"
+    console.log(this.data.items[e.detail.value].man)
     this.setData({
-      radio:e.detail.value
+      [key1]:this.data.items[e.detail.value].man,
+      [key2]:this.data.items[e.detail.value].kid,
+      logs: this.data.logs - this.data.items[e.detail.value].man+(this.data.items[e.detail.value].kid/2)+1,
+      tarifftype:this.data.items[e.detail.value].id
+    })
+  },
+  tariffByfarm(){
+    var that = this;
+    wx.request({
+      url: 'https://www.supermaker.com.cn/clzz/tariffByfarm',
+      data: {
+        farmid:this.data.farmid
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          items:res.data.type
+        })
+       
+      }
+    })
+  },
+  changeStatus(){
+    var key1 = "carts[0].num"
+    var key2 = "carts[1].num"
+    this.setData({
+      [key1]:1,
+      [key2]:0,
+      logs:this.data._num,
     })
   }
 })

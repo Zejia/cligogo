@@ -10,7 +10,8 @@ Page({
     currentTab: 0,  
     cityid:null,
     info:null,
-    swiper:null
+    swiper:null,
+    tips:[],
   },
   onLoad: function (option) {
     var that = this;  
@@ -27,6 +28,17 @@ Page({
           info:res.data.type,
           swiper:res.data.list
        })
+       console.log(res.data.list.length)
+       var tip = [];
+       for (let i = 0; i < res.data.list.length; i++) {
+         for (let k = 0; k < res.data.list[i].length; k++) {
+           var element = res.data.list[i][k].tips;
+           tip.push(element.split('|'))
+         }
+       }
+        that.setData({
+          tip
+          })
       }
     })
       /** 
@@ -90,6 +102,8 @@ Page({
           that.setData({
             [key]:res.data.farm
           })
+          
+          
           wx.createSelectorQuery().selectAll('.schedule-list').boundingClientRect(function(rects){
             rects.forEach(function(rect){
               that.setData({

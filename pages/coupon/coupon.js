@@ -23,6 +23,13 @@ Page({
             winWidth: res.windowWidth,  
             winHeight: res.windowHeight  
           });  
+          wx.createSelectorQuery().selectAll('.swiper-tab').boundingClientRect(function(rects){
+            rects.forEach(function(rect){
+              that.setData({
+                docHeight:res.windowHeight-rect.height
+              })
+            })
+          }).exec()
         }  
       });  
     this.fetchData(0);
@@ -70,13 +77,7 @@ Page({
           that.setData({
           [key]:res.data.time
           })
-          wx.createSelectorQuery().selectAll('.schedule-list').boundingClientRect(function(rects){
-            rects.forEach(function(rect){
-              that.setData({
-                docHeight:res.data.time.length*rect.height+200
-              })
-            })
-          }).exec()
+         
           // var time = []
           // for (let i = 0; i < res.data.time.length; i++) {
           //   let dataImg = res.data.time[i].s+'';

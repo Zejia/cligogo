@@ -1,13 +1,12 @@
  <!--农庄详情页蒙层 -->
+ <import src="../../wxParse/wxParse.wxml"/>
     <view  class='farm-mask masks animated'>
-        <div class="_1dwlm">
-            <div bindtap='previewImages'>
-                <image src="{{current}}" mode='aspectFit' class="_2RqbK"></image>
+        <div class="_1dwlm" bindtap='previewImages'>
+                <image src="{{current}}" mode='widthFix' class="_2RqbK"></image>
                 <div class="_3tQEs">
-                    <span class='num'>{{imgs.length}}</span>
+                    <span class='num'>{{urls.length}}</span>
                     <image class="_3tQEs_img" src="https://img.supermonkey.com.cn/webapp/wx2/box/box_image_icon.png" style="height: 12px; width: 14px;                     "></image>
                 </div>
-            </div>
         </div>
          <!-- 地址 -->
          <view class="introduce-wrap ">
@@ -41,8 +40,7 @@
                 场地介绍
             </view>
             <view class="resume_main introduce">
-                {{farm.content}}
-                
+         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
             </view>
         </view>
         <!-- 用户评价 -->

@@ -16,16 +16,14 @@
                 <!-- <view class='none' wx:if="{{swiper.length<=0}}">
                     <image mode='scaleToFill' src='../../../images/none.png'></image>
                 </view> -->
-                <navigator wx:for="{{swiper[index]}}" wx:for-item="swipers" url="../cInfo/cInfo?id={{swipers.id}}" class='schedule-list'>
+                <navigator wx:for="{{swiper[index]}}" wx:for-index="idx" wx:for-item="swipers" url="../cInfo/cInfo?id={{swipers.id}}" class='schedule-list'>
                     <view class='schedule-header'>
                         <view class='schedule-title'>
                             <view class='big-title'>
                                 <text>{{swipers.name}}</text>
-                                <view class="tag">童年达人</view>
-                                <view class="tag">童年达人</view>
-                                <view class="tag">童年达人</view>
+                                <view wx:for="{{tip[idx]}}" class="tag">{{tip[idx][index]}}</view>
                             </view>
-                            <view class='sec-title'>{{swipers.content}}</view>
+                            <!-- <view class='sec-title'>{{swipers.content}}</view> -->
                         </view>
 
                     </view>
