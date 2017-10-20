@@ -158,7 +158,7 @@ Page({
     scanCode() {
         wx.showModal({
             title: '村里走走',
-            content: '到达无人农庄，扫码二维码可控制所有设施。',
+            content: '扫描无人农庄大门、冰箱、储物箱旁边的二维码，实现控制开关门。',
             success: function (res) {
                 if (res.confirm) {
                     wx.scanCode({

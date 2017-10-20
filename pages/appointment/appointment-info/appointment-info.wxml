@@ -35,7 +35,7 @@
                 <li>
                     <span class="cellname">项目选择
                         <view class="cellname-title" style="float:right;">
-                            <text>出游卡剩余{{logs}}人次　</text>
+                            <text>剩余{{logs}}旅游币　</text>
                             <navigator class='paynow' url="../../pay/pay" open-type="switchTab">购卡</navigator>
                         </view>
                     </span>
@@ -44,7 +44,7 @@
                     <radio-group class="radio-group" bindchange="radioChange">
                         <label class="radio radio-warp">
                             <view class="radio-common-left">
-                                <radio value="" checked="true" />按出行人数
+                                <radio value="" checked="{{checked}}" />按出行人数
                             </view>
                             <view class="radio-common-right">
                                 <li>

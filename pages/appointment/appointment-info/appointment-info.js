@@ -11,6 +11,7 @@ Page({
     startTime: "",
     radio:"",
     tarifftype:"",
+    checked:true,  
     carts: [{
         num: '1',
         selected: true
@@ -195,7 +196,7 @@ Page({
         kid: kid,
         farmid: farmid,
         userid: userid,
-        tarifftype:tarifftyps
+        tarifftype:tarifftyps,
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -238,7 +239,23 @@ Page({
 
         })
         if (that.data.logs <= 0) {
-          this.showModel()
+          wx.showModal({
+            title: '提示',
+            content: '您旅游币不足一个请及时够买。',
+            cancelText:'重新选择',
+            confirmText:'买旅游币',
+            success: function (res) {
+              if (res.confirm) {
+                wx.switchTab({
+                  url: '../../pay/pay'
+                })
+              } else if (res.cancel) {
+                wx.navigateBack({
+                  delta: 1
+                })
+              }
+            }
+          })
         }
       }
     })
@@ -253,13 +270,32 @@ Page({
       return false;
     }
     console.log('radio发生change事件，携带value值为：', e.detail.value)
+    var that = this;
     var key1 = "carts[0].num"
     var key2 = "carts[1].num"
     let logsNum = this.data.logs - this.data.items[e.detail.value].man+(this.data.items[e.detail.value].kid/2)+1;
     console.log(logsNum)
     // console.log(this.data.items[e.detail.value].man)
     if(logsNum<0){
-      this.showModel()
+      wx.showModal({
+        title: '提示',
+        content: '该套餐需要'+(this.data.items[e.detail.value].man+(this.data.items[e.detail.value].kid/2))+'个旅游币，您的旅游币为'+this.data.logs+'个，不足以支付。',
+        cancelText:'重新选择',
+        confirmText:'买旅游币',
+        success: function (res) {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '../../pay/pay'
+            })
+          } else if (res.cancel) {
+            that.changeStatus()
+            that.setData({
+              checked:true
+            })
+          }
+        }
+      })
+      return false;
     }
     this.setData({
       [key1]:this.data.items[e.detail.value].man,
