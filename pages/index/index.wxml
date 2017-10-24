@@ -64,6 +64,7 @@
     <cover-view class='type list' bindtap='selectlist'>
         <cover-image class="type-img"  src='../../images/list.png' ></cover-image>
     </cover-view>
+
     <cover-view class='mask'>
         <cover-image id='reset' src='../../images/reset.png' bindtap='reset'></cover-image>
         <cover-image id='scanCode' bindtap='scanCode' src='../../images/scan.png'></cover-image>

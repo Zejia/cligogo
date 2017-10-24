@@ -1,11 +1,16 @@
 <view class="menu-mask masks" style="display:block">
-   
+
     <view class='info-mask-ul menu-mask-ul' id='menu-mask-ul'>
-            <view class='cover-li' data-id='-1' bindtap='selectAddress' >
-                    <image class='icon' src="../../images/index.png"></image>
-                    <view class='menu-name'>全部</view>
-                </view>
-        <view class='cover-li' wx:for="{{swiper}}" wx:for-item='swipers' data-id='{{swipers.id}}' data-index='{{index}}' data-name='{{swipers.name}}' bindtap='selectAddress'>
+        <view class='cover-li' data-id='-1' bindtap='selectAddress'>
+            <image class='icon' src="../../images/index.png"></image>
+            <view class='menu-name'>全部</view>
+        </view>
+        <view class='cover-li' bindtap='shopping'>
+            <image class='icon' src="../../images/index.png"></image>
+            <view class='menu-name'>村好货</view>
+        </view>
+        <view class='cover-li' wx:for="{{swiper}}" wx:for-item='swipers' data-id='{{swipers.id}}' data-index='{{index}}' data-name='{{swipers.name}}'
+            bindtap='selectAddress'>
             <image class='icon' src="../../images/{{swipers.icon}}.png"></image>
             <view class='menu-name'>{{swipers.name}}</view>
         </view>

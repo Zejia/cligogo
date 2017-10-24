@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/me/me",
     "pages/schedule/schedule",
@@ -20,13 +20,15 @@
     "pages/login/login",
     "pages/service/service",
     "pages/comment/comment",
-    "pages/list/list"
+    "pages/list/list",
+    "pages/shopping/shopping-list/shopping-list",
+    "pages/shopping/shopping-info/shopping-info"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "村里走走",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "selectedColor": "#0e932e",
@@ -52,5 +54,4 @@
       }
     ]
   }
-
 }

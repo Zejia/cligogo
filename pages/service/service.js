@@ -61,5 +61,10 @@ Page({
             // })
         }
     })
+  },
+  shopping(){
+    wx.navigateTo({
+        url:"../shopping/shopping-list/shopping-list"
+    })
   }
 })

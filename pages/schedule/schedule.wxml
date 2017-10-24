@@ -18,7 +18,8 @@
                    <view class='gray sec-title'>{{log.status}}</view> 
                </view>   
                <view class='schedule-price'>
-                   <view class='sec-title sec-title-bg'>成人{{log.man}}位<text wx:if='{{log.kid>0}}'>,儿童{{log.kid}}位</text></view> 
+                   <view class='sec-title sec-title-bg' wx:if='{{log.man>0}}' >成人{{log.man}}位<text wx:if='{{log.kid>0}}'>,儿童{{log.kid}}位</text></view> 
+                   <view class='sec-title sec-title-bg' wx:else>免旅游币</view> 
                </view> 
            </view>
    </navigator> 

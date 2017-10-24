@@ -8,7 +8,7 @@ Page({
         menuFlag: 0,
         accordionFlag: 0,
         swiperIndex: 0,
-        cityid:null,
+        cityid: null,
         commentMask: 0,
         swiper: null,
         circular: true,
@@ -20,10 +20,10 @@ Page({
         scale: 14,
         markers: null
     },
-    onReady: function () {
+    onReady: function() {
         this.mapCtx = wx.createMapContext('map')
     },
-    onShow: function () {
+    onShow: function() {
         var that = this;
         if (!app.globalData.farm) {
             return;
@@ -36,7 +36,7 @@ Page({
                     lat: this.data.latitude,
                     lng: this.data.longitude
                 },
-                success: function (res) {
+                success: function(res) {
                     that.setData({
                         swiper: res.data.cct,
                         markers: res.data.farmlist
@@ -57,10 +57,10 @@ Page({
         })
         app.globalData.farm = null;
     },
-    onLoad: function () {
+    onLoad: function() {
         wx.getStorage({
             key: 'openid',
-            success: function (res) {
+            success: function(res) {
                 console.log(res.data.openid)
             }
         })
@@ -68,7 +68,7 @@ Page({
         var that = this
         // 获取手机高度 设置map高度
         wx.getSystemInfo({
-            success: function (res) {
+            success: function(res) {
                 console.log(res.windowHeight)
                 that.setData({
                     mapheight: res.windowHeight,
@@ -80,10 +80,10 @@ Page({
                 })
             }
         })
-        app.getUserInfo(function (info) {
+        app.getUserInfo(function(info) {
             wx.getLocation({
                 type: 'wgs84',
-                success: function (res) {
+                success: function(res) {
                     //更新数据
                     that.setData({
                         latitude: res.latitude,
@@ -95,11 +95,11 @@ Page({
                             lat: res.latitude,
                             lng: res.longitude
                         },
-                        success: function (res) {
+                        success: function(res) {
                             that.setData({
                                 swiper: res.data.cct,
                                 markers: res.data.farmlist,
-                                cityid:res.data.city.id
+                                cityid: res.data.city.id
                             })
                         }
                     })
@@ -145,7 +145,7 @@ Page({
             data: {
                 typeid: e.currentTarget.dataset.id
             },
-            success: function (res) {
+            success: function(res) {
                 that.setData({
                     markers: res.data.farm
                 })
@@ -159,7 +159,7 @@ Page({
         wx.showModal({
             title: '村里走走',
             content: '扫描无人农庄大门、冰箱、储物箱旁边的二维码，实现控制开关门。',
-            success: function (res) {
+            success: function(res) {
                 if (res.confirm) {
                     wx.scanCode({
                         onlyFromCamera: true,
@@ -226,7 +226,7 @@ Page({
             data: {
                 typeid: e.currentTarget.dataset.id
             },
-            success: function (res) {
+            success: function(res) {
                 that.setData({
                     markers: res.data.farm
                 })
@@ -244,9 +244,17 @@ Page({
             url: '../service/service?latitude=' + this.data.latitude + '&longitude=' + this.data.longitude + '',
         })
     },
-    selectlist(){
+    selectlist() {
         wx.navigateTo({
             url: '../list/list?cityid=' + this.data.cityid
         })
+    },
+    onShareAppMessage: function() {
+        var that = this;
+        return {
+            title: '农餐、农宿、农玩、农游、果场、赏花、农品购物',
+            imageUrl: "http://cdnimg.bama77.com/13.jpg",
+            path: 'pages/index/index'
+        }
     }
 })
