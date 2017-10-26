@@ -8,7 +8,7 @@
             <ul class="foodlist">
                 <li class='foodlist-warp'>
                     <span class="cellname">联系人 : </span>
-                    <input class="cellquantity"  value="{{name}}" bindinput="bindnameInput" placeholder="请填写联系人" />
+                    <input class="cellquantity" value="{{name}}" bindinput="bindnameInput" placeholder="请填写联系人" />
                 </li>
                 <li class='foodlist-warp'>
                     <span class="cellname">联系电话 : </span>
@@ -44,7 +44,7 @@
                     <radio-group class="radio-group" bindchange="radioChange">
                         <label class="radio radio-warp">
                             <view class="radio-common-left">
-                                <radio value="" checked="{{checked}}" />按出行人数
+                                <radio value="" checked="{{checked}}" /> 按出行人数
                             </view>
                             <view class="radio-common-right">
                                 <li>
@@ -66,26 +66,28 @@
                             </view>
                         </label>
                         <view class='foodlist-warp'>
-                                <view class='tips'> 扣卡说明：成人每人扣除1次，儿童（1.2米以下儿童）每人扣除0.5次
-                                </view>
+                            <view class='tips'> 扣卡说明：成人每人扣除1次，儿童（1.2米以下儿童）每人扣除0.5次
+                            </view>
                         </view>
-                        <label class="radio radio-warp radio-special-warp"  wx:for="{{items}}" wx:for-item='project'>
+                        <label class="radio radio-warp radio-special-warp" wx:for="{{items}}" wx:for-item='project'>
                             <view class="radio-special-left">
                                 <radio value="{{index}}" checked="{{project.checked}}" />
-                                
+
                             </view>
                             <view class="radio-special-middle">
-                                {{project.title}}
-                                <view class="meal-name-lt">
-                                    (消费{{project.man+project.kid/2}}个旅游点)
+                                <view class="tips-title">套餐</view>
+                                <view>
+                                    {{project.title}}
+                                    <view class="meal-name-lt">
+                                        (消费{{project.man+project.kid/2}}个旅游点)
+                                    </view>
                                 </view>
-                                
                             </view>
                             <view class="radio-special-right">
-                                    {{project.content}}
+                                {{project.content}}
                             </view>
                         </label>
-                      
+
                     </radio-group>
                 </li>
 
@@ -96,16 +98,20 @@
                         <navigator class='paynow' url="../../pay/pay" open-type="switchTab">购卡</navigator>
                     </view>
                 </view> -->
-              
+
 
             </ul>
         </view>
     </view>
 
     <image style="width: 100%; height: 400px; padding-bottom:100rpx;" mode='widthFix' src="../../../images/cInfo.png"></image>
-    <footer>
+    <view class="footer-wrap">
+        <view class="consult" bindtap="consult">
+            <image class="footer-img" mode='widthFix' src="../../../images/consult.png"></image>
+            <view>咨询</view>
+        </view>
         <button class="submitbtn" bindtap='submitbtn'>
             确认下单
         </button>
-    </footer>
+    </view>
 </view>

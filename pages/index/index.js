@@ -17,7 +17,7 @@ Page({
         mallsrc: '../../images/mall.png',
         latitude: null,
         longitude: null,
-        scale: 14,
+        scale: 16,
         markers: null
     },
     onReady: function() {
@@ -91,16 +91,38 @@ Page({
                     })
                     wx.request({
                         url: 'https://www.supermaker.com.cn/clzz/index',
-                        data: {
+                        data:{
                             lat: res.latitude,
                             lng: res.longitude
                         },
                         success: function(res) {
-                            that.setData({
-                                swiper: res.data.cct,
-                                markers: res.data.farmlist,
-                                cityid: res.data.city.id
-                            })
+                            if(res.data.code == 7){
+                                var requestRes = res;
+                                wx.showModal({
+                                    title: '提示',
+                                    content: res.data.msg,
+                                    showCancel:false,
+                                    success: function(res) {
+                                      if (res.confirm) {
+                                        that.setData({
+                                            swiper: requestRes.data.cct,
+                                            markers: requestRes.data.farmlist,
+                                            cityid: requestRes.data.city.id,
+                                            latitude: requestRes.data.city.center_lat,
+                                            longitude: requestRes.data.city.center_long
+                                        })
+                                      }
+                                    }
+                                  })
+                               
+                            }else{
+                                that.setData({
+                                    swiper: res.data.cct,
+                                    markers: res.data.farmlist,
+                                    cityid: res.data.city.id
+                                })
+                            }
+                            
                         }
                     })
 

@@ -23,12 +23,14 @@ Page({
                 wx.setNavigationBarTitle({
                     title: res.data.info.title
                 })
-                that.setData({
-                    textInfo: res.data.info
+                that.setData({ 
+                    textInfo: res.data.info,
+                    link: res.data.link,
+
                 })
                 var article = res.data.info.content
                 WxParse.wxParse('article', 'html', article, that, 5);
             }
         })
-    },
+    }
 })

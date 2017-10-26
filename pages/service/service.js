@@ -63,8 +63,18 @@ Page({
     })
   },
   shopping(){
-    wx.navigateTo({
-        url:"../shopping/shopping-list/shopping-list"
-    })
+    wx.showModal({
+        title: '提示',
+        content: '程序猿正加急开发中.....',
+        showCancel:false,
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      })
+    // wx.navigateTo({
+    //     url:"../shopping/shopping-list/shopping-list"
+    // })
   }
 })

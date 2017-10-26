@@ -27,6 +27,7 @@ Page({
                     urls: res.data.urls,
                     current: res.data.current,
                     evaluate: res.data.evaluate,
+                    link: res.data.link,
                     tariff: res.data.tariff
                 })
                 var article = res.data.farm.content
@@ -80,5 +81,13 @@ Page({
                 })
             }
         })
-    }
+    },
+    onShareAppMessage: function () {
+        var that = this;
+       return {
+         title: '农餐、农宿、农玩、农游、果场、赏花、农品购物',
+         imageUrl:"http://cdnimg.bama77.com/13.jpg",
+         path: 'pages/cInfo/cInfo?id='+that.data.farmid
+       }
+     }
 })

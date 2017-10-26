@@ -8,8 +8,8 @@
     <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
         <view wx:for="{{info}}" wx:for-item='infos' bindtap="swichNav" data-current="{{index}}" class="scroll-view-item_H demo-text-1 {{currentTab==index ? 'on' : ''}}">{{infos}}</view>
     </scroll-view>
-    <scroll-view scroll-y style="height:{{winHeight-31}}px">
-        <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{docHeight}}px" bindchange="bindChange">
+    <scroll-view scroll-y style="height:{{docHeight}}px">
+        <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{ccHeight}}px" bindchange="bindChange">
             <!-- 我是哈哈 -->
 
             <swiper-item wx:for='{{swiper}}'>

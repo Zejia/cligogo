@@ -1,6 +1,7 @@
 page {
-    background: #f3f1f4;
+ background: #f3f1f4;
 }
+
 
 .schedule-list {
     background: #fff;

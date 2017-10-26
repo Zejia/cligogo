@@ -4,7 +4,8 @@ Page({
     winWidth: 0,  
     winHeight: 0,  
     // height
-    docHeight:2000,
+    docHeight:null,
+    ccHeight:800,
     height:null,
     // tab切换  
     currentTab: 0,  
@@ -39,6 +40,7 @@ Page({
         that.setData({
           tip
           })
+        
       }
     })
       /** 
@@ -51,15 +53,17 @@ Page({
             winHeight: res.windowHeight,
             cityid:option.cityid
           });  
-        }  
-      });  
-       wx.createSelectorQuery().selectAll('.schedule-list').boundingClientRect(function(rects){
+          wx.createSelectorQuery().selectAll('.scroll-view_H').boundingClientRect(function(rects){
             rects.forEach(function(rect){
               that.setData({
-                docHeight:2*rect.height
+                docHeight:res.windowHeight-rect.height-40
               })
             })
           }).exec()
+        }  
+      });
+     
+     
   },
   /** 
      * 滑动切换tab 
@@ -67,6 +71,11 @@ Page({
     bindChange: function( e ) {  
         var that = this;  
         that.setData( { currentTab: e.detail.current }); 
+        wx.createSelectorQuery().select('.schedule-list').boundingClientRect(function(rect){
+            that.setData({
+              ccHeight:that.data.swiper[e.detail.current].length*(rect.height+25)
+            })
+        }).exec()
         // console.log(e.detail.current) 
         // that.fetchData(e.detail.current)
       },  
@@ -102,12 +111,10 @@ Page({
           that.setData({
             [key]:res.data.farm
           })
-          
-          
-          wx.createSelectorQuery().selectAll('.schedule-list').boundingClientRect(function(rects){
+          wx.createSelectorQuery().select('.schedule-list').boundingClientRect(function(rects){
             rects.forEach(function(rect){
               that.setData({
-                docHeight:res.data.farm[ex].farm.length*rect.height+200
+                ccHeight:res.data.farm[ex].farm.length*(rect.height+25)
               })
             })
           }).exec()

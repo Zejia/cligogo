@@ -1,0 +1,13 @@
+<template name="cartbutton">
+  <view class="cartbutton">
+    <view class="cartbutton-2tycR">
+        <view wx-if="{{num>0}}" class="button" data-index="{{id}}" bindtap="reduce" >
+            <image class='img' src="http://cdnimg.bama77.com/subtract.png"></image>
+        </view>
+        <view wx-if="{{num>0}}" class="cartbutton-2OSi7">{{num}}</view>
+        <view class="button" data-index="{{id}}" bindtap="addNum">
+            <image class='img' src="http://cdnimg.bama77.com/plus.png"></image>
+        </view>
+    </view>
+</view>
+</template>

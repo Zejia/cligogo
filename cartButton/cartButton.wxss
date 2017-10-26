@@ -1,0 +1,16 @@
+/* cartButton.wxss */
+.cartbutton{
+    position: absolute;
+    right: 0;
+    bottom: -.066667rem;
+}
+.cartbutton-2OSi7{
+    font-size: 32rpx;
+    margin-top:8rpx;
+}
+
+.img{
+    width: 60rpx;
+    height: 60rpx;
+    margin:0 10rpx;
+}

@@ -10,7 +10,7 @@
         <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">消费</view>
     </view>
     <scroll-view scroll-y style="height:{{docHeight-31}}px">
-        <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{docHeight}}px" bindchange="bindChange">
+        <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{ccHeight}}px" bindchange="bindChange">
             <!-- 我是哈哈 -->
 
             <swiper-item>

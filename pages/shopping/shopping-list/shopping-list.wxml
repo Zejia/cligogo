@@ -1,42 +1,97 @@
 <!--logs.wxml-->
+<import src="../../../cartButton/cartButton.wxml" />
 <view class="container">
 
-    <view class="swiper-tab">
+    <scroll-view class="swiper-tab scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+        <view wx:for="{{navList}}" wx:for-item='navList' bindtap="swichNav" data-current="{{index}}" class="swiper-tab-list {{currentTab==index ? 'on' : ''}}">{{navList.name}}</view>
+    </scroll-view>
+    <!-- <view class="swiper-tab">
         <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">购买</view>
         <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">消费</view>
-    </view>
+    </view> -->
     <scroll-view scroll-y style="height:{{docHeight-31}}px">
         <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{docHeight}}px" bindchange="bindChange">
             <!-- 我是哈哈 -->
+            <swiper-item wx:for='{{navList}}'>
+                <view class="heading">
+                    <view class="category-title">
+                        <view class="category-name">{{navList[index].name}}</view>
+                        <text class="category-description">天天有惊喜！</text>
+                    </view>
+                </view>
+                <view class="shopping-list" wx:for="{{dishesList[index]}}" wx:for-index="idx" wx:for-item="dishesLists">
+                    <image class="shopping-list-img" mode="aspectFill" src="http://img.dlg369.com/temp/1508810679476.jpg"></image>
+                    <section class="foodinfo">
+                        <header class="foodtitle">
+                            <text>{{dishesLists.name}}</text>
+                        </header>
+                        <view class="fooddescription">劲爆活动价，2份15元</view>
+                        <view class="foodsales"></view>
+                        <view class="rp">库存:
+                            <text>29</text>
+                        </view>
+                        <view class="foodprice">
+                            <text>{{dishesLists.price}}</text>
+                        </view>
+                        <!-- <template is="cartbutton"  data="{{...dishesLists}}"/> -->
+                        <view class="cartbutton">
+                            <view class="cartbutton-2tycd">
+                                <view wx-if="{{dishesLists.num>0}}" class="button" data-index="{{idx}}" bindtap="reduce">
+                                    <image class='img' src="http://cdnimg.bama77.com/subtract.png"></image>
+                                </view>
+                                <view wx-if="{{dishesLists.num>0}}" class="cartbutton-2OSi7">{{dishesLists.num}}</view>
+                                <view class="button" data-index="{{idx}}" bindtap="addNum">
+                                    <image class='img' src="http://cdnimg.bama77.com/plus.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </section>
 
-            <swiper-item>
-                
-            </swiper-item>
-            <!-- 我是呵呵 -->
-            <swiper-item>
-              
-               
-            </swiper-item>
+                </view>
 
+            </swiper-item>
         </swiper>
     </scroll-view>
 
-    <!-- <view class='schedule-list gray'>
-        <view class='schedule-header'>
-            <view class='schedule-title'>
-                <view class='big-title'>乡村童年</view>
-                <view class='sec-title'>过期</view>
+    <!-- 购物车 -->
+    <view class="footer">
+        <!-- 黑色蒙层 -->
+        <view class="footer-mask {{shoppingFlag != true ? 'cartview-2CbR7' : ''}}" bindtap='openShopping'></view>
+        <!-- 购物车详情 -->
+        <view class="footer-detail {{shoppingFlag != true ? 'cartview-2CbR7' : ''}}">
+            <view class="footer-detail-header">
+                <view class="cartview-title">购物车</view>
             </view>
-            <view class='schedule-price'>
-                    消费
-                <text class="schedule-price-info">2</text>
-            </view>
+            <scroll-view scroll-y style="height: 300rpx;" class="entityList-yrs9v_0">
+                <ul>
+                    <li class="entityList-1eODF_0">
+                        <span class="entityList-30u-R_0">
+                            <em class="entityList-2g5ra_0">美式炸薯条 第2份半价</em>
+                            <p class="entityList-1IZul_0"></p>
+                        </span>
+                        <span class="entityList-1vr8H_0">
+                            <span class="entityList-1XZvm_0">15</span>
+                        </span>
+                        <span class="entityList-3cAE9_0">
+                                <span class="cartbutton-2tycR">
+                                    <span role="button" class="cartbutton-2OSi7">1/件</span>
+                                </span>
+                        </span>
+                    </li>
+                    
+                </ul>
+            </scroll-view>
         </view>
-        <view class='schedule-footer'>
-            <view class='schedule-title'>
-               <view class='gray sec-title'>所有城市适用</view>
+        <!-- 底部购物车条 -->
+        <view class="footer-bottom {{isDefault != true ? 'bottomNav-6KjUI_0' : ''}}">
+            <view bindtap='openShopping' class="footer-header  {{isDefault != true ? 'bottomNav-6KjUI_0' : ''}}" ></view>
+            <view class="footer-warp">
+                <view class="bottomNav-3Ak_E_0">
+                    <text>总价¥40</text>
+                </view>
+                <view class="bottomNav-3zqFz_0">商品2件</view>
             </view>
+            <view class="footer-btn {{isDefault != true ? 'bottomNav-9FCIh_0' : ''}}">去结算</view>
         </view>
-    </view> -->
-
+    </view>
 </view>

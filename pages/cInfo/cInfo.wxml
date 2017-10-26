@@ -43,6 +43,27 @@
             场地介绍
         </view>
         <view class="resume_main introduce">
+              <!-- 应用内跳转 -->
+                <view class='schedule-list' wx:for="{{link}}" wx:for-item="link">
+                        <view class='schedule-header'>
+                            <view class='schedule-title'>
+                                        <view class='big-title'>{{link.title}}</view>
+                                        <view class='sec-title'>{{link.content}}</view>
+                               
+                            </view>
+                            <view class='schedule-price'>
+                            </view>
+                        </view>
+                        <view class='schedule-footer'>
+                            <view class='schedule-title'>
+                                <view class='gray sec-title'></view>
+                            </view>
+                            <view class='schedule-price'>
+                                
+                                <navigator class='sec-title sec-title-bg' url="{{link.link}}">去查看</navigator>
+                            </view>
+                        </view>
+                    </view>
             <template is="wxParse" data="{{wxParseData:article.nodes}}" />
         </view>
     </view>

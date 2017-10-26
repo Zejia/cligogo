@@ -75,33 +75,16 @@ page{
     color: #666
 }
 
-footer {
+.footer-wrap {
     height: 100rpx;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #3c3c3c
 }
 
-footer span {
-color:#fff;
-font-size:32rpx;
-padding-left:20rpx;
-line-height:2.5;
-}
 
-footer small {
-    color: #999;
-    font-size: 34rpx
-}
-
-footer a {
-    line-height: 50rpx;
-    vertical-align: top
-}
-
-footer .submitbtn {
+.footer-wrap .submitbtn {
 background:#1AAD19;
 border:none;
 color:#fff;
@@ -109,10 +92,11 @@ font-size:34rpx;
 border-radius:1px;
 height:100rpx;
 line-height:100rpx;
+width: 100%;
 
 }
 
-footer .submitbtn.disabled {
+.footer-wrap .submitbtn.disabled {
     background: #666
 }
 .wrap-foodlist{
@@ -365,6 +349,9 @@ p {
     justify-content: space-between;
     border-bottom:0;
 }
+.radio-special-warp{
+    margin:20rpx 0;
+}
 .radio-common-left{
     flex-basis: 50%;
 }
@@ -392,5 +379,26 @@ p {
 }
 .meal-name-lt{
     font-size: 25rpx;
+    color: #666;
+}
+.tips-title{
+    font-size: 26rpx;
+    background: #1AAD19;
+    color: #fff;
+    border-radius: 5rpx;
+
+}
+
+.footer-wrap{
+    display: flex;
+}
+.footer-img{
+    width:60rpx;
+}
+.consult{
+    width:150rpx;
+    background: #fff;
+    font-size: 26rpx;
+    text-align: center;
     color: #666;
 }

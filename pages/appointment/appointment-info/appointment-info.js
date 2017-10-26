@@ -348,5 +348,10 @@ Page({
         }
       }
     })
+  },
+  consult(){
+      wx.makePhoneCall({
+          phoneNumber: '0898-38322067'
+        })
   }
 })
