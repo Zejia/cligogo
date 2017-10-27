@@ -30,15 +30,17 @@ Page({
           swiper:res.data.list
        })
        console.log(res.data.list.length)
-       var tip = [];
+       let tips = [];
        for (let i = 0; i < res.data.list.length; i++) {
+        let tip = [];
          for (let k = 0; k < res.data.list[i].length; k++) {
-           var element = res.data.list[i][k].tips;
-           tip.push(element.split('|'))
+          let element = res.data.list[i][k].tips;
+              tip.push(element.split('|'))
          }
+         tips.push(tip)
        }
         that.setData({
-          tip
+          tips
           })
         
       }

@@ -7,9 +7,12 @@
     </view>
     <view class="wrap-foodlist">
             <ul wx:if="{{logs.statusnum == 1}}" class="foodlist">
-                    <li><span class="cellname">消费码</span><span class="celltotal">{{logs.identify}}</span></li>
-        
-                </ul>
+                <li>
+                    <span class="cellname">消费码</span>
+                    <span class="celltotal">{{logs.identify}}</span>
+                </li>
+            
+            </ul>
         <ul class="foodlist">
             <li><span class="cellname">出行时间</span><span class="celltotal">{{logs.traveltime}}</span></li>
 

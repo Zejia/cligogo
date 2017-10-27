@@ -1,5 +1,5 @@
-
 @import "../../wxParse/wxParse.wxss";
+
 /*标题*/
 
 .header {
@@ -41,7 +41,6 @@
     width: 100%;
     height: auto;
     position: relative;
-    
 }
 
 ._1dwlm ._2RqbK {
@@ -193,7 +192,7 @@
 }
 
 .introduce {
-    padding:0  20rpx;
+    padding: 0 20rpx;
     box-sizing: border-box;
     color: #8f8f94;
     line-height: 1.2;
@@ -203,21 +202,25 @@
     padding-bottom: 100rpx;
 }
 
-.num{
+.num {
     vertical-align: middle;
 }
-._3tQEs{  
-    text-align:center;
-}  
-.num{  
-    height:100%;  
-    vertical-align:middle;  
+
+._3tQEs {
+    text-align: center;
+}
+
+.num {
+    height: 100%;
+    vertical-align: middle;
     line-height: 30rpx;
-    padding:0 10rpx;
-}  
-._3tQEs_img{  
-    vertical-align:middle;
-}  
+    padding: 0 10rpx;
+}
+
+._3tQEs_img {
+    vertical-align: middle;
+}
+
 .appBtn {
     height: 100rpx;
     line-height: 100rpx;
@@ -227,86 +230,96 @@
     width: 100%;
     background: #3c3c3c
 }
-.guide{
+
+.guide {
     float: right;
-    color:blue;
+    color: blue;
 }
-.meal-warp{
-    display:flex;
+
+.meal-warp {
+    display: flex;
     align-items: center;
-    padding:10rpx 0;
-    border-bottom:1px solid #e7e7e7;
+    padding: 10rpx 0;
+    border-bottom: 1px solid #e7e7e7;
 }
-.meal-name{
+
+.meal-name {
     flex-basis: 40%;
     text-align: center;
     font-size: 32rpx;
 }
-.meal-content{
+
+.meal-content {
     flex-basis: 60%;
     font-size: 26rpx;
 }
-.meal-name-lt{
+
+.meal-name-lt {
     font-size: 25rpx;
 }
-.meal-name-big{
+
+.meal-name-big {
     font-size: 28rpx;
     padding-bottom: 10rpx;
-    color:rgb(39, 38, 38);
+    color: rgb(39, 38, 38);
 }
 
-
-
-.schedule-list{
+.schedule-list {
     background: #fff;
     width: 95%;
     margin: 0 auto;
     border-bottom: 8rpx solid #3fb84c;
     color: #3fb84c;
     border-radius: 10rpx;
-    -webkit-box-shadow: 0px 5px 21px 0px rgba(222,219,222,1);
-    -moz-box-shadow: 0px 5px 21px 0px rgba(222,219,222,1);
-    box-shadow: 0px 5px 21px 0px rgba(222,219,222,1);
+    -webkit-box-shadow: 0px 5px 21px 0px rgba(222, 219, 222, 1);
+    -moz-box-shadow: 0px 5px 21px 0px rgba(222, 219, 222, 1);
+    box-shadow: 0px 5px 21px 0px rgba(222, 219, 222, 1);
 }
-.schedule-header{
+
+.schedule-header {
     padding: 20rpx;
     margin: 40rpx 20rpx 0 20rpx;
     display: flex;
     justify-content: space-between;
 }
-.schedule-footer{
+
+.schedule-footer {
     padding: 0 20rpx;
     margin: 0 20rpx;
     margin-bottom: 10rpx;
     display: flex;
     justify-content: space-between;
 }
-.big-title{
+
+.big-title {
     font-size: 45rpx;
     margin-bottom: 10rpx;
 }
-.sec-title{
+
+.sec-title {
     font-size: 28rpx;
     margin-bottom: 10rpx;
-
-
 }
-.schedule-price{
+
+.schedule-price {
     font-size: 40rpx;
 }
-.schedule-price-info{
+
+.schedule-price-info {
     font-size: 60rpx;
 }
-.gray{
+
+.gray {
     color: #a4a4a4;
 }
 
-.tips-share{
+.tips-share {
     margin-top: 20rpx;
     text-decoration: underline;
     color: #ff0000;
 }
-.tips{
+
+.tips {
     font-size: 30rpx;
     color: #a4a4a4;
     width: 100%;
@@ -314,3 +327,45 @@
     margin: 20rpx auto;
 }
 
+.introduce-wrap{
+    padding-bottom: 100rpx;
+}
+
+.footer-wrap .submitbtn {
+    background: #1AAD19;
+    border: none;
+    color: #fff;
+    font-size: 34rpx;
+    border-radius: 1px;
+    height: 100rpx;
+    line-height: 100rpx;
+    width: 100%;
+}
+
+.footer-wrap .submitbtn.disabled {
+    background: #666
+}
+
+.footer-wrap {
+    display: flex;
+    height:100rpx;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    
+}
+
+.footer-img {
+    width:50rpx;
+    padding-top:5px;
+    
+}
+
+.consult {
+    width: 150rpx;
+    background: #fff;
+    font-size: 26rpx;
+    text-align: center;
+    color: #666;
+}

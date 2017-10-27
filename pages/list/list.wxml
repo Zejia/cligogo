@@ -21,7 +21,7 @@
                         <view class='schedule-title'>
                             <view class='big-title'>
                                 <text>{{swipers.name}}</text>
-                                <view wx:for="{{tip[idx]}}" class="tag">{{tip[idx][index]}}</view>
+                                <view wx:for="{{tips[index][idx]}}" wx:for-index="tipsIndex" wx:for-item="tipsItem" class="tag">{{tipsItem}}</view>
                             </view>
                             <!-- <view class='sec-title'>{{swipers.content}}</view> -->
                         </view>

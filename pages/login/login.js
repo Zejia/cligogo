@@ -98,10 +98,17 @@ Page({
           success: function (res) {
             // console.log(res.data.openid)
             if (res.data.code == 1) {
+              wx.showToast({
+                title: res.data.msg,
+                icon:"success",
+                duration: 1000
+              })
+              console.log(res.data.msg)
               wx.setStorage({
                 key: 'user',
                 data: res.data.user
               })
+             
               wx.navigateBack({
                 delta: 1
               })

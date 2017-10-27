@@ -36,7 +36,7 @@
                     <span class="cellname">项目选择
                         <view class="cellname-title" style="float:right;">
                             <text>剩余{{logs}}旅游币　</text>
-                            <navigator class='paynow' url="../../pay/pay" open-type="switchTab">购卡</navigator>
+                            <navigator class='paynow' url="../../pay/pay" open-type="switchTab">购币</navigator>
                         </view>
                     </span>
                 </li>

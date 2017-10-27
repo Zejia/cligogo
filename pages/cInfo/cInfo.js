@@ -85,9 +85,14 @@ Page({
     onShareAppMessage: function () {
         var that = this;
        return {
-         title: '农餐、农宿、农玩、农游、果场、赏花、农品购物',
-         imageUrl:"http://cdnimg.bama77.com/13.jpg",
+         title: that.data.farm.name,
+         imageUrl:that.data.current,
          path: 'pages/cInfo/cInfo?id='+that.data.farmid
        }
+     },
+     consult(){
+         wx.makePhoneCall({
+             phoneNumber: '0898-38322067'
+           })
      }
 })
