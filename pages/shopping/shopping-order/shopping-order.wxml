@@ -1,0 +1,45 @@
+<view class="order">
+        <view class="cart-group checkout-view">
+            <view class="formbloack">
+                <view class="label-wrap">联系电话</view>
+                <view class="input-group-wrap rightbtn">
+                    <view class="input-wrap">
+                        <input placeholder="你的手机号" value="{{phone}}" bindinput="bindphone" type="number"  maxlength="12"/>
+                    </view>
+                </view>
+            </view>
+            <view class="formbloack">
+                <view class="label-wrap">联系地址</view>
+                <view class="input-group-wrap rightbtn">
+                    <view class="input-wrap">
+                        <input placeholder="填写联系地址" value="{{address}}" bindinput="bindaddress" type="text" />
+                    </view>
+                </view>
+            </view>
+            <view class="formbloack">
+                <view class="label-wrap">备注</view>
+                <view class="input-group-wrap rightbtn">
+                    <view class="input-wrap">
+                        <input placeholder="备注" value="{{remark}}" bindinput="bindremark" type="text" />
+                    </view>
+                </view>
+            </view>
+       
+            <ul class="foodlist">
+                <li wx:for='{{cart}}' wx:for-item = "carts">
+                    <text class="cellname">{{carts.name}}</text>
+                    <text class="cellquantity">x　{{carts.counter}}</text>
+                    <text class="celltotal">¥{{carts.price}}</text></li>
+                
+            </ul>
+            <ul class="foodlist pd-1r">
+                <li><text class="cellname">总价</text><text class="cellquantity">x　{{totalNum}}</text><text class="celltotal">¥{{total}}</text></li>
+            </ul>
+        </view>
+        <footer>
+            <text>订单金额 ¥{{total}}</text>
+            <button class="submitbtn" >
+                确认下单
+            </button>
+        </footer>
+    </view>

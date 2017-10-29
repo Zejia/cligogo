@@ -17,11 +17,11 @@
                 <view class="none-data" wx:if="{{swiper0.length <= 0}}">
                     <image src='../../images/none.png'></image>
                 </view>
-                <view wx:for="{{swiper0}}" wx:for-item='log' class='schedule-list'>
+                <view wx:for="{{swiper0}}" wx:for-item='log' class='schedule-list gray'>
                     <view class='schedule-header'>
                         <view class='schedule-title'>
                             <view class='big-title'>{{log.name}}</view>
-                            <view class='sec-title'>购买时间:{{log.createtime}}</view>
+                            <view class='sec-title gray'>购买时间:{{log.createtime}}</view>
                         </view>
                         <view class='schedule-price'>
                                 <!-- <view class='sec-title'>{{log.time*0.5}}人次</view>  -->

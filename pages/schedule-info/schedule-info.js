@@ -31,6 +31,7 @@ Page({
     switch(that.data.logs.statusnum){
         case 0:
         case 1:
+        case -1:
         wx.makePhoneCall({
           phoneNumber: that.data.logs.telphone //仅为示例，并非真实的电话号码
         })

@@ -1,17 +1,23 @@
 //logs.js
 Page({
   data: {
-    _num:null,
+    _num: null,
     tel: '',
     name: '',
     date: '',
     time: '',
     farmid: '',
-    farmname:'',
+    farmname: '',
     startTime: "",
-    radio:"",
-    tarifftype:"",
-    checked:true,  
+    radio: "",
+    tarifftype: "",
+    checked: true,
+    range: ['上午（8:00-12:00）',
+      '中午(12:00-15:00)',
+      '下午(15:00-19:00)',
+      '晚上(19:00-23:00)',
+      '其他时间'
+    ],
     carts: [{
         num: '1',
         selected: true
@@ -22,7 +28,7 @@ Page({
       },
     ],
     items: [
-      
+
     ],
     logs: null,
     minusStatuses: ['disabled', 'disabled', 'disabled', 'disabled', 'disabled']
@@ -34,7 +40,7 @@ Page({
     this.setData({
       startTime: this.getCurrenTime(),
       farmid: option.farmid,
-      farmname:option.farmname
+      farmname: option.farmname
     })
     this.tariffByfarm();
   },
@@ -47,7 +53,7 @@ Page({
   bindTimeChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      time: e.detail.value
+      time: this.data.range[e.detail.value]
     })
   },
   bindnameInput: function (e) {
@@ -152,14 +158,14 @@ Page({
       farmid = that.data.farmid,
       userid = user.id,
       tarifftyps = that.data.tarifftype
-      if (!name) {
-        wx.showToast({
-          title: '联系人错误',
-          image: '../../../images/error.png',
-          duration: 2000
-        })
-        return false;
-      }
+    if (!name) {
+      wx.showToast({
+        title: '请填写联系人',
+        image: '../../../images/error.png',
+        duration: 2000
+      })
+      return false;
+    }
     if (!tel) {
       wx.showToast({
         title: '手机号码错误',
@@ -168,7 +174,7 @@ Page({
       })
       return false;
     }
-    
+
     if (!traveltime) {
       wx.showToast({
         title: '到达时间错误',
@@ -196,7 +202,7 @@ Page({
         kid: kid,
         farmid: farmid,
         userid: userid,
-        tarifftype:tarifftyps,
+        tarifftype: tarifftyps,
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -212,10 +218,10 @@ Page({
           //   delta: 2
           // })
           wx.redirectTo({
-            url: '../../schedule-info/schedule-info?orderid='+res.data.oid
-        })
+            url: '../../schedule-info/schedule-info?orderid=' + res.data.oid
+          })
         }
-      
+
         console.log(res.data)
       }
     })
@@ -242,8 +248,8 @@ Page({
           wx.showModal({
             title: '提示',
             content: '您旅游币不足一个请及时够买。',
-            cancelText:'重新选择',
-            confirmText:'买旅游币',
+            cancelText: '重新选择',
+            confirmText: '买旅游币',
             success: function (res) {
               if (res.confirm) {
                 wx.switchTab({
@@ -260,12 +266,12 @@ Page({
       }
     })
   },
-  radioChange: function(e) {
+  radioChange: function (e) {
     this.changeStatus()
-    
-    if(!e.detail.value){
+
+    if (!e.detail.value) {
       this.setData({
-        tarifftype:""
+        tarifftype: ""
       })
       return false;
     }
@@ -273,15 +279,15 @@ Page({
     var that = this;
     var key1 = "carts[0].num"
     var key2 = "carts[1].num"
-    let logsNum = this.data.logs - this.data.items[e.detail.value].man+(this.data.items[e.detail.value].kid/2)+1;
+    let logsNum = this.data.logs - this.data.items[e.detail.value].man + (this.data.items[e.detail.value].kid / 2) + 1;
     console.log(logsNum)
     // console.log(this.data.items[e.detail.value].man)
-    if(logsNum<0){
+    if (logsNum < 0) {
       wx.showModal({
         title: '提示',
-        content: '该套餐需要'+(this.data.items[e.detail.value].man+(this.data.items[e.detail.value].kid/2))+'个旅游币，您的旅游币为'+this.data.logs+'个，不足以支付。',
-        cancelText:'重新选择',
-        confirmText:'买旅游币',
+        content: '该套餐需要' + (this.data.items[e.detail.value].man + (this.data.items[e.detail.value].kid / 2)) + '个旅游币，您的旅游币为' + this.data.logs + '个，不足以支付。',
+        cancelText: '重新选择',
+        confirmText: '买旅游币',
         success: function (res) {
           if (res.confirm) {
             wx.switchTab({
@@ -290,7 +296,7 @@ Page({
           } else if (res.cancel) {
             that.changeStatus()
             that.setData({
-              checked:true
+              checked: true
             })
           }
         }
@@ -298,18 +304,18 @@ Page({
       return false;
     }
     this.setData({
-      [key1]:this.data.items[e.detail.value].man,
-      [key2]:this.data.items[e.detail.value].kid,
+      [key1]: this.data.items[e.detail.value].man,
+      [key2]: this.data.items[e.detail.value].kid,
       logs: logsNum,
-      tarifftype:this.data.items[e.detail.value].id
+      tarifftype: this.data.items[e.detail.value].id
     })
   },
-  tariffByfarm(){
+  tariffByfarm() {
     var that = this;
     wx.request({
       url: 'https://www.supermaker.com.cn/clzz/tariffByfarm',
       data: {
-        farmid:this.data.farmid
+        farmid: this.data.farmid
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -317,22 +323,22 @@ Page({
       success: function (res) {
         console.log(res.data)
         that.setData({
-          items:res.data.type
+          items: res.data.type
         })
-       
+
       }
     })
   },
-  changeStatus(){
+  changeStatus() {
     var key1 = "carts[0].num"
     var key2 = "carts[1].num"
     this.setData({
-      [key1]:1,
-      [key2]:0,
-      logs:this.data._num,
+      [key1]: 1,
+      [key2]: 0,
+      logs: this.data._num,
     })
   },
-  showModel(){
+  showModel() {
     wx.showModal({
       title: '提示',
       content: '您出游卡次数不足请及时够买',
@@ -349,9 +355,9 @@ Page({
       }
     })
   },
-  consult(){
-      wx.makePhoneCall({
-          phoneNumber: '0898-38322067'
-        })
+  consult() {
+    wx.makePhoneCall({
+      phoneNumber: '0898-38322067'
+    })
   }
 })

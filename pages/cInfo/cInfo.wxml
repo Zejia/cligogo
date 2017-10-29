@@ -1,13 +1,13 @@
 <!--农庄详情页蒙层 -->
 <import src="../../wxParse/wxParse.wxml" />
 <view class='farm-mask masks animated'>
-    <div class="_1dwlm" bindtap='previewImages'>
-        <image src="{{current}}" mode='widthFix' class="_2RqbK"></image>
-        <div class="_3tQEs">
+    <scroll-view class="_1dwlm" bindtap='previewImages'>
+        <image src="{{current}}"  bindload="imgload" mode='widthFix' class="_2RqbK animated {{imgLoad == true ? 'fadeIn' : ''}}"></image>
+        <view class="_3tQEs">
             <span class='num'>{{urls.length}}</span>
             <image class="_3tQEs_img" src="https://img.supermonkey.com.cn/webapp/wx2/box/box_image_icon.png" style="height: 12px; width: 14px;                     "></image>
-        </div>
-    </div>
+        </view>
+    </scroll-view>
     <!-- 地址 -->
     <view class="introduce-wrap ">
         <view class="resume_title" bindtap='openLocation'>
@@ -28,7 +28,7 @@
                         {{resume.title}}
                     </view>
                     <view class="meal-name-lt">
-                        (消费{{resume.man+resume.kid/2}}个旅游点)
+                        (消费{{resume.man+resume.kid/2}}个旅游币)
                     </view>
                 </view>
                 <view class="meal-content">
@@ -43,40 +43,38 @@
             场地介绍
         </view>
         <view class="resume_main introduce">
-             
             <template is="wxParse" data="{{wxParseData:article.nodes}}" />
         </view>
     </view>
     <view class="introduce-wrap" wx:if="{{link.length>0}}">
         <view class="resume_title">
-            村好货
+            村好货在售
         </view>
         <view class="resume_main introduce">
-              <!-- 应用内跳转 -->
-              <view class='schedule-list' wx:for="{{link}}" wx:for-item="link">
-                    <view class='schedule-header'>
-                        <view class='schedule-title'>
-                                    <view class='big-title'>{{link.title}}</view>
-                                    <view class='sec-title'>{{link.content}}</view>
-                           
-                        </view>
-                        <view class='schedule-price'>
-                        </view>
+            <!-- 应用内跳转 -->
+            <view class='schedule-list' wx:for="{{link}}" wx:for-item="link">
+                <view class='schedule-header'>
+                    <view class='schedule-title'>
+                        <view class='big-title'>{{link.title}}</view>
+                        <view class='sec-title'>{{link.content}}</view>
                     </view>
-                    <view class='schedule-footer'>
-                        <view class='schedule-title'>
-                            <view class='gray sec-title'></view>
-                        </view>
-                        <view class='schedule-price'>
-                            
-                            <navigator class='sec-title sec-title-bg' url="{{link.link}}">去查看</navigator>
-                        </view>
+                    <view class='schedule-price'>
                     </view>
                 </view>
+                <view class='schedule-footer'>
+                    <view class='schedule-title'>
+                        <view class='gray sec-title'></view>
+                    </view>
+                    <view class='schedule-price'>
+
+                        <navigator class='sec-title sec-title-bg' url="{{link.link}}">去查看</navigator>
+                    </view>
+                </view>
+            </view>
         </view>
     </view>
     <!-- 用户评价 -->
-    <view class="resume-wrap introduce-wrap" wx:for='{{evaluate.length>0}}'>
+    <view class="resume-wrap introduce-wrap" wx:if='{{evaluate.length>0}}'>
         <view class="resume_title">
             用户评价
         </view>
@@ -97,12 +95,12 @@
         </view>
     </view>
     <view class="footer-wrap">
-            <view class="consult" bindtap="consult">
-                <image class="footer-img" mode='widthFix' src="../../images/consult.png"></image>
-                <view>咨询</view>
-            </view>
-            <button class='submitbtn' type='primary' bindtap="appointment">
-                    马上预约
-            </button>
+        <view class="consult" bindtap="consult">
+            <image class="footer-img" mode='widthFix' src="../../images/consult.png"></image>
+            <view>咨询</view>
         </view>
+        <button class='submitbtn' type='primary' bindtap="appointment">
+            马上预约
+        </button>
+    </view>
 </view>

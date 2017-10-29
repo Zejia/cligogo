@@ -1,1 +1,526 @@
-/* shopping.wxss */
+@import "../../../wxParse/wxParse.wxss";
+
+/*标题*/
+page{
+    background: #f5f5f5;
+}
+.header {
+    position: relative;
+}
+
+.accordion .close {
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+    font-size: 30rpx;
+    color: #f4b06f;
+}
+
+.title {
+    text-align: center;
+}
+
+.ft-btn {
+    width: 30%;
+    margin-right: 0;
+    border-radius: 0;
+    font-size: 28rpx;
+}
+
+.footer {
+    position: relative;
+}
+
+.question {
+    font-size: 24rpx;
+    color: #000;
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+}
+
+._1dwlm {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+._1dwlm ._2RqbK {
+    width: 100%;
+}
+
+._1dwlm ._3tQEs {
+    position: absolute;
+    left: 14px;
+    bottom: 30px;
+    z-index: 2;
+    color: #fff;
+    font-size: 14px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.resume_title {
+    color: #262626;
+    font-size: 14px;
+    padding: 30rpx;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.resume_main img {
+    width: 14px;
+    margin-left: 13px;
+    margin-right: 9px;
+    margin-top: -5px;
+}
+
+.resume_info {
+    color: #696969;
+    font-size: 12px;
+    margin-left: 80rpx;
+    margin-top: 30rpx;
+}
+
+.resume_info text {
+    margin-right: 56rpx;
+}
+
+.resume_info_last {
+    margin-left: 80rpx;
+    margin-top: 20rpx;
+    margin-bottom: 32rpx;
+}
+
+.resume_info_last text {
+    margin-right: 0px;
+}
+
+.resume_main {
+    margin-top: 18rpx;
+}
+
+.evaluate_main text {
+    font-size: 14px;
+    color: #8f8f94;
+    padding: 18px;
+    display: block;
+}
+
+.message {
+    margin-top: 16px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.message_user {
+    overflow: hidden;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.message_main_star {
+    width: 60%;
+    float: left;
+}
+
+.message_main_face {
+    text-align: center;
+    float: right;
+    margin-right: 29px;
+}
+
+.message_main_face img {
+    margin-bottom: 10px;
+    width: 50px;
+    margin-top: 7px;
+}
+
+.message_head {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 120rpx;
+    overflow: hidden;
+    float: left;
+    margin: 19px;
+    display: block;
+}
+
+.message_head img {
+    width: 100%;
+}
+
+.message_name {
+    float: left;
+    margin-top: 0em;
+    padding-top: 56rpx;
+    width: 70%;
+}
+
+.message_time {
+    font-size: 12px;
+    color: #ababab;
+    margin-bottom: 24rpx;
+    text-align: right;
+    margin-top: 28rpx;
+}
+
+.message_head {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 120rpx;
+    overflow: hidden;
+    float: left;
+    margin: 19px;
+    display: block;
+}
+
+.message_head .header {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 120rpx;
+}
+
+.uesrname {
+    font-size: 14px;
+    color: #8f8f94;
+}
+
+.evaluatecontent {
+    font-size: 14px;
+    color: #8f8f94;
+    margin-top: 10rpx;
+    display: inline-block;
+}
+
+.introduce {
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    color: #8f8f94;
+    line-height: 1.2;
+}
+
+.resume-wrap {
+    padding-bottom: 100rpx;
+}
+
+.num {
+    vertical-align: middle;
+}
+
+._3tQEs {
+    text-align: center;
+}
+
+.num {
+    height: 100%;
+    vertical-align: middle;
+    line-height: 30rpx;
+    padding: 0 10rpx;
+}
+
+._3tQEs_img {
+    vertical-align: middle;
+}
+
+.appBtn {
+    height: 100rpx;
+    line-height: 100rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #3c3c3c
+}
+
+.guide {
+    float: right;
+    color: blue;
+}
+
+.meal-warp {
+    display: flex;
+    align-items: center;
+    padding: 10rpx 0;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.meal-name {
+    flex-basis: 40%;
+    text-align: center;
+    font-size: 32rpx;
+}
+
+.meal-content {
+    flex-basis: 60%;
+    font-size: 26rpx;
+}
+
+.meal-name-lt {
+    font-size: 25rpx;
+}
+
+.meal-name-big {
+    font-size: 28rpx;
+    padding-bottom: 10rpx;
+    color: rgb(39, 38, 38);
+}
+
+.schedule-list {
+    background: #fff;
+    width: 95%;
+    margin: 0 auto;
+    border-bottom: 8rpx solid #3fb84c;
+    color: #3fb84c;
+    border-radius: 10rpx;
+    -webkit-box-shadow: 0px 5px 21px 0px rgba(222, 219, 222, 1);
+    -moz-box-shadow: 0px 5px 21px 0px rgba(222, 219, 222, 1);
+    box-shadow: 0px 5px 21px 0px rgba(222, 219, 222, 1);
+}
+
+.schedule-header {
+    padding: 20rpx;
+    margin: 40rpx 20rpx 0 20rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.schedule-footer {
+    padding: 0 20rpx;
+    margin: 0 20rpx;
+    margin-bottom: 10rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.big-title {
+    font-size: 45rpx;
+    margin-bottom: 10rpx;
+}
+
+.sec-title {
+    font-size: 28rpx;
+    margin-bottom: 10rpx;
+}
+
+.schedule-price {
+    font-size: 40rpx;
+}
+
+.schedule-price-info {
+    font-size: 60rpx;
+}
+
+.gray {
+    color: #a4a4a4;
+}
+
+.tips-share {
+    margin-top: 20rpx;
+    text-decoration: underline;
+    color: #ff0000;
+}
+
+.tips {
+    font-size: 30rpx;
+    color: #a4a4a4;
+    width: 100%;
+    text-align: center;
+    margin: 20rpx auto;
+}
+
+.introduce-wrap{
+    padding-bottom: 100rpx;
+}
+
+.footer-wrap .submitbtn {
+    background: #1AAD19;
+    border: none;
+    color: #fff;
+    font-size: 34rpx;
+    border-radius: 1px;
+    height: 100rpx;
+    line-height: 100rpx;
+    width: 100%;
+}
+
+.footer-wrap .submitbtn.disabled {
+    background: #666
+}
+
+.footer-wrap {
+    display: flex;
+    height:100rpx;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    
+}
+
+.footer-img {
+    width:50rpx;
+    padding-top:5px;
+    
+}
+
+.consult {
+    width: 150rpx;
+    background: #fff;
+    font-size: 26rpx;
+    text-align: center;
+    color: #666;
+}
+
+/* 新增样式 shopping-card*/
+.textures{
+    background: url(http://cdnimg.bama77.com/product-bg.png) top no-repeat;
+    background-size: 100% 106%;
+}
+.textures-box {
+    margin-left: 40rpx;
+    padding-left: 10rpx;
+    padding-right: 44rpx;
+}
+.title-h2{
+    font-size: 30rpx;
+    color: #262626;
+    margin: 0;
+    padding-bottom: 12rpx;
+    padding-top: 60rpx;
+}
+.price-box{
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 8px;
+}
+.title-h3{
+    font-size: 28rpx;
+    margin: 0;
+}
+.price-red{
+    color: #ff4891;
+    font-size: 26rpx;
+    line-height: 40rpx;
+}
+.price-red .price-product {
+    padding-left:10rpx;
+    font-size: 46rpx;
+}
+.sale-num {
+    color: #969696;
+    font-size: 24rpx;
+    float: right;
+    margin-top:7rpx;
+    
+}
+.product-news{
+    display:flex;
+    align-items: flex-end;
+    padding-bottom:20rpx;
+    padding-top:10rpx;
+}
+.product-model{
+    width: 33%;
+    font-size: 24rpx;
+}
+.product-model image {
+    width: 36rpx;
+    line-height: 44px;
+    margin-right: 10rpx;
+}
+.binding{
+    line-height:52rpx;
+    color: #969696;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-align: left;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+/* 亮点 */
+
+.lights-pots{
+    background: #fff;
+    padding: 12rpx;
+    border-top: 20rpx solid #f5f5f5;
+    border-left: 20rpx solid #f5f5f5;
+    border-right: 20rpx solid #f5f5f5;
+}
+.bright-img {
+    width: 30rpx;
+    height: 30rpx;
+}
+.list-titile {
+    font-size: 30rpx;
+    color: #262626;
+    clear: both;
+    padding-left: 40rpx;
+    text-align: center;
+    line-height:60rpx;
+}
+
+.commodity-details{
+    width:95%;
+    margin: 0 auto;
+}
+.commodity-details li:first-child {
+    padding-top: 20px;
+}
+.commodity-details li {
+    color: #262626;
+    line-height: 40px;
+    font-size: 14px;
+    border-bottom: 1px solid #f5f5f5;
+    position: relative;
+    display: block;
+    margin-left:30rpx;
+    
+}
+.disc {
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 50%;
+    background: #c6c6c6;
+    display: inline-block;
+    margin-right: 6rpx;
+    vertical-align: middle;
+    margin-top: -6rpx;
+    margin-right: 10rpx;
+}
+.graphic-details {
+    border: 10px solid #F5F5F5;
+    background:#fff;
+}
+.top-title {
+    text-align: center;
+    width: 100%;
+    font-size: 30rpx;
+    color: #262626;
+    clear: both;
+    position: relative;
+    margin: 0 auto;
+    line-height: 88rpx;
+}
+.top-title .line {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 0 40rpx;
+}
+.content-detail {
+    margin: 0 20px;
+}
+ .detail-item {
+    color: #262626;
+    line-height: 40px;
+    font-size: 14px;
+    border-top: 1px solid #f5f5f5;
+}
+.detail-info {
+    color: #262626;
+    padding-left: 5px;
+}

@@ -22,7 +22,8 @@
     "pages/comment/comment",
     "pages/list/list",
     "pages/shopping/shopping-list/shopping-list",
-    "pages/shopping/shopping-info/shopping-info"
+    "pages/shopping/shopping-info/shopping-info",
+    "pages/shopping/shopping-order/shopping-order"
   ],
   "window": {
     "backgroundTextStyle": "light",

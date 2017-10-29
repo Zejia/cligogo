@@ -8,7 +8,8 @@ Page({
         evaluate: null,
         current: null,
         tariff: null,
-        farmid: ''
+        farmid: '',
+        imgLoad:false,
     },
     onLoad: function(option) {
         console.log(option.id)
@@ -94,5 +95,11 @@ Page({
          wx.makePhoneCall({
              phoneNumber: '0898-38322067'
            })
+     },
+     imgload(e){
+         console.log(e)
+         this.setData({
+             imgLoad:true
+         })
      }
 })

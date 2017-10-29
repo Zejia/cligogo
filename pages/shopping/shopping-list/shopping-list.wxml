@@ -16,7 +16,7 @@
                 <view class="heading">
                     <view class="category-title">
                         <view class="category-name">{{navList[index].name}}</view>
-                        <text class="category-description">天天有惊喜！</text>
+                        <text class="category-description">{{navList[index].title}}</text>
                     </view>
                 </view>
                 <view class="shopping-list" wx:for="{{dishesList[index]}}" wx:for-index="idx" wx:for-item="dishesLists">
@@ -25,10 +25,10 @@
                         <header class="foodtitle">
                             <text>{{dishesLists.name}}</text>
                         </header>
-                        <view class="fooddescription">劲爆活动价，2份15元</view>
+                        <view class="fooddescription">{{dishesLists.title}}</view>
                         <view class="foodsales"></view>
                         <view class="rp">库存:
-                            <text>29</text>
+                            <text>{{dishesLists.num}}</text>
                         </view>
                         <view class="foodprice">
                             <text>{{dishesLists.price}}</text>
@@ -36,11 +36,11 @@
                         <!-- <template is="cartbutton"  data="{{...dishesLists}}"/> -->
                         <view class="cartbutton">
                             <view class="cartbutton-2tycd">
-                                <view wx-if="{{dishesLists.num>0}}" class="button" data-index="{{idx}}" bindtap="reduce">
+                                <view wx-if="{{dishesLists.counter>0}}" class="button" data-index="{{idx}}" data-id="{{dishesLists.id}}" bindtap="reduce">
                                     <image class='img' src="http://cdnimg.bama77.com/subtract.png"></image>
                                 </view>
-                                <view wx-if="{{dishesLists.num>0}}" class="cartbutton-2OSi7">{{dishesLists.num}}</view>
-                                <view class="button" data-index="{{idx}}" bindtap="addNum">
+                                <view wx-if="{{dishesLists.counter>0}}" class="cartbutton-2OSi7">{{dishesLists.counter}}</view>
+                                <view class="button" data-index="{{idx}}" data-id="{{dishesLists.id}}" bindtap="addcart">
                                     <image class='img' src="http://cdnimg.bama77.com/plus.png"></image>
                                 </view>
                             </view>
@@ -64,17 +64,17 @@
             </view>
             <scroll-view scroll-y style="height: 300rpx;" class="entityList-yrs9v_0">
                 <ul>
-                    <li class="entityList-1eODF_0">
+                    <li class="entityList-1eODF_0" wx:for="{{carts}}" wx:for-item="cart">
                         <span class="entityList-30u-R_0">
-                            <em class="entityList-2g5ra_0">美式炸薯条 第2份半价</em>
+                            <em class="entityList-2g5ra_0">{{cart.name}}</em>
                             <p class="entityList-1IZul_0"></p>
                         </span>
                         <span class="entityList-1vr8H_0">
-                            <span class="entityList-1XZvm_0">15</span>
+                            <span class="entityList-1XZvm_0">{{cart.price}}</span>
                         </span>
                         <span class="entityList-3cAE9_0">
                                 <span class="cartbutton-2tycR">
-                                    <span role="button" class="cartbutton-2OSi7">1/件</span>
+                                    <span role="button" class="cartbutton-2OSi7">{{cart.counter}}/件</span>
                                 </span>
                         </span>
                     </li>
@@ -83,15 +83,15 @@
             </scroll-view>
         </view>
         <!-- 底部购物车条 -->
-        <view class="footer-bottom {{isDefault != true ? 'bottomNav-6KjUI_0' : ''}}">
-            <view bindtap='openShopping' class="footer-header  {{isDefault != true ? 'bottomNav-6KjUI_0' : ''}}" ></view>
+        <view class="footer-bottom {{total <= 0 ? 'bottomNav-6KjUI_0' : ''}}">
+            <view bindtap='openShopping' class="footer-header  {{total <= 0 ? 'bottomNav-6KjUI_0' : ''}}" ></view>
             <view class="footer-warp">
                 <view class="bottomNav-3Ak_E_0">
-                    <text>总价¥40</text>
+                    <text>总价¥{{total}}</text>
                 </view>
-                <view class="bottomNav-3zqFz_0">商品2件</view>
+                <view class="bottomNav-3zqFz_0">商品{{totalNum}}件</view>
             </view>
-            <view class="footer-btn {{isDefault != true ? 'bottomNav-9FCIh_0' : ''}}">去结算</view>
+            <view class="footer-btn {{total <= 0 ? 'bottomNav-9FCIh_0' : ''}}" bindtap="order">去结算</view>
         </view>
     </view>
 </view>

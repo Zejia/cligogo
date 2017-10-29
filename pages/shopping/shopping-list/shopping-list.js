@@ -9,91 +9,23 @@ Page({
     // height
     docHeight: 3000,
     height: null,
-    isDefault:true,
-    shoppingFlag:true,
+    isDefault: false,
+    shoppingFlag: false,
     // tab切换  
     currentTab: 0,
-    navList: [{
-        id: 1,
-        name: '热销菜品'
-      },
-      {
-        id: 2,
-        name: '热菜'
-      },
-      {
-        id: 3,
-        name: '凉菜'
-      },
-      {
-        id: 4,
-        name: '套餐'
-      }
-    ],
-    dishesList: [
-      [{
-          name: "红烧肉",
-          price: 38,
-          num: 1,
-          id: 0
-        },
-        {
-          name: "宫保鸡丁",
-          price: 58,
-          num: 0,
-          id: 1
-        },
-        {
-          name: "水煮鱼",
-          price: 88,
-          num: 0,
-          id: 2
-        }
-      ],
-      [{
-          name: "小炒日本豆腐",
-          price: 18,
-          num: 0,
-          id: 0
-        },
-        {
-          name: "烤鱼",
-          price: 58,
-          num: 0,
-          id: 1
-        }
-      ],
-      [{
-          name: "大拌菜",
-          price: 18,
-          num: 0,
-          id: 2
-        },
-        {
-          name: "川北凉粉",
-          price: 8,
-          num: 0,
-          id: 3
-        }
-      ],
-      [{
-          name: "大拌菜4444",
-          price: 18,
-          num: 0,
-          id: 0
-        },
-        {
-          name: "川北凉粉6666",
-          price: 8,
-          num: 0,
-          id: 1
-        }
-      ]
-    ]
+    navList: null,
+    dishesList: null,
+    carts: [],
+    total:0,
+    totalNum:0,
   },
   onLoad: function () {
     var that = this;
-
+    try {
+      wx.removeStorageSync('cart')
+    } catch (e) {
+      // Do something when catch error
+    }
     /** 
      * 获取系统信息 
      */
@@ -112,7 +44,7 @@ Page({
         }).exec()
       }
     });
-    this.fetchData(0);
+    this.fetchData();
   },
   /** 
    * 滑动切换tab 
@@ -123,15 +55,13 @@ Page({
     that.setData({
       currentTab: e.detail.current
     });
-    that.fetchData(e.detail.current)
+    // that.fetchData(e.detail.current)
   },
   /** 
    * 点击tab切换 
    */
   swichNav: function (e) {
-
     var that = this;
-    that.fetchData(e.target.dataset.current)
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
@@ -140,57 +70,168 @@ Page({
       })
     }
   },
-  fetchData(ex) {
+  fetchData() {
     let that = this;
-    let user = wx.getStorageSync('user');
+    wx.request({
+      url: 'https://www.supermaker.com.cn/chh/storeIndex', //仅为示例，并非真实的接口地址
+      data: {},
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        if (res.data.code == 1) {
+          that.setData({
+            navList: res.data.memu,
+            dishesList: res.data.skulist
+          })
 
-    // wx.request({
-    //   url: 'https://www.supermaker.com.cn/clzz/cardIO', //仅为示例，并非真实的接口地址
-    //   data: {
-    //     userid: user.id,
-    //     type:ex
-    //   },
-    //   header: {
-    //       'content-type': 'application/json' // 默认值
-    //   },
-    //   success: function(res) {
-    //     if(res.data.code==1){
-    //       var key = "swiper"+ex
-    //       that.setData({
-    //       [key]:res.data.time
-    //       })
-
-    //     }
-    //   }
-    // })
+        }
+      }
+    })
 
   },
   reduce(options) {
-    let currentTab = this.data.currentTab;
-    let index = options.currentTarget.dataset.index;
-    let counter = this.data.dishesList[currentTab][index];
-    let string = "dishesList["+currentTab+"]["+index+"].num"
-    if (counter.num == 0) {
-      return false;
+    let that = this,
+      currentTab = this.data.currentTab, //当前大选项卡index
+      fetchData = options.currentTarget.dataset, //点击传值 parm:index=小选项卡位置 id = 选项卡ID;
+      counts = this.data.dishesList[currentTab][fetchData.index],
+      toatl = null,
+      string = "dishesList[" + currentTab + "][" + fetchData.index + "].counter";
+
+    counts.counter = counts.counter - 1;
+    
+    this.data.total -= counts.price
+    this.setData({
+      [string]: counts.counter,
+      total:this.data.total,
+      totalNum:this.data.totalNum-=1
+    })
+    // 遍历列表 与 购物车列表  
+    for (var i in this.data.dishesList[currentTab]) {
+      // 列表中某一项item的id == 点击事件传递过来的id。则是被点击的项  
+      if (this.data.dishesList[currentTab][i].id == options.currentTarget.dataset.id) {
+        // 获取购物车的缓存数组（没有数据，则赋予一个空数组）  
+        var arr = wx.getStorageSync('cart') || [];
+        // 如果购物车有数据  
+        if (arr.length > 0) {
+          // 遍历购物车数组  
+          for (var j in arr) {
+            // 判断购物车内的item的id，和事件传递过来的id，是否相等  
+            if (arr[j].id == options.currentTarget.dataset.id) {
+              // 相等的话，给counter+1（即再次添加入购物车，数量+1）  
+              arr[j].counter = arr[j].counter - 1;
+              if(arr[j].counter == 0){
+                arr.splice(j, 1);
+              }
+              // 最后，把购物车数据，存放入缓存（此处不用再给购物车数组push元素进去，因为这个是购物车有的，直接更新当前数组即可）  
+             
+                try {
+                  wx.setStorageSync('cart', arr)
+                } catch (e) {
+                  console.log(e)
+                }
+                if(arr.length <= 0 ){
+                  wx.removeStorageSync('cart')
+                }
+              // 返回（在if内使用return，跳出循环节约运算，节约性能）  
+              return;
+            }
+          }
+        }
+       
+        // 最后，把购物车数据，存放入缓存  
+        try {
+          wx.setStorageSync('cart', arr)
+          // 返回（在if内使用return，跳出循环节约运算，节约性能）  
+          return;
+        } catch (e) {
+          console.log(e)
+        }
+      }
     }
-    counter.num--
-    this.setData({
-      [string]:counter.num
-    })
   },
-  addNum(options) {
-    let currentTab = this.data.currentTab;
-    let index = options.currentTarget.dataset.index;
-    let counter = this.data.dishesList[currentTab][index];
-    let string = "dishesList["+currentTab+"]["+index+"].num"
-    counter.num++
+  // 加入购物车  
+  addcart(options) {
+    let that = this,
+      currentTab = this.data.currentTab, //当前大选项卡index
+      fetchData = options.currentTarget.dataset, //点击传值 parm:index=小选项卡位置 id = 选项卡ID;
+      counts = this.data.dishesList[currentTab][fetchData.index],
+      string = "dishesList[" + currentTab + "][" + fetchData.index + "].counter";
+      this.data.total += counts.price
+      counts.counter = counts.counter + 1;
     this.setData({
-      [string]:counter.num
+      [string]: counts.counter,
+      total:this.data.total,
+      totalNum:this.data.totalNum+=1
     })
+    // 遍历列表 与 购物车列表  
+    for (var i in this.data.dishesList[currentTab]) {
+      // 列表中某一项item的id == 点击事件传递过来的id。则是被点击的项  
+      if (this.data.dishesList[currentTab][i].id == options.currentTarget.dataset.id) {
+        // 获取购物车的缓存数组（没有数据，则赋予一个空数组）  
+        var arr = wx.getStorageSync('cart') || [];
+        // 如果购物车有数据  
+        if (arr.length > 0) {
+          // 遍历购物车数组  
+          for (var j in arr) {
+            // 判断购物车内的item的id，和事件传递过来的id，是否相等  
+            if (arr[j].id == options.currentTarget.dataset.id) {
+              // 相等的话，给counter+1（即再次添加入购物车，数量+1）  
+              arr[j].counter = arr[j].counter + 1;
+              // 最后，把购物车数据，存放入缓存（此处不用再给购物车数组push元素进去，因为这个是购物车有的，直接更新当前数组即可）  
+              try {
+                wx.setStorageSync('cart', arr)
+              } catch (e) {
+                console.log(e)
+              }
+              // 返回（在if内使用return，跳出循环节约运算，节约性能）  
+              return;
+            }
+          }
+          // 遍历完购物车后，没有对应的item项，把goodslist的当前项放入购物车数组  
+          arr.push(this.data.dishesList[currentTab][i]);
+        }
+        // 购物车没有数据，把item项push放入当前数据（第一次存放时）  
+        else {
+          arr.push(this.data.dishesList[currentTab][i]);
+        }
+        // 最后，把购物车数据，存放入缓存  
+        try {
+          wx.setStorageSync('cart', arr)
+          // 返回（在if内使用return，跳出循环节约运算，节约性能）  
+          return;
+        } catch (e) {
+          console.log(e)
+        }
+      }
+    }
+
+
   },
-  openShopping(){
-    this.setData({
-      shoppingFlag:!this.data.shoppingFlag
+  openShopping() {
+    try {
+      let cart = wx.getStorageSync('cart')
+      if (cart) {
+        this.setData({
+          shoppingFlag: !this.data.shoppingFlag,
+          carts: cart
+        })
+      }
+    } catch (e) {
+      console.log(e)
+    }
+
+  },
+  order(){
+    let that = this;
+    if(that.data.total<=0){
+        return;      
+    }
+    wx.setStorageSync('total', this.data.total);
+    wx.setStorageSync('totalNum', this.data.totalNum);
+
+    wx.navigateTo({
+      url:'../shopping-order/shopping-order'
     })
   }
 })

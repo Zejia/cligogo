@@ -45,6 +45,7 @@
 
 ._1dwlm ._2RqbK {
     width: 100%;
+    opacity: 0;
 }
 
 ._1dwlm ._3tQEs {
@@ -327,9 +328,7 @@
     margin: 20rpx auto;
 }
 
-.introduce-wrap{
-    padding-bottom: 100rpx;
-}
+
 
 .footer-wrap .submitbtn {
     background: #1AAD19;
@@ -369,3 +368,41 @@
     text-align: center;
     color: #666;
 }
+.farm-mask .introduce-wrap:nth-last-child(2){ 
+    padding-bottom:100rpx;
+}
+
+
+
+/* 动画 */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+  }  

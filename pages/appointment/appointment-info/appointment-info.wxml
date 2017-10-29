@@ -26,7 +26,7 @@
                 <li>
                     <!-- <span class="cellname">出行时间 </span> -->
                     <!-- <input class="cellquantity" value="{{id}}" placeholder="出行时间"/>-->
-                    <picker class='cellquantity' mode="time" value="{{time}}" start="09:00" end="21:01" bindchange="bindTimeChange">
+                    <picker class='cellquantity' mode="selector" range="{{range}}"  bindchange="bindTimeChange">
                         <view class="picker">
                             预计到店时间: {{time}}
                         </view>

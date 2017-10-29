@@ -1,2 +1,139 @@
-<!--shopping.wxml-->
-<text>shopping.wxml</text>
+<!--农庄详情页蒙层 -->
+<import src="../../../wxParse/wxParse.wxml" />
+<view class='farm-mask masks animated'>
+    <view class="_1dwlm" bindtap='previewImages'>
+        <image src="{{current}}" mode='widthFix' class="_2RqbK"></image>
+        <view class="_3tQEs">
+            <text class='num'>{{urls.length}}</text>
+            <image class="_3tQEs_img" src="https://img.supermonkey.com.cn/webapp/wx2/box/box_image_icon.png" style="height: 12px; width: 14px;                     "></image>
+        </view>
+    </view>
+    <view class="textures">
+        <view class="textures-box">
+            <view class="title-h2">伊岭薄皮红肉火龙果275-400g*2个</view>
+            <view class="title-h3" style="color: rgb(255, 195, 141);">
+                <text class="price-currency ">原价</text>
+                <text class="rmb">¥</text>
+                ¥
+                <text class="price-product">17.9</text>
+            </view>
+            <view class="price-box">
+                <text class="price-red">
+                    <text class="price-label ">商城价 ¥ </text>
+                    <text class="price-product">9.9</text>
+                </text>
+                <text class="sale-num">已售8999份</text>
+            </view>
+            <view class="product-news">
+                <view class="product-model product-mess">
+                    <image mode="widthFix" src="http://cdnimg.bama77.com/location-img.png"></image>
+                    <view class="binding">广西</view>
+                </view>
+                <view class="product-model sale-volume">
+                    <image mode="widthFix" src="http://cdnimg.bama77.com/sales.png"></image>
+                    <view class=" binding">次日达</view>
+                </view>
+                <view class="product-model product-message">
+                    <image mode="widthFix" src="http://cdnimg.bama77.com/free-ship.png"></image>
+                    <view class=" binding">实付满199包邮</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="lights-pots" >
+        <view class="list-titile">
+            <image class="bright-img" src="http://cdnimg.bama77.com/bright-left.png"> </image>亮点
+            <image  class="bright-img" src="http://cdnimg.bama77.com/bright-right.png"></image>
+        </view>
+        <ul class="commodity-details">
+            <li>
+                <text class="disc"></text>
+                <text>自然成熟的火龙果可甜了
+                </text>
+            </li>
+            <li>
+                <text class="disc"></text>
+                <text>虽然外表有点丑，但是营养丰富抗氧化
+                </text>
+            </li>
+            <li>
+                <text class="disc"></text>
+                <text>我准备好了，你要来吃我吗</text>
+            </li>
+            <li>
+                <text class="disc"></text>
+                <text>我准备好了，你要来吃我吗</text>
+            </li>
+        </ul>
+    </view>
+    <view class="graphic-details"  style="">
+		<view class="top-title">
+			<view class="line">商品详情</view>
+		</view>
+		<view class="content-detail">
+			<view class="detail-item">规格: <text class="detail-info" >2个</text></view>
+			<view class="detail-item">重量: <text class="detail-info" >275-400g*2个</text></view>
+			<view class="detail-item">包装: <text class="detail-info" >普装</text></view>
+			<view class="detail-item">保质期: <text class="detail-info" >到货即可食用</text></view>
+			<view class="detail-item">贮存方法: <text class="detail-info">冷藏</text></view>
+		</view>
+	<view class="picture" >
+			<image  class="picture-img" src="https://image.missfresh.cn/7f96d1b7bda14f65ad53d11a9fc896a0.jpg"></image>
+			<view class="commodity">
+			</view>
+        </view>
+        <view class="picture" >
+			<image  class="picture-img" src="https://image.missfresh.cn/3d7a9638efed438a97eba4eb34d318da.jpg"></image>
+			<view class="commodity">
+			</view>
+        </view>
+        <view class="picture" >
+			<image   class="picture-img" src="https://image.missfresh.cn/725c3463da6e46a280c6bea655f9fdaa.jpg"></image>
+			<view class="commodity">
+			</view>
+        </view>
+        <view class="picture" >
+			<image   class="picture-img" src="https://image.missfresh.cn/77bf459f583648c8b5d6405897be11ff.jpg"></image>
+			<view class="commodity">
+			</view>
+        </view>
+        <view class="picture" >
+			<image  class="picture-img" src="https://image.missfresh.cn/086fccd8c14142ea9cc24956f560a47b.jpg"></image>
+			<view class="commodity">
+			</view>
+        </view>
+        <view class="picture" >
+			<image   class="picture-img" src="https://image.missfresh.cn/059ca1ba4b264674807a59de59e52476.jpg"></image>
+			<view class="commodity">
+			</view>
+        </view>
+        <view class="picture" >
+			<image   class="picture-img" src="https://image.missfresh.cn/13d6063a68e241b499e970e6ea4acc11.jpg"></image>
+			<view class="commodity">
+			</view>
+        </view>
+        <view class="picture" >
+			<image   class="picture-img" src="https://image.missfresh.cn/55e1138a3d794a988c2874d51a17c600.jpg"></image>
+			<view class="commodity">
+			</view>
+        </view>
+        <view class="picture" >
+			<image   class="picture-img" src="https://image.missfresh.cn/053adc2152af45b296c313e0dcc36e18.jpg"></image>
+			<view class="commodity">
+			</view>
+        </view>
+        
+	</view>
+    <!-- 场地介绍 -->
+    <!-- <view class="introduce-wrap ">
+        <view class="resume_title">
+            场地介绍
+        </view>
+        <view class="resume_main introduce">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        </view>
+    </view>
+    -->
+
+
+</view>
