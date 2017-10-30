@@ -1,45 +1,54 @@
 <view class="order">
-        <view class="cart-group checkout-view">
-            <view class="formbloack">
+    <view class="cart-group checkout-view">
+        <view class="header-warp" bindtap='chooseAddress'>
+            <view wx:if="{{!addressInfo}}" class='none-address'>+ 添加收货地址</view>
+            <view wx:else class='address-warp'>
+                <view class="detailInfo">{{addressInfo.detailInfo}}
+                    <image class="arrow" mode="widthFix" src="../../../images/arrow.png"></image>
+                </view>
+                <view class="userName">{{addressInfo.userName}}　{{addressInfo.telNumber}}</view>
+            </view>
+        </view>
+        <view role="alertdialog" class="el-message el-message--success">
+            <view class="el-message__content">提示框</view>
+        </view>
+        <!-- <view class="formbloack">
                 <view class="label-wrap">联系电话</view>
                 <view class="input-group-wrap rightbtn">
                     <view class="input-wrap">
                         <input placeholder="你的手机号" value="{{phone}}" bindinput="bindphone" type="number"  maxlength="12"/>
                     </view>
                 </view>
-            </view>
-            <view class="formbloack">
-                <view class="label-wrap">联系地址</view>
-                <view class="input-group-wrap rightbtn">
-                    <view class="input-wrap">
-                        <input placeholder="填写联系地址" value="{{address}}" bindinput="bindaddress" type="text" />
-                    </view>
-                </view>
-            </view>
-            <view class="formbloack">
-                <view class="label-wrap">备注</view>
-                <view class="input-group-wrap rightbtn">
-                    <view class="input-wrap">
-                        <input placeholder="备注" value="{{remark}}" bindinput="bindremark" type="text" />
-                    </view>
-                </view>
-            </view>
-       
+            </view> -->
+        <view class="foodlist-warp">
             <ul class="foodlist">
-                <li wx:for='{{cart}}' wx:for-item = "carts">
+                <li wx:for='{{cart}}' wx:for-item="carts">
                     <text class="cellname">{{carts.name}}</text>
-                    <text class="cellquantity">x　{{carts.counter}}</text>
-                    <text class="celltotal">¥{{carts.price}}</text></li>
-                
+                    <text class="cellquantity">{{carts.counter}}份</text>
+                    <text class="celltotal">¥{{carts.price}}</text>
+                </li>
+
             </ul>
             <ul class="foodlist pd-1r">
-                <li><text class="cellname">总价</text><text class="cellquantity">x　{{totalNum}}</text><text class="celltotal">¥{{total}}</text></li>
+                <li>
+                    <text class="cellname">总价</text>
+                    <text class="cellquantity">{{totalNum}}份</text>
+                    <text class="celltotal">¥{{total}}</text>
+                </li>
             </ul>
         </view>
-        <footer>
-            <text>订单金额 ¥{{total}}</text>
-            <button class="submitbtn" >
-                确认下单
-            </button>
-        </footer>
+        <view class="foodlist-warp">
+            <radio-group class="radio-group" bindchange="payChange">
+                <label class="radio" wx:for="{{items}}">
+                    <radio value="{{item.value}}" checked="{{item.checked}}" />{{item.name}}
+                </label>
+            </radio-group>
+        </view>
     </view>
+    <footer>
+        <text>订单金额 ¥{{total}}</text>
+        <button class="submitbtn" bindtap='submitbtn'>
+            确认下单
+        </button>
+    </footer>
+</view>

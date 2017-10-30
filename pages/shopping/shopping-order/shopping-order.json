@@ -1,3 +1,5 @@
 {
-    "navigationBarTitleText": "村好货详情"
+    "navigationBarTitleText": "订单配送至",
+    "navigationBarBackgroundColor" : "#3fb84c",
+    "navigationBarTextStyle" : "white"
 }

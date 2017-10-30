@@ -7,7 +7,13 @@ Page({
   data: {
     phone:null,
     address:null,
-    remark:null
+    remark:null,
+    addressInfo:null,
+    pay:0,
+    items: [
+      {name: '在线支付', value: 0 , checked: 'true'},
+      {name: '货到付款', value: 1 }
+    ]
   },
   /**
    * 生命周期函数--监听页面加载
@@ -15,11 +21,13 @@ Page({
   onLoad: function (options) {
     let total = wx.getStorageSync('total'),
         totalNum = wx.getStorageSync('totalNum'),
-        cart = wx.getStorageSync('cart');
+        cart = wx.getStorageSync('cart'),
+        addressInfo = wx.getStorageSync('addressInfo');
     this.setData({
       total:total,
       totalNum:totalNum,
-      cart:cart
+      cart:cart,
+      addressInfo:addressInfo
     })
   },
 
@@ -29,45 +37,6 @@ Page({
   onReady: function () {
   
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
   
   },
@@ -86,4 +55,23 @@ Page({
       remark: e.detail.value
     })
   },
+  submitbtn(){
+   
+  },
+  chooseAddress(){
+    let that = this;
+    wx.chooseAddress({
+      success: function (res) {
+        wx.setStorageSync('addressInfo',res);
+        that.setData({
+          addressInfo:res
+        })
+      }
+    })
+  },
+  payChange: function(e) {
+    this.setData({
+      pay:e.detail.value
+    })
+  }
 })

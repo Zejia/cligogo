@@ -244,7 +244,7 @@ Page({
           _num: res.data.time - 1
 
         })
-        if (that.data.logs <= 0) {
+        if (that.data.logs < 0) {
           wx.showModal({
             title: '提示',
             content: '您旅游币不足一个请及时够买。',

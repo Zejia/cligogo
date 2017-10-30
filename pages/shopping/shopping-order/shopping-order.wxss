@@ -1,5 +1,7 @@
 /* shopping.wxss */
-
+page{
+    background: #eff2f0;
+}
 .formbloack {
     background-color: #fff;
     padding-left: 10rpx;
@@ -90,12 +92,11 @@
     border-bottom: 1rpx solid #eee;
 }
 
-
 .foodlist {
     padding: 10rpx 20rpx;
     color: #666;
     font-size: 32rpx;
-    border-bottom: 1rpx solid #eee;
+    /* border-bottom: 1rpx solid #eee; */
 }
 
 .foodlist li {
@@ -107,32 +108,35 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    font-size: 38rpx;
     color: inherit;
-    padding: 10rpx 15rpx;
+    padding: 10rpx 0;
+    margin:0 20rpx;
+    border-bottom: 1rpx solid #f9f9f9;
 }
 
 .foodlist li .cellname {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    -webkit-box-flex: 9;
-    -webkit-flex: 9;
-    -ms-flex: 9;
-    flex: 9;
+    -webkit-box-flex: 8;
+    -webkit-flex: 8;
+    -ms-flex: 8;
+    flex: 8;
     display: block;
     width: 0;
+    color: #474747;
+    font-size: 30rpx;
 }
 
 .foodlist li .cellquantity {
-    -webkit-box-flex: 2;
-    -webkit-flex: 2;
-    -ms-flex: 2;
-    flex: 2;
+    -webkit-box-flex: 3;
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
     display: block;
     width: 0;
-    text-align: right;
     color: #999;
+    font-size: 30rpx;
 }
 
 .foodlist li .celltotal {
@@ -143,6 +147,7 @@
     display: block;
     width: 0;
     text-align: right;
+    font-size: 30rpx;
 }
 
 .total {
@@ -200,20 +205,105 @@ footer .submitbtn {
     color: #fff;
     font-size: 32rpx;
     line-height: 100rpx;
+    width: 200rpx;
 }
 
 footer .submitbtn.disabled {
     background: #666
 }
-.pd-1r{
-    padding-bottom:10rpx;
+
+.pd-1r {
+    padding-bottom: 10rpx;
 }
-.shop{
+
+.shop {
     position: absolute;
     top: 10rpx;
-    right:10rpx;
-    padding:10rpx 20rpx;
+    right: 10rpx;
+    padding: 10rpx 20rpx;
     background: #f98523;
     color: #fff;
     border-radius: 10rpx;
+}
+
+
+/* 详情页顶部地址 */
+
+.header-warp {
+    background: #3fb84c;
+    min-height: 100rpx;
+    color: #fff;
+    text-align: center;
+}
+
+.none-address {
+    border: 2rpx solid #fff;
+    display: inline-block;
+    padding: 10rpx 30rpx;
+    border-radius: 40rpx;
+    font-size: 28rpx;
+    font-weight: 700;
+}
+
+.arrow {
+    vertical-align: middle;
+    width: 30rpx;
+    margin-top: -8rpx;
+}
+
+.detailInfo {
+    font-size: 32rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.userName {
+    font-size: 28rpx;
+    margin-top: 10rpx;
+}
+/* 提示框 */
+
+.el-message {
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #e6ebf5;
+    background-color: #edf2fc;
+    overflow: hidden;
+    padding: 40rpx 40rpx 40rpx 50rpx;
+    display: flex;
+    align-items: center;
+}
+.el-message--success {
+    background-color: #f0f9eb;
+    border-color: #e1f3d8;
+}
+
+.el-message--success .el-message__content {
+    color: #67c23a;
+}
+.el-message view {
+    margin: 0;
+}
+.el-message__content {
+    padding: 0;
+    font-size: 28rpx;
+    line-height: 1;
+}
+/* 订单列表 */
+.foodlist-warp{
+    background: #fff;
+    border-bottom:2rpx solid #f9f9f9;
+    width: 95%;
+    margin:0 auto;
+    border-radius: 4rpx;
+    margin-top: 20rpx;
+}
+.radio{
+    display:block;
+    color:#474747;
+    font-size:30rpx;
+    padding:30rpx 0;
+    margin:0 20rpx;
+    border-bottom:2rpx solid #f9f9f9;
 }

@@ -74,7 +74,9 @@ Page({
     let that = this;
     wx.request({
       url: 'https://www.supermaker.com.cn/chh/storeIndex', //仅为示例，并非真实的接口地址
-      data: {},
+      data: {
+        storeid:wx.getStorageSync('cityid')
+      },
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -232,6 +234,11 @@ Page({
 
     wx.navigateTo({
       url:'../shopping-order/shopping-order'
+    })
+  },
+  shoppingInfo(e){
+    wx.navigateTo({
+      url:'../shopping-info/shopping-info?id='+e.currentTarget.dataset.id
     })
   }
 })

@@ -104,6 +104,7 @@ Page({
                                     showCancel:false,
                                     success: function(res) {
                                       if (res.confirm) {
+                                        wx.setStorageSync('cityid',requestRes.data.city.id)
                                         that.setData({
                                             swiper: requestRes.data.cct,
                                             markers: requestRes.data.farmlist,
@@ -116,6 +117,7 @@ Page({
                                   })
                                
                             }else{
+                                wx.setStorageSync('cityid',res.data.city.id)
                                 that.setData({
                                     swiper: res.data.cct,
                                     markers: res.data.farmlist,
