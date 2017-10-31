@@ -7,7 +7,7 @@
         </view>
         <view class='cover-li' bindtap='shopping'>
             <image class='icon' src="../../images/6.png"></image>
-            <view class='menu-name'>村好货</view>
+            <view class='menu-name'>村里优选</view>
         </view>
         <view class='cover-li' wx:for="{{swiper}}" wx:for-item='swipers' data-id='{{swipers.id}}' data-index='{{index}}' data-name='{{swipers.name}}'
             bindtap='selectAddress'>

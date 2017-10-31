@@ -19,10 +19,10 @@
                         <text class="category-description">{{navList[index].title}}</text>
                     </view>
                 </view>
-                <view  class="shopping-list" wx:for="{{dishesList[index]}}" wx:for-index="idx" wx:for-item="dishesLists" data-id="{{dishesLists.id}}" catchtap="shoppingInfo">
-                    <image class="shopping-list-img" mode="aspectFill" src="http://img.dlg369.com/temp/1508810679476.jpg"></image>
+                <view  class="shopping-list" wx:for="{{dishesList[index]}}" wx:for-index="idx" wx:for-item="dishesLists" >
+                    <image class="shopping-list-img" mode="aspectFill" src="http://img.dlg369.com/temp/1508810679476.jpg" data-id="{{dishesLists.id}}" catchtap="shoppingInfo"></image>
                     <section class="foodinfo">
-                        <header class="foodtitle">
+                        <header class="foodtitle" data-id="{{dishesLists.id}}" catchtap="shoppingInfo">
                             <text>{{dishesLists.name}}</text>
                         </header>
                         <view class="fooddescription">{{dishesLists.title}}</view>
@@ -37,11 +37,11 @@
                         <view class="cartbutton">
                             <view class="cartbutton-2tycd">
                                 <view wx-if="{{dishesLists.counter>0}}" class="button" data-index="{{idx}}" data-id="{{dishesLists.id}}" catchtap="reduce">
-                                    <image class='img' src="http://cdnimg.bama77.com/subtract.png"></image>
+                                    <image class='img' src="../../../images/subtract.png"></image>
                                 </view>
                                 <view wx-if="{{dishesLists.counter>0}}" class="cartbutton-2OSi7">{{dishesLists.counter}}</view>
                                 <view class="button" data-index="{{idx}}" data-id="{{dishesLists.id}}" catchtap="addcart">
-                                    <image class='img' src="http://cdnimg.bama77.com/plus.png"></image>
+                                    <image class='img' src="../../../images/plus.png"></image>
                                 </view>
                             </view>
                         </view>

@@ -1,5 +1,5 @@
 <view class="order">
-    <view class="cart-group checkout-view">
+    <view class="cart-group checkout-view" wx:if="{{paydone}}">
         <view class="header-warp" bindtap='chooseAddress'>
             <view wx:if="{{!addressInfo}}" class='none-address'>+ 添加收货地址</view>
             <view wx:else class='address-warp'>
@@ -9,8 +9,8 @@
                 <view class="userName">{{addressInfo.userName}}　{{addressInfo.telNumber}}</view>
             </view>
         </view>
-        <view role="alertdialog" class="el-message el-message--success">
-            <view class="el-message__content">提示框</view>
+        <view  wx:if="{{tips}}" class="el-message el-message--success">
+            <view class="el-message__content">{{tips}}</view>
         </view>
         <!-- <view class="formbloack">
                 <view class="label-wrap">联系电话</view>
@@ -44,11 +44,16 @@
                 </label>
             </radio-group>
         </view>
+        <footer>
+                <text>订单金额 ¥{{total}}</text>
+                <button class="submitbtn" bindtap='submitbtn'>
+                    确认下单
+                </button>
+            </footer>
     </view>
-    <footer>
-        <text>订单金额 ¥{{total}}</text>
-        <button class="submitbtn" bindtap='submitbtn'>
-            确认下单
-        </button>
-    </footer>
+    <view wx:else class="done">
+         <image class="orderDone" mode="widthFix" src="../../../images/orderDone.png"></image>
+         <text>预计12:32送达</text>
+         <button class="primary" type="primary" bindtap="primary"> 回到首页 </button>
+    </view>
 </view>

@@ -229,6 +229,21 @@ Page({
     if(that.data.total<=0){
         return;      
     }
+    try {
+      var user = wx.getStorageSync('user')
+      console.log(user)
+      if (!user) {
+        setTimeout(function () {
+          wx.navigateTo({
+            url: '../../login/login'
+          })
+        }, 400)
+        return;
+      }
+    } catch (e) {
+      console.log('请刷新')
+      // Do something when catch error
+    }
     wx.setStorageSync('total', this.data.total);
     wx.setStorageSync('totalNum', this.data.totalNum);
 

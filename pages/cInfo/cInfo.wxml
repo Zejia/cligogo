@@ -48,7 +48,7 @@
     </view>
     <view class="introduce-wrap" wx:if="{{link.length>0}}">
         <view class="resume_title">
-            村好货在售
+            村里优选在售
         </view>
         <view class="resume_main introduce">
             <!-- 应用内跳转 -->

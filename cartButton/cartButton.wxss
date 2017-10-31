@@ -10,7 +10,7 @@
 }
 
 .img{
-    width: 60rpx;
-    height: 60rpx;
+    width: 55rpx;
+    height: 55rpx;
     margin:0 10rpx;
 }

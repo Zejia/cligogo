@@ -1,0 +1,45 @@
+<view class="order">
+    <view class="cart-group checkout-view">
+        <view class="header-warp" >
+            <view class='address-warp'>
+                <view class="detailInfo">{{order.address}}
+                </view>
+                <view class="userName">{{order.name}}　{{order.tel}}</view>
+            </view>
+        </view>
+        <view  wx:if="{{tips}}" class="el-message el-message--success">
+            <view class="el-message__content">{{tips}}</view>
+        </view>
+        <!-- <view class="formbloack">
+                <view class="label-wrap">联系电话</view>
+                <view class="input-group-wrap rightbtn">
+                    <view class="input-wrap">
+                        <input placeholder="你的手机号" value="{{phone}}" bindinput="bindphone" type="number"  maxlength="12"/>
+                    </view>
+                </view>
+            </view> -->
+        <view class="foodlist-warp">
+            <ul class="foodlist">
+                <li wx:for='{{list}}' wx:for-item="carts">
+                    <text class="cellname">{{carts.name}}</text>
+                    <text class="cellquantity">{{carts.num}}份</text>
+                    <text class="celltotal">¥{{carts.price}}</text>
+                </li>
+            </ul>
+            <ul class="foodlist pd-1r">
+                <li>
+                    <text class="cellname">总价</text>
+                    <text class="celltotal">¥{{order.total}}</text>
+                </li>
+            </ul>
+        </view>
+        <image class="paytypeImg" mode="widthFix" src="images/{{order.status}}.png"></image>
+        <footer wx:if="{{order.status==0}}">
+                <text>订单金额 ¥{{order.total}}</text>
+                <button class="submitbtn" bindtap='submitbtn'>
+                    确认下单
+                </button>
+        </footer>
+    </view>
+  
+</view>

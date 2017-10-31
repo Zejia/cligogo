@@ -325,3 +325,12 @@ footer .submitbtn.disabled {
     width:70%;
     margin-top: 20rpx;
 }
+.paytypeImg{
+    width: 100%;
+    width:95%;
+    margin:0 auto;
+    border-radius: 4rpx;    
+    background: #fff;
+    display: block;
+    margin-top: 20rpx;
+}

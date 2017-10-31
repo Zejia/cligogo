@@ -175,7 +175,7 @@ swiper-item{
 .foodprice{
     font-size: 36rpx;
     line-height: 36rpx;
-    color: #f60;
+    color: #3fb84c;
 }
 .foodprice:before {
     font-weight: 500;
@@ -253,7 +253,7 @@ swiper-item{
     right: 0;
     bottom: 0;
     left: 0;
-    background: url(http://h5.bama77.com/xd/logo1.png) 50% no-repeat;
+    background: url(http://cdnimg.bama77.com/cligogo.png) 50% no-repeat;
     background-size:110rpx;
     border-radius: 100rpx;
     content: "";
@@ -389,9 +389,10 @@ swiper-item{
 .cartbutton-2OSi7 {
     text-align: center;
     color: #666;
-    font-size: 28rpx;
-    overflow: hidden;
-    line-height: 1.5;
+    font-size:34rpx;
+    overflow:hidden;
+    line-height:1.2;
+    
 }
 
 .cartbutton-2tycd{
@@ -401,7 +402,7 @@ swiper-item{
 
 
 .footer-header.bottomNav-6KjUI_0:after {
-    background-image: url(http://h5.bama77.com/xd/logo1-gray.png)
+    background-image: url(http://cdnimg.bama77.com/cligogo-gary.png)
 }
 
 
