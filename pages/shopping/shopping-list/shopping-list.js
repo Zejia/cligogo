@@ -16,8 +16,8 @@ Page({
     navList: null,
     dishesList: null,
     carts: [],
-    total:0,
-    totalNum:0,
+    total: 0,
+    totalNum: 0,
   },
   onLoad: function () {
     var that = this;
@@ -45,6 +45,43 @@ Page({
       }
     });
     this.fetchData();
+  },
+  onShow() {
+    try {
+      let carts = wx.getStorageSync('cart'),
+        currentCartJson = wx.getStorageSync('currentCartJson'),
+        that = this,
+        total = 0,
+        totalNum = 0;
+      for (let cart of carts) {
+        total += cart.price * cart.counter;
+        totalNum += cart.counter;
+        if(cart.id == currentCartJson.id){
+          
+          if(cart.counter >= currentCartJson.counter){
+              for(let a = 0; a < that.data.dishesList.length; a++){
+                for(let b = 0; b < that.data.dishesList[a].length; b++){
+                  if(that.data.dishesList[a][b].id == currentCartJson.id){
+                    console.log(cart.counter)
+                    let dishesListEle = 'dishesList['+a+']['+b+'].counter'
+                    that.setData({
+                      [dishesListEle]:cart.counter
+                    })
+                  }
+                }
+              }
+          }
+        }
+      }
+    
+      this.setData({
+        total: total,
+        totalNum: totalNum
+      })
+    } catch (e) {
+      // Do something when catch error
+      console.log(e)
+    }
   },
   /** 
    * 滑动切换tab 
@@ -75,7 +112,7 @@ Page({
     wx.request({
       url: 'https://www.supermaker.com.cn/chh/storeIndex', //仅为示例，并非真实的接口地址
       data: {
-        storeid:wx.getStorageSync('cityid')
+        storeid: wx.getStorageSync('cityid')
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -84,9 +121,9 @@ Page({
         if (res.data.code == 1) {
           that.setData({
             navList: res.data.memu,
-            dishesList: res.data.skulist
+            dishesList: res.data.skulist,
+            allsku: res.data.allsku,
           })
-
         }
       }
     })
@@ -101,12 +138,12 @@ Page({
       string = "dishesList[" + currentTab + "][" + fetchData.index + "].counter";
 
     counts.counter = counts.counter - 1;
-    
+
     this.data.total -= counts.price
     this.setData({
       [string]: counts.counter,
-      total:this.data.total,
-      totalNum:this.data.totalNum-=1
+      total: this.data.total,
+      totalNum: this.data.totalNum -= 1
     })
     // 遍历列表 与 购物车列表  
     for (var i in this.data.dishesList[currentTab]) {
@@ -122,25 +159,25 @@ Page({
             if (arr[j].id == options.currentTarget.dataset.id) {
               // 相等的话，给counter+1（即再次添加入购物车，数量+1）  
               arr[j].counter = arr[j].counter - 1;
-              if(arr[j].counter == 0){
+              if (arr[j].counter == 0) {
                 arr.splice(j, 1);
               }
               // 最后，把购物车数据，存放入缓存（此处不用再给购物车数组push元素进去，因为这个是购物车有的，直接更新当前数组即可）  
-             
-                try {
-                  wx.setStorageSync('cart', arr)
-                } catch (e) {
-                  console.log(e)
-                }
-                if(arr.length <= 0 ){
-                  wx.removeStorageSync('cart')
-                }
+
+              try {
+                wx.setStorageSync('cart', arr)
+              } catch (e) {
+                console.log(e)
+              }
+              if (arr.length <= 0) {
+                wx.removeStorageSync('cart')
+              }
               // 返回（在if内使用return，跳出循环节约运算，节约性能）  
               return;
             }
           }
         }
-       
+
         // 最后，把购物车数据，存放入缓存  
         try {
           wx.setStorageSync('cart', arr)
@@ -159,12 +196,12 @@ Page({
       fetchData = options.currentTarget.dataset, //点击传值 parm:index=小选项卡位置 id = 选项卡ID;
       counts = this.data.dishesList[currentTab][fetchData.index],
       string = "dishesList[" + currentTab + "][" + fetchData.index + "].counter";
-      this.data.total += counts.price
-      counts.counter = counts.counter + 1;
+    this.data.total += counts.price
+    counts.counter = counts.counter + 1;
     this.setData({
       [string]: counts.counter,
-      total:this.data.total,
-      totalNum:this.data.totalNum+=1
+      total: this.data.total,
+      totalNum: this.data.totalNum += 1
     })
     // 遍历列表 与 购物车列表  
     for (var i in this.data.dishesList[currentTab]) {
@@ -224,10 +261,10 @@ Page({
     }
 
   },
-  order(){
+  order() {
     let that = this;
-    if(that.data.total<=0){
-        return;      
+    if (that.data.total <= 0) {
+      return;
     }
     try {
       var user = wx.getStorageSync('user')
@@ -248,12 +285,28 @@ Page({
     wx.setStorageSync('totalNum', this.data.totalNum);
 
     wx.navigateTo({
-      url:'../shopping-order/shopping-order'
+      url: '../shopping-order/shopping-order'
     })
   },
-  shoppingInfo(e){
-    wx.navigateTo({
-      url:'../shopping-info/shopping-info?id='+e.currentTarget.dataset.id
-    })
+  shoppingInfo(e) {
+    let currentId = e.currentTarget.dataset.id,
+      allskus = this.data.dishesList;
+    for (let allsku of allskus) {
+      // var element = array[index];
+      for(let i of allsku){
+        if (i.id == currentId) {
+          if(i.counter == 0){
+          i.counter = i.counter + 1;
+          }
+          wx.setStorageSync('currentCartJson', i)
+          
+          wx.navigateTo({
+            url: '../shopping-info/shopping-info?id=' + currentId
+          })
+        }
+      }
+      
+    }
+
   }
 })

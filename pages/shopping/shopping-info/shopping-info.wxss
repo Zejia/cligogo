@@ -494,6 +494,7 @@ page{
 .graphic-details {
     border: 10px solid #F5F5F5;
     background:#fff;
+    margin-bottom: 150rpx;
 }
 .top-title {
     text-align: center;
@@ -523,4 +524,222 @@ page{
 .detail-info {
     color: #262626;
     padding-left: 5px;
+}
+
+
+
+/* 底部购物车 */
+
+.footer-mask{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .4;
+    transition: opacity .35s ease;
+}
+.footer-bottom{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    /* padding-left: 180rpx; */
+    background-color: #3d3d3f;
+    height: 110rpx;
+    /* opacity: .95; */
+}
+.footer-header{
+    position: absolute;
+    left: 40rpx;
+    bottom: 20rpx;
+    width: 110rpx;
+    height: 110rpx;
+    box-sizing: border-box;
+    border-radius: 100%;
+    background-color: #0bc032;
+    border: .133333rem solid #0bc032;
+    box-shadow: 0 -3rpx 1rpx 0 rgba(0,0,0,.1);
+    will-change: transform;
+}
+.footer-header:after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(http://cdnimg.bama77.com/cligogo.png) 50% no-repeat;
+    background-size:110rpx;
+    border-radius: 100rpx;
+    content: "";
+}
+/* .footer-header:before{
+    position: absolute;
+    right: -20rpx;
+    top: -10rpx;
+    line-height: 1;
+    background-color: #f35a74;
+    color: #fff;
+    border-radius: 100%;
+    padding: 10rpx 20rpx;
+    content: "2";
+    font-size: 30rpx;
+    z-index: 9999
+} */
+.footer-warp{
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    width: 0;
+}
+.bottomNav-3Ak_E_0 {
+    font-size: 36rpx;
+    line-height: normal;
+    color: #fff;
+    margin-top:10rpx;
+}
+.bottomNav-3zqFz_0{
+    color: #f5f5f5;
+    font-size: 22rpx;
+}
+.footer-btn{
+    height: 100%;
+    width: 100%;
+    background-color: #0bc032;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32rpx;
+    font-weight: 700;
+    line-height: 3.5;
+}
+
+.footer-detail{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    transition: all .35s ease;
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+    bottom: 500rpx;
+}
+.entityList-yrs9v_0{
+    min-height: 300rpx;
+    overflow: hidden;
+}
+.footer-detail-header{
+    padding:20rpx;
+    border-bottom: 1rpx solid #ddd;
+    background-color: #eceff1;
+    color: #666;
+}
+.entityList-yrs9v_0 {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: 600rpx;
+}
+.cartview-title{
+    font-size: 32rpx;
+    line-height:1.5;
+    padding-left: 10rpx;
+    border-left: 8rpx solid #0bc032;
+}
+.entityList-1eODF_0 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    allet-items: center;
+    padding: 10rpx 15rpx 10rpx 0;
+    min-height: 120rpx;
+    margin-left: 15rpx;
+}
+.entityList-30u-R_0 {
+    -webkit-box-flex: 5.5;
+    -ms-flex: 5.5;
+    flex: 5.5;
+    line-height: normal;
+}
+.entityList-30u-R_0 .entityList-2g5ra_0 {
+    font-size: 32rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    max-width: 50%;
+}
+.entityList-1vr8H_0[data-v-7fa87137] {
+    -webkit-box-flex: 2.5;
+    -ms-flex: 2.5;
+    flex: 2.5;
+    color: #3fb84c;
+    text-align: right;
+    white-space: nowrap;
+    font-weight: 700;
+}
+.entityList-1XZvm_0{
+    font-size: 30rpx;
+    color: rgb(6, 168, 33);
+    text-align: right;
+    white-space: nowrap;
+    font-weight: 700;
+}
+.entityList-1XZvm_0:before {
+    content: "\A5";
+    font-size:24rpx;
+    color: currentColor;
+}
+.entityList-3cAE9_0 {
+    -webkit-box-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+    text-align: right;
+    font-size: 30rpx;
+}
+.cartbutton-2tycR{
+    text-align: right;
+}
+.cartbutton-2OSi7 {
+    text-align: center;
+    color: #666;
+    font-size:34rpx;
+    overflow:hidden;
+    line-height:1.2;
+    
+}
+
+.cartbutton-2tycd{
+    display: flex;
+}
+/* 动态class */
+
+
+.footer-header.bottomNav-6KjUI_0:after {
+    background-image: url(http://cdnimg.bama77.com/cligogo-gary.png)
+}
+
+
+.footer-btn.bottomNav-9FCIh_0 {
+    background-color: #535356
+}
+.cartview-2CbR7 {
+    bottom: -300rpx;
+}
+.footer-mask.cartview-2CbR7{
+    display: none;
+}
+.cartview-2CbR7,
+.cartview-3x5Do,
+.cartview-aUsPc {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0)
 }

@@ -1,5 +1,7 @@
 {
     "navigationBarTitleText": "订单配送至",
     "navigationBarBackgroundColor" : "#3fb84c",
-    "navigationBarTextStyle" : "white"
+    "backgroundColor":"#3fb84c",
+    "navigationBarTextStyle" : "white",
+    "enablePullDownRefresh":true
 }

@@ -65,5 +65,44 @@ Page({
             imageUrl: that.data.current,
             path: 'pages/cInfo/cInfo?id=' + that.data.farmid
         }
+    },
+    joinCart(){
+        let currentCartJson =  wx.getStorageSync('currentCartJson'),
+             arr = wx.getStorageSync('cart') || [],
+             clickN = this.data.clickNum;
+             wx.showToast({
+                title: '成功加入购物车',
+                icon: 'success',
+                duration: 1000
+            })
+             if(arr.length >0){
+                for (var j in arr) {
+                    // 判断购物车内的item的id，和事件传递过来的id，是否相等  
+                    if (arr[j].id == currentCartJson.id) {
+                      // 相等的话，给counter+1（即再次添加入购物车，数量+1）  
+                      arr[j].counter = arr[j].counter + 1;
+                      // 最后，把购物车数据，存放入缓存（此处不用再给购物车数组push元素进去，因为这个是购物车有的，直接更新当前数组即可）  
+                      try {
+                        wx.setStorageSync('cart', arr)
+                      } catch (e) {
+                        console.log(e)
+                      }
+                      // 返回（在if内使用return，跳出循环节约运算，节约性能）  
+                      return;
+                    }
+                  }
+                  // 遍历完购物车后，没有对应的item项，把goodslist的当前项放入购物车数组  
+                  arr.push(currentCartJson);
+             }else{
+                arr.push(currentCartJson);
+             }
+             try {
+                wx.setStorageSync('cart', arr)
+                // 返回（在if内使用return，跳出循环节约运算，节约性能）  
+                return;
+              } catch (e) {
+                console.log(e)
+              }
+            
     }
 })

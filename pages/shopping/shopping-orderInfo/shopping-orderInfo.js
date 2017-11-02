@@ -107,5 +107,9 @@ Page({
 
       }
     })
+  },
+  onPullDownRefresh: function(){
+    this.fetchData(this.data.orderid)
+    wx.stopPullDownRefresh()
   }
 })

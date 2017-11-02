@@ -76,5 +76,8 @@
     </view>
     -->
 
-
+    <view class="footer-bottom {{total <= 0 ? 'bottomNav-6KjUI_0' : ''}}">
+        <!-- <view bindtap='openShopping' class="footer-header  {{total <= 0 ? 'bottomNav-6KjUI_0' : ''}}" ></view> -->
+        <view class="footer-btn {{total <= 0 ? 'bottomNav-9FCIh_0' : ''}}" bindtap="joinCart">加入购物车</view>
+    </view>
 </view>

@@ -97,8 +97,8 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        console.log(res.data)
         let orderid = res.data.orderid
+        console.log(res.data)
         console.log(orderid)
         if (that.data.pay == 0) {
           wx.redirectTo({
@@ -126,7 +126,7 @@ Page({
                     // todo orderid跳转长轮询页面
                   }
                 }
-              })
+              }) 
             },
             'complete': function (res) {
 
